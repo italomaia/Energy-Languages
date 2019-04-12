@@ -1,16 +1,18 @@
+BINARY=/usr/bin/lua5.3
+
 compile:
 
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/lua-5.3.3/bin/lua  pidigits.lua-5.lua 10000" Lua pidigits
+	sudo ../../RAPL/main "${BINARY}  pidigits.lua-5.lua 10000" Lua pidigits
 
 run:
-	/usr/local/src/lua-5.3.3/bin/lua  pidigits.lua-5.lua 10000
+	${BINARY}  pidigits.lua-5.lua 10000
 
 mem:
-	/usr/bin/time -v /usr/local/src/lua-5.3.3/bin/lua  pidigits.lua-5.lua 10000
+	/usr/bin/time -v ${BINARY}  pidigits.lua-5.lua 10000
 
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/lua-5.3.3/bin/lua  pidigits.lua-5.lua 10000
+	valgrind --tool=massif --stacks=yes ${BINARY}  pidigits.lua-5.lua 10000
 

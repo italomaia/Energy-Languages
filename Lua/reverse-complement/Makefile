@@ -1,14 +1,16 @@
+BINARY=/usr/bin/lua5.3
+
 compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/lua-5.3.3/bin/lua  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt" Lua reverse-complement
+	sudo ../../RAPL/main "${BINARY}  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt" Lua reverse-complement
 
 run:
-	/usr/local/src/lua-5.3.3/bin/lua  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt
+	${BINARY}  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt
 
 mem:
-	/usr/bin/time -v /usr/local/src/lua-5.3.3/bin/lua  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt
+	/usr/bin/time -v ${BINARY}  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/lua-5.3.3/bin/lua  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt
+	valgrind --tool=massif --stacks=yes ${BINARY}  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt
