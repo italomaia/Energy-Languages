@@ -1,0 +1,16 @@
+BINARY=/usr/bin/lua5.3
+
+compile:
+
+measure:
+	sudo modprobe msr
+	sudo ../../RAPL/main "${BINARY}  spectralnorm.lua 5500" Lua spectral-norm
+
+run:
+	${BINARY}  spectralnorm.lua 5500
+
+mem:
+	/usr/bin/time -v ${BINARY}  spectralnorm.lua 5500
+
+valgrind:
+	valgrind --tool=massif --stacks=yes ${BINARY}  spectralnorm.lua 5500

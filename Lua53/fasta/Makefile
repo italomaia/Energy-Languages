@@ -1,0 +1,16 @@
+BINARY=/usr/bin/lua5.3
+
+compile:
+
+measure:
+	sudo modprobe msr
+	sudo ../../RAPL/main "${BINARY}  fasta.lua-3.lua 25000000" Lua fasta
+
+run:
+	${BINARY}  fasta.lua-3.lua 25000000
+
+mem:
+	/usr/bin/time -v  ${BINARY}  fasta.lua-3.lua 25000000
+
+valgrind:
+	valgrind --tool=massif --stacks=yes  ${BINARY}  fasta.lua-3.lua 25000000
