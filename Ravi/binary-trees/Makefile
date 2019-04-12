@@ -1,4 +1,4 @@
-BINARY=/usr/bin/lua5.3
+BINARY=/usr/bin/ravi
 
 compile:
 
