@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./mandelbrot.swift-3.swift_run 16000" Swift mandelbrot
+	sudo /opt/rapl/main "./mandelbrot.swift-3.swift_run 16000" Swift mandelbrot
 
 run:
 	./mandelbrot.swift-3.swift_run 16000

@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./revcomp.go-6.go_run 0 < ../../revcomp-input25000000.txt" Go reverse-complement
+	sudo /opt/rapl/main "./revcomp.go-6.go_run 0 < ../../revcomp-input25000000.txt" Go reverse-complement
 
 run:
 	./revcomp.go-6.go_run 0 < ../../revcomp-input25000000.txt

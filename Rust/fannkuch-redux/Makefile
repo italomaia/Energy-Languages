@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fannkuchredux.rust-3.rust_run 12" Rust fannkuch-redux
+	sudo /opt/rapl/main "./fannkuchredux.rust-3.rust_run 12" Rust fannkuch-redux
 
 run:
 	./fannkuchredux.rust-3.rust_run 12

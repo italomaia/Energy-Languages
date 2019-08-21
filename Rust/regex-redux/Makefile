@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./regexredux.rust_run 0 < ../../regexredux-input5000000.txt" Rust regex-redux
+	sudo /opt/rapl/main "./regexredux.rust_run 0 < ../../regexredux-input5000000.txt" Rust regex-redux
 
 run:
 	./regexredux.rust_run 0 < ../../regexredux-input5000000.txt

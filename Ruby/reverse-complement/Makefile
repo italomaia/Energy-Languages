@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/ruby/bin/ruby -W0 revcomp.yarv-3.yarv 0 < ../../revcomp-input25000000.txt" Ruby reverse-complement
+	sudo /opt/rapl/main "/usr/local/src/ruby/bin/ruby -W0 revcomp.yarv-3.yarv 0 < ../../revcomp-input25000000.txt" Ruby reverse-complement
 
 run:
 	/usr/local/src/ruby/bin/ruby -W0 revcomp.yarv-3.yarv 0 < ../../revcomp-input25000000.txt

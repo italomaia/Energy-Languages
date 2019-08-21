@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "sbcl --noinform --core binarytrees.core 21" Lisp binary-trees
+	sudo /opt/rapl/main "sbcl --noinform --core binarytrees.core 21" Lisp binary-trees
 
 run:
 	sbcl --noinform --core binarytrees.core 21

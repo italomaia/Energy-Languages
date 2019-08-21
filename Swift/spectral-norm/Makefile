@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./spectralnorm.swift-3.swift_run 5500" Swift spectral-norm
+	sudo /opt/rapl/main "./spectralnorm.swift-3.swift_run 5500" Swift spectral-norm
 
 run:
 	./spectralnorm.swift-3.swift_run 5500

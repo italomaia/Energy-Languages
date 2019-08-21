@@ -3,7 +3,7 @@ compile:
 	erlc +native +"{hipe, [o3]}" revcomp.erl
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "erl -smp enable -noshell -run  revcomp main 0 < ../../revcomp-input25000000.txt" Erlang reverse-complement
+	sudo /opt/rapl/main "erl -smp enable -noshell -run  revcomp main 0 < ../../revcomp-input25000000.txt" Erlang reverse-complement
 
 run:
 	erl -smp enable -noshell -run  revcomp main 0 < ../../revcomp-input25000000.txt

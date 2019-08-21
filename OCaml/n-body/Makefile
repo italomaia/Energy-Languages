@@ -4,7 +4,7 @@ compile:
 	rm nbody.ml
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./nbody.ocaml_run 50000000" OCaml n-body
+	sudo /opt/rapl/main "./nbody.ocaml_run 50000000" OCaml n-body
 
 run:
 	./nbody.ocaml_run 50000000

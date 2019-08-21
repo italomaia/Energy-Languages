@@ -3,7 +3,7 @@ compile:
 	erlc +native +"{hipe, [o3]}" regexredux.erl
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "erl -smp enable -noshell -run -noinput -run regexredux main 0 < ../../regexredux-input50000.txt" Erlang regex-redux
+	sudo /opt/rapl/main "erl -smp enable -noshell -run -noinput -run regexredux main 0 < ../../regexredux-input50000.txt" Erlang regex-redux
 
 run:
 	erl -smp enable -noshell -run -noinput -run regexredux main 0 < ../../regexredux-input50000.txt

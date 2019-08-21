@@ -4,7 +4,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "${BINARY}  spectralnorm.lua 5500" Lua spectral-norm
+	sudo /opt/rapl/main "${BINARY}  spectralnorm.lua 5500" Lua spectral-norm
 
 run:
 	${BINARY}  spectralnorm.lua 5500

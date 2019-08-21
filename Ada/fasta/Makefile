@@ -1,6 +1,6 @@
 compile:
 	gnatchop -r -w fasta.gnat-5.gnat
-	gnatmake -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp -f fasta.adb -o fasta.gnat-5.gnat_run 
+	gnatmake -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp -f fasta.adb -o fasta.gnat-5.gnat_run
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp fasta.adb
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp sequence.ads
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp sequence-creation.adb
@@ -12,7 +12,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fasta.gnat-5.gnat_run 25000000" Ada fasta
+	sudo /opt/rapl/main "./fasta.gnat-5.gnat_run 25000000" Ada fasta
 
 run:
 	./fasta.gnat-5.gnat_run 25000000

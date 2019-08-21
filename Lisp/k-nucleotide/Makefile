@@ -3,7 +3,7 @@ compile:
 
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "sbcl --noinform --core knucleotide.core 5500" Lisp k-nucleotide
+	sudo /opt/rapl/main "sbcl --noinform --core knucleotide.core 5500" Lisp k-nucleotide
 
 run:
 	sbcl --noinform --core knucleotide.core --userinit /dev/null --load knucleotide.sbcl-6.sbcl_run 0 < knucleotide-input25000000.txt

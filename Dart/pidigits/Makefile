@@ -2,7 +2,7 @@ compile:
 
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/dart  pidigits.dart 2000" Dart pidigits
+	sudo /opt/rapl/main "/usr/bin/dart  pidigits.dart 2000" Dart pidigits
 
 run:
 	/usr/bin/dart  pidigits.dart 2000

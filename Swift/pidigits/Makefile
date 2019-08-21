@@ -3,7 +3,7 @@ compile:
 
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./pidigits.swift-2.swift_run 10000" Swift pidigits
+	sudo /opt/rapl/main "./pidigits.swift-2.swift_run 10000" Swift pidigits
 
 run:
 	./pidigits.swift-2.swift_run 10000

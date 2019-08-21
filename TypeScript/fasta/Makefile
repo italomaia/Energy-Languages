@@ -4,7 +4,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fasta.js 25000000" TypeScript fasta
+	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fasta.js 25000000" TypeScript fasta
 
 run:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fasta.js 25000000

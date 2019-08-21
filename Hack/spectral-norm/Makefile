@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/hhvm  spectralnorm.hack-3.hack 5500" Hack spectral-norm
+	sudo /opt/rapl/main "/usr/bin/hhvm  spectralnorm.hack-3.hack 5500" Hack spectral-norm
 
 run:
 	/usr/bin/hhvm  spectralnorm.hack-3.hack 5500

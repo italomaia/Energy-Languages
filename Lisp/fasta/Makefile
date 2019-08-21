@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "sbcl --noinform --core fasta.core 25000000" Lisp fasta
+	sudo /opt/rapl/main "sbcl --noinform --core fasta.core 25000000" Lisp fasta
 
 run:
 	sbcl --noinform --core fasta.core 25000000

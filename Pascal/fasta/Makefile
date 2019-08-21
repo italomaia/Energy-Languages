@@ -6,7 +6,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fasta.fpascal-4.fpascal_run 25000000" Pascal fasta
+	sudo /opt/rapl/main "./fasta.fpascal-4.fpascal_run 25000000" Pascal fasta
 
 run:
 	./fasta.fpascal-4.fpascal_run 25000000

@@ -3,7 +3,7 @@ compile:
 
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./regexredux.go-2.go_run 0 < ../../regexredux-input5000000.txt" Go regex-redux
+	sudo /opt/rapl/main "./regexredux.go-2.go_run 0 < ../../regexredux-input5000000.txt" Go regex-redux
 
 run:
 	./regexredux.go-2.go_run 0 < ../../regexredux-input5000000.txt

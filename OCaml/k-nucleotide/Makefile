@@ -5,7 +5,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./knucleotide.ocaml-3.ocaml_run 0 < knucleotide-input25000000.txt" OCaml k-nucleotide
+	sudo /opt/rapl/main "./knucleotide.ocaml-3.ocaml_run 0 < knucleotide-input25000000.txt" OCaml k-nucleotide
 
 run:
 	./knucleotide.ocaml-3.ocaml_run 0 < knucleotide-input25000000.txt

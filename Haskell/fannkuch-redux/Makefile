@@ -3,7 +3,7 @@ compile:
 	/usr/local/src/ghc-8.0.2/bin/ghc --make -fllvm -O2 -XBangPatterns -threaded -rtsopts -XScopedTypeVariables fannkuchredux.ghc-3.hs -o fannkuchredux.ghc-3.ghc_run
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fannkuchredux.ghc-3.ghc_run +RTS -N4 -RTS 12" Haskell fannkuch-redux
+	sudo /opt/rapl/main "./fannkuchredux.ghc-3.ghc_run +RTS -N4 -RTS 12" Haskell fannkuch-redux
 
 run:
 	./fannkuchredux.ghc-3.ghc_run +RTS -N4 -RTS 12

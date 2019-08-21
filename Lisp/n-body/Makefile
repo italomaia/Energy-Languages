@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "sbcl --noinform --core nbody.core 50000000" Lisp n-body
+	sudo /opt/rapl/main "sbcl --noinform --core nbody.core 50000000" Lisp n-body
 
 run:
 	sbcl --noinform --core nbody.core 50000000

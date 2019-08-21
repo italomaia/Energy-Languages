@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/racket-6.8/bin/racket ./compiled/spectralnorm.racket-3_racket.zo 5500" Racket spectral-norm
+	sudo /opt/rapl/main "/usr/local/src/racket-6.8/bin/racket ./compiled/spectralnorm.racket-3_racket.zo 5500" Racket spectral-norm
 
 run:
 	/usr/local/src/racket-6.8/bin/racket ./compiled/spectralnorm.racket-3_racket.zo 5500

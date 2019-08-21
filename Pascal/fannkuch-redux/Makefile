@@ -5,7 +5,7 @@ compile:
 	rm fannkuchredux.pas
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fannkuchredux.fpascal_run 12" Pascal fannkuch-redux
+	sudo /opt/rapl/main "./fannkuchredux.fpascal_run 12" Pascal fannkuch-redux
 
 run:
 	./fannkuchredux.fpascal_run 12

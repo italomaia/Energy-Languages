@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/ruby/bin/ruby -W0 binarytrees.yarv-5.yarv 21" Ruby binary-trees
+	sudo /opt/rapl/main "/usr/local/src/ruby/bin/ruby -W0 binarytrees.yarv-5.yarv 21" Ruby binary-trees
 
 run:
 	/usr/local/src/ruby/bin/ruby -W0 binarytrees.yarv-5.yarv 21

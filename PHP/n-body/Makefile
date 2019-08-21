@@ -2,7 +2,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "php -n  nbody.php-3.php 50000000" PHP n-body
+	sudo /opt/rapl/main "php -n  nbody.php-3.php 50000000" PHP n-body
 
 run:
 	php -n  nbody.php-3.php 50000000

@@ -1,10 +1,10 @@
-compile:	
+compile:
 	cp nbody.fsharpcore Program.fs
 	/usr/bin/dotnet build -c Release
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 50000000" FSharp n-body
+	sudo /opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 50000000" FSharp n-body
 
 run:
 	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 50000000

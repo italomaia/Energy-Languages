@@ -3,7 +3,7 @@ compile:
 	erlc +native +"{hipe, [o3]}" nbody.erl
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "erl -smp enable -noshell -run  nbody main 50000000" Erlang n-body
+	sudo /opt/rapl/main "erl -smp enable -noshell -run  nbody main 50000000" Erlang n-body
 
 run:
 	erl -smp enable -noshell -run  nbody main 50000000

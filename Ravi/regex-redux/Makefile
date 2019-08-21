@@ -4,7 +4,7 @@ compile:
 
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "${BINARY}  regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt" Lua regex-redux
+	sudo /opt/rapl/main "${BINARY}  regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt" Lua regex-redux
 
 run:
 	${BINARY}  regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt

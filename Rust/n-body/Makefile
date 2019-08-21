@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./nbody.rust-2.rust_run 50000000" Rust n-body
+	sudo /opt/rapl/main "./nbody.rust-2.rust_run 50000000" Rust n-body
 
 run:
 	./nbody.rust-2.rust_run 50000000

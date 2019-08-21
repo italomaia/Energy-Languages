@@ -2,7 +2,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/dart  fasta.dart 25000000" Dart fasta
+	sudo /opt/rapl/main "/usr/bin/dart  fasta.dart 25000000" Dart fasta
 
 run:
 	/usr/bin/dart  fasta.dart 25000000

@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./pidigits.rust-2.rust_run 10000" Rust pidigits
+	sudo /opt/rapl/main "./pidigits.rust-2.rust_run 10000" Rust pidigits
 
 run:
 	./pidigits.rust-2.rust_run 10000

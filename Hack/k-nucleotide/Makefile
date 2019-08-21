@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/hhvm  knucleotide.hack-4.hack 0 < knucleotide-input25000000.txt" Hack k-nucleotide
+	sudo /opt/rapl/main "/usr/bin/hhvm  knucleotide.hack-4.hack 0 < knucleotide-input25000000.txt" Hack k-nucleotide
 
 run:
 	/usr/bin/hhvm  knucleotide.hack-4.hack 0 < knucleotide-input25000000.txt

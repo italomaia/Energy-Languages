@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "sbcl --noinform --core spectralnorm.core 5500" Lisp spectral-norm
+	sudo /opt/rapl/main "sbcl --noinform --core spectralnorm.core 5500" Lisp spectral-norm
 
 run:
 	sbcl --noinform --core spectralnorm.core 5500

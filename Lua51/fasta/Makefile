@@ -4,7 +4,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "${BINARY}  fasta.lua-3.lua 25000000" Lua fasta
+	sudo /opt/rapl/main "${BINARY}  fasta.lua-3.lua 25000000" Lua fasta
 
 run:
 	${BINARY}  fasta.lua-3.lua 25000000

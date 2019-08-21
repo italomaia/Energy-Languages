@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./pidigits.go-3.go_run 10000" Go pidigits
+	sudo /opt/rapl/main "./pidigits.go-3.go_run 10000" Go pidigits
 
 run:
 	./pidigits.go-3.go_run 10000

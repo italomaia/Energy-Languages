@@ -3,7 +3,7 @@ compile:
 
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./binarytrees.swift-9.swift_run 21" Swift binary-trees
+	sudo /opt/rapl/main "./binarytrees.swift-9.swift_run 21" Swift binary-trees
 
 run:
 	./binarytrees.swift-9.swift_run 21

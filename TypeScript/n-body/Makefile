@@ -4,7 +4,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict nbody.typescript-3.js 50000000" TypeScript n-body
+	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict nbody.typescript-3.js 50000000" TypeScript n-body
 
 run:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict nbody.typescript-3.js 50000000

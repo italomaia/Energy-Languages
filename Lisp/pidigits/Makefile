@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "sbcl --noinform --core pidigits.core 10000" Lisp pidigits
+	sudo /opt/rapl/main "sbcl --noinform --core pidigits.core 10000" Lisp pidigits
 
 run:
 	sbcl --noinform --core pidigits.core 10000

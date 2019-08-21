@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./binarytrees.go-2.go_run 21" Go binary-trees
+	sudo /opt/rapl/main "./binarytrees.go-2.go_run 21" Go binary-trees
 
 run:
 	./binarytrees.go-2.go_run 21

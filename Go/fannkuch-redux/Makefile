@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fannkuchredux.go_run 12" Go fannkuch-redux
+	sudo /opt/rapl/main "./fannkuchredux.go_run 12" Go fannkuch-redux
 
 run:
 	./fannkuchredux.go_run 12

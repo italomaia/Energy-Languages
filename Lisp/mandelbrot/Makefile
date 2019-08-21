@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "sbcl --noinform --core mandelbrot.core 16000" Lisp mandelbrot
+	sudo /opt/rapl/main "sbcl --noinform --core mandelbrot.core 16000" Lisp mandelbrot
 
 run:
 	sbcl --noinform --core mandelbrot.core 16000

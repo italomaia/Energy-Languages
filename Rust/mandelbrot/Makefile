@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./mandelbrot.rust-4.rust_run 16000" Rust mandelbrot
+	sudo /opt/rapl/main "./mandelbrot.rust-4.rust_run 16000" Rust mandelbrot
 
 run:
 	./mandelbrot.rust-4.rust_run 16000

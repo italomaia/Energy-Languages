@@ -2,7 +2,7 @@ compile:
 
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "" TypeScript pidigits
+	sudo /opt/rapl/main "" TypeScript pidigits
 
 mem:
 	/usr/bin/time -v ./binarytrees.gpp-9.gpp_run 21

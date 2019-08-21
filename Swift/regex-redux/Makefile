@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./regexredux.swift-2.swift_run 0 < ../../regexredux-input5000000.txt" Swift regex-redux
+	sudo /opt/rapl/main "./regexredux.swift-2.swift_run 0 < ../../regexredux-input5000000.txt" Swift regex-redux
 
 run:
 	./regexredux.swift-2.swift_run 0 < ../../regexredux-input5000000.txt

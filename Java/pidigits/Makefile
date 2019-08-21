@@ -3,7 +3,7 @@ compile:
 	/usr/local/src/jdk1.8.0_121/bin/javac -d .  pidigits.java
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java -Djava.library.path=Include/java  pidigits 10000" Java pidigits
+	sudo /opt/rapl/main "/usr/local/src/jdk1.8.0_121/bin/java -Djava.library.path=Include/java  pidigits 10000" Java pidigits
 
 run:
 	/usr/local/src/jdk1.8.0_121/bin/java -Djava.library.path=Include/java  pidigits 10000

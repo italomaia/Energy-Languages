@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fasta.swift-3.swift_run 25000000" Swift fasta
+	sudo /opt/rapl/main "./fasta.swift-3.swift_run 25000000" Swift fasta
 
 run:
 	./fasta.swift-3.swift_run 25000000

@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/hhvm  binarytrees.hack-4.hack 21" Hack binary-trees
+	sudo /opt/rapl/main "/usr/bin/hhvm  binarytrees.hack-4.hack 21" Hack binary-trees
 
 run:
 	/usr/bin/hhvm binarytrees.hack-4.hack 21

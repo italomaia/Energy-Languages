@@ -3,7 +3,7 @@ compile:
 	erlc +native +"{hipe, [o3]}" spectralnorm.erl
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "erl -smp enable -noshell -run  spectralnorm main 5500" Erlang spectral-norm
+	sudo /opt/rapl/main "erl -smp enable -noshell -run  spectralnorm main 5500" Erlang spectral-norm
 
 run:
 	erl -smp enable -noshell -run  spectralnorm main 5500

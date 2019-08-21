@@ -3,7 +3,7 @@ compile:
 	erlc +native +"{hipe, [o3]}" fasta.erl
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "erl -smp enable -noshell -run  fasta main 25000000" Erlang fasta
+	sudo /opt/rapl/main "erl -smp enable -noshell -run  fasta main 25000000" Erlang fasta
 
 run:
 	erl -smp enable -noshell -run  fasta main 25000000

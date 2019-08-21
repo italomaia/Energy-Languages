@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/racket-6.8/bin/racket ./compiled/nbody.racket-2_racket.zo 50000000" Racket n-body
+	sudo /opt/rapl/main "/usr/local/src/racket-6.8/bin/racket ./compiled/nbody.racket-2_racket.zo 50000000" Racket n-body
 
 run:
 	/usr/local/src/racket-6.8/bin/racket ./compiled/nbody.racket-2_racket.zo 50000000

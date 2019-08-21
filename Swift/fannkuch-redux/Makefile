@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fannkuchredux.swift-3.swift_run 12" Swift fannkuch-redux
+	sudo /opt/rapl/main "./fannkuchredux.swift-3.swift_run 12" Swift fannkuch-redux
 
 run:
 	./fannkuchredux.swift-3.swift_run 12

@@ -4,7 +4,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fasta.ocaml-6.ocaml_run 25000000" OCaml fasta
+	sudo /opt/rapl/main "./fasta.ocaml-6.ocaml_run 25000000" OCaml fasta
 
 run:
 	./fasta.ocaml-6.ocaml_run 25000000

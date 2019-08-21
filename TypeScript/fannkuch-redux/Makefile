@@ -4,7 +4,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fannkuchredux.js 12" TypeScript fannkuch-redux
+	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fannkuchredux.js 12" TypeScript fannkuch-redux
 
 run:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fannkuchredux.js 12

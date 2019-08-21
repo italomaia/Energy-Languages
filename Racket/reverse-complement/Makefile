@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/racket-6.8/bin/racket ./compiled/revcomp.racket-2_racket.zo 0 < ../../revcomp-input25000000.txt" Racket reverse-complement
+	sudo /opt/rapl/main "/usr/local/src/racket-6.8/bin/racket ./compiled/revcomp.racket-2_racket.zo 0 < ../../revcomp-input25000000.txt" Racket reverse-complement
 
 run:
 	/usr/local/src/racket-6.8/bin/racket ./compiled/revcomp.racket-2_racket.zo 0 < ../../revcomp-input25000000.txt

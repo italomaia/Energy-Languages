@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./binarytrees.ifc-2.ifc_run 21" Fortran binary-trees
+	sudo /opt/rapl/main "./binarytrees.ifc-2.ifc_run 21" Fortran binary-trees
 
 run:
 	./binarytrees.ifc-2.ifc_run 21

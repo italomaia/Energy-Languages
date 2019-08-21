@@ -1,6 +1,6 @@
 compile:
 	gnatchop -r -w spectralnorm.gnat-4.gnat
-	gnatmake -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp -f spectralnorm.adb -o spectralnorm.gnat-4.gnat_run 
+	gnatmake -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp -f spectralnorm.adb -o spectralnorm.gnat-4.gnat_run
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp spectralnorm.adb
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp division.ads
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp division-d.adb
@@ -14,7 +14,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./spectralnorm.gnat-4.gnat_run 5500" Ada spectral-norm
+	sudo /opt/rapl/main "./spectralnorm.gnat-4.gnat_run 5500" Ada spectral-norm
 
 run:
 	./spectralnorm.gnat-4.gnat_run 5500
@@ -23,4 +23,4 @@ mem:
 	/usr/bin/time -v ./spectralnorm.gnat-4.gnat_run 5500
 
 valgrind:
-	valgrind --tool=massif --stacks=yes ./spectralnorm.gnat-4.gnat_run 5500	
+	valgrind --tool=massif --stacks=yes ./spectralnorm.gnat-4.gnat_run 5500

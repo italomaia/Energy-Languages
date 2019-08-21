@@ -4,7 +4,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "${BINARY}  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt" Lua reverse-complement
+	sudo /opt/rapl/main "${BINARY}  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt" Lua reverse-complement
 
 run:
 	${BINARY}  revcomp.lua-2.lua 0 < ../../revcomp-input25000000.txt

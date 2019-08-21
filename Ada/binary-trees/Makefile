@@ -10,7 +10,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./binarytrees.gnat-4.gnat_run 21" Ada binary-trees
+	sudo /opt/rapl/main "./binarytrees.gnat-4.gnat_run 21" Ada binary-trees
 
 run:
 	./binarytrees.gnat-4.gnat_run 21

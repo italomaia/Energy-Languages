@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/racket-6.8/bin/racket ./compiled/knucleotide.racket-4_racket.zo 0 < knucleotide-input25000000.txt" Racket k-nucleotide
+	sudo /opt/rapl/main "/usr/local/src/racket-6.8/bin/racket ./compiled/knucleotide.racket-4_racket.zo 0 < knucleotide-input25000000.txt" Racket k-nucleotide
 
 run:
 	/usr/local/src/racket-6.8/bin/racket ./compiled/knucleotide.racket-4_racket.zo 0 < knucleotide-input25000000.txt

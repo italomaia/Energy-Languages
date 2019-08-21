@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./knucleotide.rust-4.rust_run 0 < knucleotide-input25000000.txt" Rust k-nucleotide
+	sudo /opt/rapl/main "./knucleotide.rust-4.rust_run 0 < knucleotide-input25000000.txt" Rust k-nucleotide
 
 run:
 	./knucleotide.rust-4.rust_run 0 < knucleotide-input25000000.txt

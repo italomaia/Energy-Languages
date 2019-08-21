@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./nbody.go_run 50000000" Go n-body
+	sudo /opt/rapl/main "./nbody.go_run 50000000" Go n-body
 
 run:
 	./nbody.go_run 50000000

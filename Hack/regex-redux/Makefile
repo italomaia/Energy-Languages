@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/hhvm  regexredux.hack 0 < ../../regexredux-input5000000.txt" Hack regex-redux
+	sudo /opt/rapl/main "/usr/bin/hhvm  regexredux.hack 0 < ../../regexredux-input5000000.txt" Hack regex-redux
 
 run:
 	/usr/bin/hhvm  regexredux.hack 0 < ../../regexredux-input5000000.txt

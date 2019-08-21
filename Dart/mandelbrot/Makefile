@@ -2,7 +2,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/dart  mandelbrot.dart 16000" Dart mandelbrot
+	sudo /opt/rapl/main "/usr/bin/dart  mandelbrot.dart 16000" Dart mandelbrot
 
 run:
 	/usr/bin/dart  mandelbrot.dart 16000

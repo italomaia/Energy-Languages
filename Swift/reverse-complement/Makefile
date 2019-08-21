@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./revcomp.swift_run 0 < ../../revcomp-input25000000.txt" Swift reverse-complement
+	sudo /opt/rapl/main "./revcomp.swift_run 0 < ../../revcomp-input25000000.txt" Swift reverse-complement
 
 run:
 	./revcomp.swift_run 0 < ../../revcomp-input25000000.txt

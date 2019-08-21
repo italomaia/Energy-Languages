@@ -3,7 +3,7 @@ compile:
 	/usr/local/src/jdk1.8.0_121/bin/javac -d .  regexredux.java
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java   regexredux 0 < ../../regexredux-input5000000.txt" Java regex-redux
+	sudo /opt/rapl/main "/usr/local/src/jdk1.8.0_121/bin/java   regexredux 0 < ../../regexredux-input5000000.txt" Java regex-redux
 
 run:
 	/usr/local/src/jdk1.8.0_121/bin/java   regexredux 0 < ../../regexredux-input5000000.txt

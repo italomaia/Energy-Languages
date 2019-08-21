@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./mandelbrot.go-3.go_run 16000" Go mandelbrot
+	sudo /opt/rapl/main "./mandelbrot.go-3.go_run 16000" Go mandelbrot
 
 run:
 	./mandelbrot.go-3.go_run 16000

@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "sbcl --noinform --core revcomp.core 0 < ../../revcomp-input25000000.txt" Lisp reverse-complement
+	sudo /opt/rapl/main "sbcl --noinform --core revcomp.core 0 < ../../revcomp-input25000000.txt" Lisp reverse-complement
 
 run:
 	sbcl --noinform --core revcomp.core 0 < ../../revcomp-input25000000.txt

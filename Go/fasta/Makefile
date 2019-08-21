@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fasta.go-3.go_run 25000000" Go fasta
+	sudo /opt/rapl/main "./fasta.go-3.go_run 25000000" Go fasta
 
 run:
 	./fasta.go-3.go_run 25000000

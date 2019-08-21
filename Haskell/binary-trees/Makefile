@@ -4,7 +4,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./binarytrees.ghc_run +RTS -N4 -K128M -H -RTS 21" Haskell binary-trees
+	sudo /opt/rapl/main "./binarytrees.ghc_run +RTS -N4 -K128M -H -RTS 21" Haskell binary-trees
 
 run:
 	./binarytrees.ghc_run +RTS -N4 -K128M -H -RTS 21

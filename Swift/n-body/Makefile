@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./nbody.swift-5.swift_run 50000000" Swift n-body
+	sudo /opt/rapl/main "./nbody.swift-5.swift_run 50000000" Swift n-body
 
 run:
 	./nbody.swift-5.swift_run 50000000

@@ -3,7 +3,7 @@ compile:
 	/usr/local/src/ghc-8.0.2/bin/ghc --make -fllvm -O2 -XBangPatterns -threaded -rtsopts -XMagicHash spectralnorm.ghc-4.hs -o spectralnorm.ghc-4.ghc_run
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./spectralnorm.ghc-4.ghc_run +RTS -N4 -RTS 5500" Haskell spectral-norm
+	sudo /opt/rapl/main "./spectralnorm.ghc-4.ghc_run +RTS -N4 -RTS 5500" Haskell spectral-norm
 
 run:
 	./spectralnorm.ghc-4.ghc_run +RTS -N4 -RTS 5500

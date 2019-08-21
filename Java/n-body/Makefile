@@ -3,7 +3,7 @@ compile:
 	/usr/local/src/jdk1.8.0_121/bin/javac -d .  nbody.java
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000" Java n-body
+	sudo /opt/rapl/main "/usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000" Java n-body
 
 run:
 	/usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000

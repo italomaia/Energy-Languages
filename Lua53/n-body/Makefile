@@ -4,7 +4,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "${BINARY}  nbody.lua-2.lua 50000000" Lua n-body
+	sudo /opt/rapl/main "${BINARY}  nbody.lua-2.lua 50000000" Lua n-body
 
 run:
 	${BINARY}  nbody.lua-2.lua 50000000

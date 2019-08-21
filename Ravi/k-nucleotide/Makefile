@@ -4,7 +4,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "${BINARY}  knucleotide.lua-2.lua 0 < knucleotide-input25000000.txt" Lua k-nucleotide
+	sudo /opt/rapl/main "${BINARY}  knucleotide.lua-2.lua 0 < knucleotide-input25000000.txt" Lua k-nucleotide
 
 run:
 	${BINARY}  knucleotide.lua-2.lua 0 < knucleotide-input25000000.txt

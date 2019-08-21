@@ -3,7 +3,7 @@ compile:
 	/usr/local/src/jdk1.8.0_121/bin/javac -d .  binarytrees.java
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java binarytrees 21" Java binary-trees
+	sudo /opt/rapl/main "/usr/local/src/jdk1.8.0_121/bin/java binarytrees 21" Java binary-trees
 
 run:
 	/usr/local/src/jdk1.8.0_121/bin/java binarytrees 21

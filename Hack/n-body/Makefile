@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/hhvm  nbody.hack-5.hack 50000000" Hack n-body
+	sudo /opt/rapl/main "/usr/bin/hhvm  nbody.hack-5.hack 50000000" Hack n-body
 
 run:
 	/usr/bin/hhvm  nbody.hack-5.hack 50000000

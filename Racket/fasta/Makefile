@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/racket-6.8/bin/racket ./compiled/fasta.racket-3_racket.zo 25000000" Racket fasta
+	sudo /opt/rapl/main "/usr/local/src/racket-6.8/bin/racket ./compiled/fasta.racket-3_racket.zo 25000000" Racket fasta
 
 run:
 	/usr/local/src/racket-6.8/bin/racket ./compiled/fasta.racket-3_racket.zo 25000000

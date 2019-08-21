@@ -3,7 +3,7 @@ compile:
 
 xmeasure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/hhvm  nbody.hack-5.hack 50000000" Hack pidigits
+	sudo /opt/rapl/main "/usr/bin/hhvm  nbody.hack-5.hack 50000000" Hack pidigits
 
 run:
 	/usr/bin/hhvm  nbody.hack-5.hack 50000000

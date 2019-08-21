@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fasta.rust-2.rust_run 25000000" Rust fasta
+	sudo /opt/rapl/main "./fasta.rust-2.rust_run 25000000" Rust fasta
 
 run:
 	./fasta.rust-2.rust_run 25000000

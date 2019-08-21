@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "sbcl --noinform --core fannkuch.core 12" Lisp fannkuch-redux
+	sudo /opt/rapl/main "sbcl --noinform --core fannkuch.core 12" Lisp fannkuch-redux
 
 run:
 	sbcl --noinform --core fannkuch.core 12

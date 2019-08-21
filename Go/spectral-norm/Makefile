@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./spectralnorm.go-4.go_run 5500" Go spectral-norm
+	sudo /opt/rapl/main "./spectralnorm.go-4.go_run 5500" Go spectral-norm
 
 run:
 	./spectralnorm.go-4.go_run 5500

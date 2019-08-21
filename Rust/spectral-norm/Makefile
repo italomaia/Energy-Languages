@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./spectralnorm.rust-4.rust_run 5500" Rust spectral-norm
+	sudo /opt/rapl/main "./spectralnorm.rust-4.rust_run 5500" Rust spectral-norm
 
 run:
 	./spectralnorm.rust-4.rust_run 5500
