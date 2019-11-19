@@ -18,10 +18,10 @@ def _build_docker_image(root, image_name):
     print(output)
 
 
-def build_docker_image(name, base_image=None):
+def build_docker_image(name, force_build=False):
     image_name = make_docker_image_name(name)
 
-    if not docker_image_exists(image_name):
+    if force_build or not docker_image_exists(image_name):
         # docker folder root
         root = make_root(name)
         _build_docker_image(root, image_name)
@@ -34,7 +34,10 @@ def make_docker_image_name(name):
 
 
 def run_docker_image(image_name: str, action: str):
-    check_output(["docker", 'run', image_name, "/usr/bin/python3 compile_all.py %s" % action])
+    check_output([
+        "docker", 'run', '--rm', image_name,
+        "/usr/bin/python3", "compile_all.py", action
+    ])
 
 
 def docker_image_exists(image):
@@ -62,7 +65,7 @@ def main(lang_list: List[str], action: str):
     rapl_image_name = build_docker_image('rapl')  # noqa: F841
 
     for lang in lang_list:
-        image_name = build_docker_image(lang.lower(), rapl_image_name)
+        image_name = build_docker_image(lang.lower())
         run_docker_image(image_name, action)
 
 
