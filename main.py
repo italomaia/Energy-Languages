@@ -74,7 +74,7 @@ def make_parser():
     parser.add_argument(
         '-a', '--act',
         required=True,
-        choices=('mem', 'compile', 'run', 'measure'),
+        choices=('mem', 'run', 'measure'),
         help='action to execute'
     )
 
