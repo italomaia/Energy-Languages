@@ -1,4 +1,3 @@
-BINARY=/usr/bin/lua5.1
 
 compile:
 

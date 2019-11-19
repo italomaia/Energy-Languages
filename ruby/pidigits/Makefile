@@ -3,13 +3,13 @@ compile:
 
 xmeasure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "/usr/local/src/ruby/bin/ruby -W0 pidigits.yarv-5.yarv 10000" Ruby pidigits
+	sudo /opt/rapl/main "${BINARY} -W0 pidigits.yarv-5.yarv 10000" Ruby pidigits
 
 run:
-	/usr/local/src/ruby/bin/ruby -W0 pidigits.yarv-5.yarv 10000
+	${BINARY} -W0 pidigits.yarv-5.yarv 10000
 
 mem:
-	/usr/bin/time -v  /usr/local/src/ruby/bin/ruby -W0 pidigits.yarv-5.yarv 10000
+	/usr/bin/time -v  ${BINARY} -W0 pidigits.yarv-5.yarv 10000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/local/src/ruby/bin/ruby -W0 pidigits.yarv-5.yarv 10000
+	valgrind --tool=massif --stacks=yes  ${BINARY} -W0 pidigits.yarv-5.yarv 10000

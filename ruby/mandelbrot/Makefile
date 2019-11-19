@@ -3,13 +3,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "/usr/local/src/ruby/bin/ruby -W0 mandelbrot.yarv-5.yarv 16000" Ruby mandelbrot
+	sudo /opt/rapl/main "${BINARY} -W0 mandelbrot.yarv-5.yarv 16000" Ruby mandelbrot
 
 run:
-	/usr/local/src/ruby/bin/ruby -W0 mandelbrot.yarv-5.yarv 16000
+	${BINARY} -W0 mandelbrot.yarv-5.yarv 16000
 
 mem:
-	/usr/bin/time -v /usr/local/src/ruby/bin/ruby -W0 mandelbrot.yarv-5.yarv 16000
+	/usr/bin/time -v ${BINARY} -W0 mandelbrot.yarv-5.yarv 16000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/ruby/bin/ruby -W0 mandelbrot.yarv-5.yarv 16000
+	valgrind --tool=massif --stacks=yes ${BINARY} -W0 mandelbrot.yarv-5.yarv 16000

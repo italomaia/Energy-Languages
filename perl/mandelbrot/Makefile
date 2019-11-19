@@ -2,13 +2,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "/usr/local/src/perl-5.24.0/bin/perl mandelbrot.perl 16000" Perl mandelbrot
+	sudo /opt/rapl/main "${BINARY} mandelbrot.perl 16000" Perl mandelbrot
 
 run:
-	/usr/local/src/perl-5.24.0/bin/perl mandelbrot.perl 16000
+	${BINARY} mandelbrot.perl 16000
 
 mem:
-	/usr/bin/time -v /usr/local/src/perl-5.24.0/bin/perl mandelbrot.perl 16000
+	/usr/bin/time -v ${BINARY} mandelbrot.perl 16000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/perl-5.24.0/bin/perl mandelbrot.perl 16000
+	valgrind --tool=massif --stacks=yes ${BINARY} mandelbrot.perl 16000

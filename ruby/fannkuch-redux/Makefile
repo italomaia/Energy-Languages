@@ -3,13 +3,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "/usr/local/src/ruby/bin/ruby -W0 fannkuchredux.yarv-2.yarv 12" Ruby fannkuch-redux
+	sudo /opt/rapl/main "${BINARY} -W0 fannkuchredux.yarv-2.yarv 12" Ruby fannkuch-redux
 
 run:
-	/usr/local/src/ruby/bin/ruby -W0 fannkuchredux.yarv-2.yarv 12
+	${BINARY} -W0 fannkuchredux.yarv-2.yarv 12
 
 mem:
-	/usr/bin/time -v /usr/local/src/ruby/bin/ruby -W0 fannkuchredux.yarv-2.yarv 12
+	/usr/bin/time -v ${BINARY} -W0 fannkuchredux.yarv-2.yarv 12
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/ruby/bin/ruby -W0 fannkuchredux.yarv-2.yarv 12
+	valgrind --tool=massif --stacks=yes ${BINARY} -W0 fannkuchredux.yarv-2.yarv 12

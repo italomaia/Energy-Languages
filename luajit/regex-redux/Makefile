@@ -1,5 +1,3 @@
-BINARY=/usr/bin/luajit
-
 compile:
 
 xmeasure:

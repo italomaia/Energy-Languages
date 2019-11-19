@@ -1,3 +1,6 @@
 FROM energy/rapl:1
 
-RUN apk add python3 && ln -s /usr/bin/python3 /usr/bin/python
+ENV BINARY=/usr/bin/python3
+COPY . .
+RUN apk add python3
+RUN /usr/bin/python3 compile_all.py compile

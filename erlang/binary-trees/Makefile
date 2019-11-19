@@ -1,15 +1,15 @@
 compile:
 	cp binarytrees.hipe-2.hipe binarytrees.erl
-	erlc +native +"{hipe, [o3]}" binarytrees.erl
+	${COMPILER} +native +"{hipe, [o3]}" binarytrees.erl
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "erl -smp enable -noshell -run  binarytrees main 21" Erlang binary-trees
+	sudo /opt/rapl/main "${BINARY} -smp enable -noshell -run  binarytrees main 21" Erlang binary-trees
 
 run:
-	erl -smp enable -noshell -run  binarytrees main 21
+	${BINARY} -smp enable -noshell -run  binarytrees main 21
 
 mem:
-	/usr/bin/time -v  erl -smp enable -noshell -run  binarytrees main 21
+	/usr/bin/time -v  ${BINARY} -smp enable -noshell -run  binarytrees main 21
 
 valgrind:
-	valgrind --tool=massif --stacks=yes  erl -smp enable -noshell -run  binarytrees main 21
+	valgrind --tool=massif --stacks=yes  ${BINARY} -smp enable -noshell -run  binarytrees main 21

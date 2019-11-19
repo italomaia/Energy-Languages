@@ -2,13 +2,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "/usr/local/src/perl-5.24.0/bin/perl spectralnorm.perl-4.perl 5500" Perl spectral-norm
+	sudo /opt/rapl/main "${BINARY} spectralnorm.perl-4.perl 5500" Perl spectral-norm
 
 run:
-	/usr/local/src/perl-5.24.0/bin/perl spectralnorm.perl-4.perl 5500
+	${BINARY} spectralnorm.perl-4.perl 5500
 
 mem:
-	/usr/bin/time -v  /usr/local/src/perl-5.24.0/bin/perl spectralnorm.perl-4.perl 5500
+	/usr/bin/time -v  ${BINARY} spectralnorm.perl-4.perl 5500
 
 valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/local/src/perl-5.24.0/bin/perl spectralnorm.perl-4.perl 5500
+	valgrind --tool=massif --stacks=yes  ${BINARY} spectralnorm.perl-4.perl 5500

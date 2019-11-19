@@ -3,13 +3,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "/usr/local/src/ruby/bin/ruby -W0 fasta.yarv-3.yarv 25000000" Ruby fasta
+	sudo /opt/rapl/main "${BINARY} -W0 fasta.yarv-3.yarv 25000000" Ruby fasta
 
 run:
-	/usr/local/src/ruby/bin/ruby -W0 fasta.yarv-3.yarv 25000000
+	${BINARY} -W0 fasta.yarv-3.yarv 25000000
 
 mem:
-	/usr/bin/time -v  /usr/local/src/ruby/bin/ruby -W0 fasta.yarv-3.yarv 25000000
+	/usr/bin/time -v  ${BINARY} -W0 fasta.yarv-3.yarv 25000000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/local/src/ruby/bin/ruby -W0 fasta.yarv-3.yarv 25000000
+	valgrind --tool=massif --stacks=yes  ${BINARY} -W0 fasta.yarv-3.yarv 25000000

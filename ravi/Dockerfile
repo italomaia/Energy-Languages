@@ -1,7 +1,8 @@
 FROM energy/rapl:1
 
-WORKDIR /root
-COPY . /root
+ENV BINARY=/usr/bin/ravi
+COPY . .
+
 RUN apk add cmake llvm git gcc g++ ccache &&\
     git clone https://github.com/dibyendumajumdar/ravi.git /tmp/ravi &&\
     cd /tmp/ravi &&\
@@ -13,3 +14,4 @@ RUN apk add cmake llvm git gcc g++ ccache &&\
         -D LLVM_JIT=ON \
         -D CMAKE_INSTALL_PREFIX=/opt/ravi \
         -D LLVM_DIR=/opt/llvm801/lib/cmake/llvm .
+RUN /usr/bin/python3 compile_all.py compile

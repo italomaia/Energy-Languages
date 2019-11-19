@@ -2,9 +2,9 @@ compile:
 	cp pidigits.python3-2.python3 pidigits.python3-2.py
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "/usr/bin/python -OO pidigits.python3-2.py 10000" Python pidigits
+	sudo /opt/rapl/main "${BINARY} -OO pidigits.python3-2.py 10000" Python pidigits
 
 run:
-	/usr/bin/python -OO pidigits.python3-2.py 10000
+	${BINARY} -OO pidigits.python3-2.py 10000
 mem:
-	/usr/bin/time -v /usr/bin/python -OO pidigits.python3-2.py 10000
+	/usr/bin/time -v ${BINARY} -OO pidigits.python3-2.py 10000
