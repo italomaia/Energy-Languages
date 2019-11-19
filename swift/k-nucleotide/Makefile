@@ -3,13 +3,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "./knucleotide.swift-2.swift_run 0 < knucleotide-input25000000.txt" Swift k-nucleotide
+	sudo /opt/rapl/main "./knucleotide.swift-2.swift_run 0 < /root/data/knucleotide-input25000000.txt" Swift k-nucleotide
 
 run:
-	./knucleotide.swift-2.swift_run 0 < knucleotide-input25000000.txt
+	./knucleotide.swift-2.swift_run 0 < /root/data/knucleotide-input25000000.txt
 
 mem:
-	/usr/bin/time -v ./knucleotide.swift-2.swift_run 0 < knucleotide-input25000000.txt
+	/usr/bin/time -v ./knucleotide.swift-2.swift_run 0 < /root/data/knucleotide-input25000000.txt
 
 valgrind:
-	valgrind --tool=massif --stacks=yes ./knucleotide.swift-2.swift_run 0 < knucleotide-input25000000.txt
+	valgrind --tool=massif --stacks=yes ./knucleotide.swift-2.swift_run 0 < /root/data/knucleotide-input25000000.txt

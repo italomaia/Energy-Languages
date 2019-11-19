@@ -4,13 +4,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY}  knucleotide.lua-2.lua 0 < knucleotide-input25000000.txt" Lua k-nucleotide
+	sudo /opt/rapl/main "${BINARY}  knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt" Lua k-nucleotide
 
 run:
-	${BINARY}  knucleotide.lua-2.lua 0 < knucleotide-input25000000.txt
+	${BINARY}  knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt
 
 mem:
-	/usr/bin/time -v ${BINARY}  knucleotide.lua-2.lua 0 < knucleotide-input25000000.txt
+	/usr/bin/time -v ${BINARY}  knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt
 
 valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY}  knucleotide.lua-2.lua 0 < knucleotide-input25000000.txt
+	valgrind --tool=massif --stacks=yes ${BINARY}  knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt

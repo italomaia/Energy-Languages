@@ -33,11 +33,21 @@ def make_docker_image_name(name):
     return f"energy/{name}:1"
 
 
+def get_data_folder():
+    return os.path.join(os.getcwd(), "data/")
+
+
 def run_docker_image(image_name: str, action: str):
-    check_output([
-        "docker", 'run', '--rm', image_name,
+    data_folder = get_data_folder()
+    cmd = [
+        "docker", 'run', '--rm',
+        "-v", "%s:/root/data/" % data_folder, image_name,
         "/usr/bin/python3", "compile_all.py", action
-    ])
+    ]
+
+    print("running: " + ' '.join(cmd))
+    # TODO improve
+    print(check_output(cmd))
 
 
 def docker_image_exists(image):

@@ -4,13 +4,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../revcomp-input25000000.txt" CSharp reverse-complement
+	sudo /opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/revcomp-input25000000.txt" CSharp reverse-complement
 
 run:
-	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../revcomp-input25000000.txt
+	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/revcomp-input25000000.txt
 
 mem:
-	/usr/bin/time -v  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../revcomp-input25000000.txt
+	/usr/bin/time -v  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/revcomp-input25000000.txt
 
 valgrind:
-	valgrind --tool=massif --stacks=yes   /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../revcomp-input25000000.txt
+	valgrind --tool=massif --stacks=yes   /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/revcomp-input25000000.txt

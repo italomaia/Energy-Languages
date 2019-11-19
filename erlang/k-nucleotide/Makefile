@@ -3,13 +3,13 @@ compile:
 	${COMPILER} +native +"{hipe, [o3]}" knucleotide.erl
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY} -smp enable -noshell -run  knucleotide main 0 < knucleotide-input25000000.txt" Erlang k-nucleotide
+	sudo /opt/rapl/main "${BINARY} -smp enable -noshell -run  knucleotide main 0 < /root/data/knucleotide-input25000000.txt" Erlang k-nucleotide
 
 run:
-	${BINARY} -smp enable -noshell -run  knucleotide main 0 < knucleotide-input25000000.txt
+	${BINARY} -smp enable -noshell -run  knucleotide main 0 < /root/data/knucleotide-input25000000.txt
 
 mem:
-	/usr/bin/time -v ${BINARY} -smp enable -noshell -run  knucleotide main 0 < knucleotide-input25000000.txt
+	/usr/bin/time -v ${BINARY} -smp enable -noshell -run  knucleotide main 0 < /root/data/knucleotide-input25000000.txt
 
 valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} -smp enable -noshell -run  knucleotide main 0 < knucleotide-input25000000.txt
+	valgrind --tool=massif --stacks=yes ${BINARY} -smp enable -noshell -run  knucleotide main 0 < /root/data/knucleotide-input25000000.txt

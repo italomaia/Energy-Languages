@@ -5,13 +5,13 @@ compile:
 	rm revcomp.fpascal-2.pas
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "./revcomp.fpascal-2.fpascal_run 0 < ../../revcomp-input25000000.txt" Pascal reverse-complement
+	sudo /opt/rapl/main "./revcomp.fpascal-2.fpascal_run 0 < /root/data/revcomp-input25000000.txt" Pascal reverse-complement
 
 run:
-	./revcomp.fpascal-2.fpascal_run 0 < ../../revcomp-input25000000.txt
+	./revcomp.fpascal-2.fpascal_run 0 < /root/data/revcomp-input25000000.txt
 
 mem:
-	/usr/bin/time -v  ./revcomp.fpascal-2.fpascal_run 0 < ../../revcomp-input25000000.txt
+	/usr/bin/time -v  ./revcomp.fpascal-2.fpascal_run 0 < /root/data/revcomp-input25000000.txt
 
 valgrind:
-	valgrind --tool=massif --stacks=yes  ./revcomp.fpascal-2.fpascal_run 0 < ../../revcomp-input25000000.txt
+	valgrind --tool=massif --stacks=yes  ./revcomp.fpascal-2.fpascal_run 0 < /root/data/revcomp-input25000000.txt

@@ -3,16 +3,16 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "sbcl --noinform --core revcomp.core 0 < ../../revcomp-input25000000.txt" Lisp reverse-complement
+	sudo /opt/rapl/main "sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt" Lisp reverse-complement
 
 run:
-	sbcl --noinform --core revcomp.core 0 < ../../revcomp-input25000000.txt
+	sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt
 
 clean:
 	rm -rf *.core
 
 mem:
-	/usr/bin/time -v  sbcl --noinform --core revcomp.core 0 < ../../revcomp-input25000000.txt
+	/usr/bin/time -v  sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt
 
 valgrind:
-	valgrind --tool=massif --stacks=yes  sbcl --noinform --core revcomp.core 0 < ../../revcomp-input25000000.txt
+	valgrind --tool=massif --stacks=yes  sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt

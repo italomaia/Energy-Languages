@@ -3,13 +3,13 @@ compile:i
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY} -W0 regexredux.yarv-2.yarv 0 < ../../regexredux-input5000000.txt" Ruby regex-redux
+	sudo /opt/rapl/main "${BINARY} -W0 regexredux.yarv-2.yarv 0 < /root/data/regexredux-input5000000.txt" Ruby regex-redux
 
 run:
-	${BINARY} -W0 regexredux.yarv-2.yarv 0 < ../../regexredux-input5000000.txt
+	${BINARY} -W0 regexredux.yarv-2.yarv 0 < /root/data/regexredux-input5000000.txt
 
 mem:
-	/usr/bin/time -v ${BINARY} -W0 regexredux.yarv-2.yarv 0 < ../../regexredux-input5000000.txt
+	/usr/bin/time -v ${BINARY} -W0 regexredux.yarv-2.yarv 0 < /root/data/regexredux-input5000000.txt
 
 valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} -W0 regexredux.yarv-2.yarv 0 < ../../regexredux-input5000000.txt
+	valgrind --tool=massif --stacks=yes ${BINARY} -W0 regexredux.yarv-2.yarv 0 < /root/data/regexredux-input5000000.txt

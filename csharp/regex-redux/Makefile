@@ -4,13 +4,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../regexredux-input5000000.txt" CSharp regex-redux
+	sudo /opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/regexredux-input5000000.txt" CSharp regex-redux
 
 run:
-	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../regexredux-input5000000.txt
+	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/regexredux-input5000000.txt
 
 mem:
-	/usr/bin/time -v /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../regexredux-input5000000.txt
+	/usr/bin/time -v /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/regexredux-input5000000.txt
 
 valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../regexredux-input5000000.txt
+	valgrind --tool=massif --stacks=yes /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/regexredux-input5000000.txt
