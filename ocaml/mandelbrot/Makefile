@@ -1,6 +1,6 @@
 compile:
 	cp mandelbrot.ocaml mandelbrot.ml
-	ocamlopt -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa mandelbrot.ml -o mandelbrot.ocaml_run
+	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa mandelbrot.ml -o mandelbrot.ocaml_run
 	rm mandelbrot.ml
 
 measure:

@@ -1,6 +1,6 @@
 compile:
 	cp nbody.ocaml nbody.ml
-	ocamlopt -noassert -unsafe -fPIC -nodynlink -inline 100  nbody.ml -o nbody.ocaml_run
+	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100  nbody.ml -o nbody.ocaml_run
 	rm nbody.ml
 measure:
 	sudo modprobe msr

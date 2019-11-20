@@ -1,6 +1,6 @@
 compile:
 	cp binarytrees.ocaml-2.ocaml binarytrees.ocaml-2.ml
-	ocamlopt -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa binarytrees.ocaml-2.ml -o binarytrees.ocaml-2.ocaml_run
+	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa binarytrees.ocaml-2.ml -o binarytrees.ocaml-2.ocaml_run
 	rm binarytrees.ocaml-2.ml
 
 measure:

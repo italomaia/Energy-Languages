@@ -1,6 +1,6 @@
 compile:
 	cp knucleotide.ocaml-3.ocaml knucleotide.ocaml-3.ml
-	ocamlopt -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa knucleotide.ocaml-3.ml -o knucleotide.ocaml-3.ocaml_run
+	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa knucleotide.ocaml-3.ml -o knucleotide.ocaml-3.ocaml_run
 	rm knucleotide.ocaml-3.ml
 
 measure:

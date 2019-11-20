@@ -1,6 +1,6 @@
 compile:
 	cp spectralnorm.ocaml-3.ocaml spectralnorm.ocaml-3.ml
-	ocamlopt -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa bigarray.cmxa spectralnorm.ocaml-3.ml -o spectralnorm.ocaml-3.ocaml_run
+	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa bigarray.cmxa spectralnorm.ocaml-3.ml -o spectralnorm.ocaml-3.ocaml_run
 	rm spectralnorm.ocaml-3.ml
 
 measure:
