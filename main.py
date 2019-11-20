@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
+import subprocess
 
-from subprocess import check_output
 from lazyme.string import color_print
 from typing import List
 
@@ -14,7 +14,7 @@ def make_root(name):
 
 def _build_docker_image(root, image_name):
     args = ["docker", "build", "-t", image_name, "."]
-    output = check_output(args, cwd=root).decode('utf-8')
+    output = subprocess.check_output(args, cwd=root).decode('utf-8')
     print(output)
 
 
@@ -47,11 +47,11 @@ def run_docker_image(image_name: str, action: str):
 
     print("running: " + ' '.join(cmd))
     # TODO improve
-    print(check_output(cmd))
+    print(subprocess.check_output(cmd))
 
 
 def docker_image_exists(image):
-    return len(check_output(["docker", "images", "-q", image])) > 0
+    return len(subprocess.check_output(["docker", "images", "-q", image])) > 0
 
 
 def run_command(name):
