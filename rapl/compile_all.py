@@ -1,5 +1,8 @@
 import os
 import sys
+import time
+import argparse
+
 from subprocess import call
 from subprocess import check_output
 from subprocess import Popen
@@ -10,52 +13,45 @@ action = 'compile'
 
 
 def file_exists(file_path):
-    if not file_path:
-        return False
-    else:
-        return os.path.isfile(file_path)
+    return os.path.isfile(file_path) if file_path \
+        else False
 
 
-def main():
+def main(action):
     for root, dirs, files in os.walk(path):
         print('Checking' + root)
         makefile = os.path.join(root, "Makefile")
 
         if file_exists(makefile):
-            cmd = 'cd %s; make %s' % (root, action)
-            pipes = Popen(cmd, shell=True, stdout=PIPE, stderr=PIPE)
+            cmd = ['make', action]
+            pipes = Popen(cmd, cwd=root, bufsize=0, stdout=PIPE, stderr=PIPE)
             std_out, std_err = pipes.communicate()
 
-            if (action == 'compile') or (action == 'run'):
-                if pipes.returncode != 0:
-                    # an error happened!
-                    err_msg = "%s. Code: %s" % (std_err.strip(), pipes.returncode)
-                    print('[E] Error on ' + root + ': ')
-                    print(err_msg)
+            if action in ('compile', 'run'):
+                if pipes.returncode and len(std_err):
+                    print('[OK]')
                 elif len(std_err):
                     # return code is 0 (no error), but we may want to
                     # do something with the info on std_err
                     # i.e. logger.warning(std_err)
                     print('[OK]')
                 else:
-                    print('[OK]')
+                    # an error happened!
+                    err_msg = "%s. Code: %s" % (std_err.strip(), pipes.returncode)
+                    print('[E] Error on ' + root + ': ')
+                    print(err_msg)
 
         if action == 'measure':
-            call(['sleep', '5'])
+            time.sleep(5)
+
+
+def make_parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('action', choices=('compile', 'run', 'clean', 'measure'))
+    return parser
 
 
 if __name__ == '__main__':
-    if len(sys.argv) == 2:
-        act = sys.argv[1]
-
-        if (act == 'compile') or (act == 'run') or (act == 'clean') or (act == 'measure'):
-            print('Performing \"' + act + '\" action...')
-            action = act
-        else:
-            print('Error: Unrecognized action \"' + act + '\"')
-            sys.exit(1)
-    else:
-        print('Performing \"compile\" action...')
-        action = 'compile'
-
-    main()
+    parser = make_parser()
+    namespace, args = parser.parse_known_args()
+    main(namespace.action)
