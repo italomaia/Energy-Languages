@@ -25,6 +25,9 @@ def build_docker_image(name, force_build=False):
         # docker folder root
         root = make_root(name)
         _build_docker_image(root, image_name)
+        print("image %s built" % image_name)
+    else:
+        print("image %s was not built" % image_name)
 
     return image_name
 
@@ -46,8 +49,17 @@ def run_docker_image(image_name: str, action: str):
     ]
 
     print("running: " + ' '.join(cmd))
-    # TODO improve
-    print(subprocess.check_output(cmd))
+
+    prc = subprocess.Popen(
+        cmd,
+        stdout=subprocess.PIPE,
+        bufsize=1,
+        universal_newlines=True
+    )
+
+    while prc.poll() is None:
+        for line in prc.stdout:
+            print(line)
 
 
 def docker_image_exists(image):
@@ -70,12 +82,12 @@ def file_exists(file_path):
     return os.path.isfile(file_path) if file_path else False
 
 
-def main(lang_list: List[str], action: str):
+def main(lang_list: List[str], action: str, force_build):
     # builds base image for all other images
-    rapl_image_name = build_docker_image('rapl')  # noqa: F841
+    rapl_image_name = build_docker_image('rapl', force_build)  # noqa: F841
 
     for lang in lang_list:
-        image_name = build_docker_image(lang.lower())
+        image_name = build_docker_image(lang.lower(), force_build)
         run_docker_image(image_name, action)
 
 
@@ -90,6 +102,12 @@ def make_parser():
         choices=('mem', 'run', 'measure'),
         help='action to execute'
     )
+    parser.add_argument(
+        '-b', '--force-build',
+        default=False,
+        help='force build docker images',
+        action='store_true'
+    )
 
     return parser
 
@@ -99,4 +117,4 @@ if __name__ == '__main__':
     namespace, args = parser.parse_known_args()
 
     color_print(f"Preparing to measure languages performance", color='yellow', bold=True)
-    main(namespace.languages, namespace.act)
+    main(namespace.languages, namespace.act, namespace.force_build)
