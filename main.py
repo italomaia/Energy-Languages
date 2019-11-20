@@ -105,7 +105,7 @@ def make_parser():
     parser.add_argument(
         '-b', '--force-build',
         default=False,
-        help='force build docker images',
+        help='build docker images even if they already exist',
         action='store_true'
     )
 
