@@ -19,13 +19,16 @@ def file_exists(file_path):
 
 def main(action):
     for root, dirs, files in os.walk(path):
-        print('Checking' + root)
+        print('compile_all: checking ' + root)
         makefile = os.path.join(root, "Makefile")
 
         if file_exists(makefile):
             cmd = ['make', action]
+            print("compile_all: " + ' '.join(cmd))
+
             pipes = Popen(cmd, cwd=root, bufsize=0, stdout=PIPE, stderr=PIPE)
             std_out, std_err = pipes.communicate()
+            std_out, std_err = std_out.decode(), std_err.decode()
 
             if action in ('compile', 'run'):
                 if pipes.returncode and len(std_err):
