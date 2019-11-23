@@ -40,12 +40,18 @@ def get_data_folder():
     return os.path.join(os.getcwd(), "data/")
 
 
+def get_result_folder():
+    return os.path.join(os.getcwd(), "result/")
+
+
 def run_docker_image(image_name: str, action: str):
     data_folder = get_data_folder()
+    result_folder = get_result_folder()
     cmd = [
         "docker", 'run', '--rm',
-        "-v", "%s:/root/data/" % data_folder, image_name,
-        "/usr/bin/python3", "compile_all.py", action
+        "-v", "%s:/root/data/" % data_folder,
+        "-v", "%s:/opt/result/" % result_folder,
+        image_name, "/usr/bin/python3", "compile_all.py", action
     ]
 
     print("running: " + ' '.join(cmd))
