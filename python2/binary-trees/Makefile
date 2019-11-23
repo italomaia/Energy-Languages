@@ -3,7 +3,7 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY} -OO binarytrees.py 21" Python binary-trees
+	sudo /opt/rapl/main "${BINARY} -OO binarytrees.py 21" /opt/result/python2 binary-trees
 
 run:
 	${BINARY} -OO binarytrees.py 21

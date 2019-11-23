@@ -2,7 +2,7 @@ compile:
 	cp pidigits.python3-2.python3 pidigits.python3-2.py
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY} -OO pidigits.python3-2.py 10000" Python pidigits
+	sudo /opt/rapl/main "${BINARY} -OO pidigits.python3-2.py 10000" /opt/result/python2 pidigits
 
 run:
 	${BINARY} -OO pidigits.python3-2.py 10000

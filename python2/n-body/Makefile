@@ -2,7 +2,7 @@ compile:
 	cp nbody.python3 nbody.py
 measure:
 	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY} -OO nbody.py 50000000" Python n-body
+	sudo /opt/rapl/main "${BINARY} -OO nbody.py 50000000" /opt/result/python2 n-body
 
 run:
 	${BINARY} -OO nbody.py 50000000
