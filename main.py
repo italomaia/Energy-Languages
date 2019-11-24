@@ -29,6 +29,7 @@ def build_docker_image(name, force_build=False):
     else:
         print("image %s was not built" % image_name)
 
+    print("")
     return image_name
 
 
