@@ -1,9 +1,9 @@
 compile:
-	cp binarytrees.python3 binarytrees.py
+	echo "python2: nothing to compile"
 
 measure:
-	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY} -OO binarytrees.py 21" /opt/result/python2 binary-trees
+	modprobe msr
+	/opt/rapl/main "${BINARY} -OO binarytrees.py 21" /opt/result/python2 binary-trees
 
 run:
 	${BINARY} -OO binarytrees.py 21

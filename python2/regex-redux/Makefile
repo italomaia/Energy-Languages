@@ -1,8 +1,9 @@
 compile:
-	cp regexredux.python3 regexredux.py
+	echo "python2: nothing to compile"
+
 measure:
-	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY} -OO regexredux.py 0 < /root/data/regexredux-input5000000.txt" /opt/result/python2 regex-redux
+	modprobe msr
+	/opt/rapl/main "${BINARY} -OO regexredux.py 0 < /root/data/regexredux-input5000000.txt" /opt/result/python2 regex-redux
 
 run:
 	${BINARY} -OO regexredux.py 0 < /root/data/regexredux-input5000000.txt

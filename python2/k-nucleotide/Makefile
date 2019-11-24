@@ -1,8 +1,9 @@
 compile:
-	cp knucleotide.python3-3.python3 knucleotide.python3-3.py
+	echo "python2: nothing to compile"
+
 measure:
-	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY} -OO knucleotide.python3-3.py 0 < /root/data/knucleotide-input25000000.txt" /opt/result/python2 k-nucleotide
+	modprobe msr
+	/opt/rapl/main "${BINARY} -OO knucleotide.python3-3.py 0 < /root/data/knucleotide-input25000000.txt" /opt/result/python2 k-nucleotide
 
 run:
 	${BINARY} -OO knucleotide.python3-3.py 0 < /root/data/knucleotide-input25000000.txt

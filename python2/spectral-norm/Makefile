@@ -1,8 +1,9 @@
 compile:
-	cp spectralnorm.python3-5.python3 spectralnorm.python3-5.py
+	echo "python2: nothing to compile"
+
 measure:
-	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY} -OO spectralnorm.python3-5.py 5500" /opt/result/python2 spectral-norm
+	modprobe msr
+	/opt/rapl/main "${BINARY} -OO spectralnorm.python3-5.py 5500" /opt/result/python2 spectral-norm
 
 run:
 	${BINARY} -OO spectralnorm.python3-5.py 5500

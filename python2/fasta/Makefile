@@ -1,8 +1,9 @@
 compile:
-	cp fasta.python3-3.python3 fasta.python3-3.py
+	echo "python2: nothing to compile"
+
 measure:
-	sudo modprobe msr
-	sudo /opt/rapl/main "${BINARY} -OO fasta.python3-3.py 25000000" /opt/result/python2 fasta
+	modprobe msr
+	/opt/rapl/main "${BINARY} -OO fasta.python3-3.py 25000000" /opt/result/python2 fasta
 
 run:
 	${BINARY} -OO fasta.python3-3.py 25000000
