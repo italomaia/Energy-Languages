@@ -3,7 +3,7 @@ compile:
 	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100  nbody.ml -o nbody.ocaml_run
 	rm nbody.ml
 measure:
-	sudo /opt/rapl/main "./nbody.ocaml_run 50000000" OCaml n-body
+	/opt/rapl/main "./nbody.ocaml_run 50000000" OCaml n-body
 
 run:
 	./nbody.ocaml_run 50000000

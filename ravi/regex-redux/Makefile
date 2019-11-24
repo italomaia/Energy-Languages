@@ -3,7 +3,7 @@ BINARY=/usr/bin/ravi
 compile:
 
 xmeasure:
-	sudo /opt/rapl/main "${BINARY}  regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt" Lua regex-redux
+	/opt/rapl/main "${BINARY}  regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt" Lua regex-redux
 
 run:
 	${BINARY}  regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt

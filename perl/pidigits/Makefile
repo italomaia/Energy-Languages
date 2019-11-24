@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "perl pidigits.perl-4.perl 10000" Perl pidigits
+	/opt/rapl/main "perl pidigits.perl-4.perl 10000" Perl pidigits
 
 run:
 	perl pidigits.perl-4.perl 10000

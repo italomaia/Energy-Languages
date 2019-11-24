@@ -4,7 +4,7 @@ compile:
 	exit 1
 
 xmeasure:
-	#sudo /opt/rapl/main "sbcl --noinform --core regexredux.core < 0 < /root/data/regexredux-input5000000.txt" Lisp regex-redux
+	#/opt/rapl/main "sbcl --noinform --core regexredux.core < 0 < /root/data/regexredux-input5000000.txt" Lisp regex-redux
 
 clean:
 	rm -rf *core

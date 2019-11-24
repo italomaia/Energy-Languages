@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/dart  spectralnorm.dart 5500" Dart spectral-norm
+	/opt/rapl/main "/usr/bin/dart  spectralnorm.dart 5500" Dart spectral-norm
 
 run:
 	/usr/bin/dart  spectralnorm.dart 5500

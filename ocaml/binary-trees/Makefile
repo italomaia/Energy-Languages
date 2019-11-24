@@ -4,7 +4,7 @@ compile:
 	rm binarytrees.ocaml-2.ml
 
 measure:
-	sudo /opt/rapl/main "./binarytrees.ocaml-2.ocaml_run 21" OCaml binary-trees
+	/opt/rapl/main "./binarytrees.ocaml-2.ocaml_run 21" OCaml binary-trees
 
 run:
 	./binarytrees.ocaml-2.ocaml_run 21

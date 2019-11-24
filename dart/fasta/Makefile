@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/dart  fasta.dart 25000000" Dart fasta
+	/opt/rapl/main "/usr/bin/dart  fasta.dart 25000000" Dart fasta
 
 run:
 	/usr/bin/dart  fasta.dart 25000000

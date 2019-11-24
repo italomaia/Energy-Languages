@@ -2,7 +2,7 @@ compile:
 
 
 xmeasure:
-	sudo /opt/rapl/main "${BINARY} -W0 pidigits.yarv-5.yarv 10000" Ruby pidigits
+	/opt/rapl/main "${BINARY} -W0 pidigits.yarv-5.yarv 10000" Ruby pidigits
 
 run:
 	${BINARY} -W0 pidigits.yarv-5.yarv 10000

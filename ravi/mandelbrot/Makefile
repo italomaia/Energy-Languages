@@ -3,7 +3,7 @@ BINARY=/usr/bin/ravi
 compile:
 
 measure:
-	sudo /opt/rapl/main "${BINARY}  mandelbrot.lua-6.lua 16000" Lua mandelbrot
+	/opt/rapl/main "${BINARY}  mandelbrot.lua-6.lua 16000" Lua mandelbrot
 
 run:
 	${BINARY}  mandelbrot.lua-6.lua 16000

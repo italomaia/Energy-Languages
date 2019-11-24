@@ -2,7 +2,7 @@ compile:
 	/usr/bin/go build -o spectralnorm.go-4.go_run
 
 measure:
-	sudo /opt/rapl/main "./spectralnorm.go-4.go_run 5500" Go spectral-norm
+	/opt/rapl/main "./spectralnorm.go-4.go_run 5500" Go spectral-norm
 
 run:
 	./spectralnorm.go-4.go_run 5500

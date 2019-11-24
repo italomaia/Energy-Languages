@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "php -n  spectralnorm.php 5500" PHP spectral-norm
+	/opt/rapl/main "php -n  spectralnorm.php 5500" PHP spectral-norm
 
 run:
 	php -n  spectralnorm.php 5500

@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "${BINARY} fasta.perl 25000000" Perl fasta
+	/opt/rapl/main "${BINARY} fasta.perl 25000000" Perl fasta
 
 run:
 	${BINARY} fasta.perl 25000000

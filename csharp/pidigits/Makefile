@@ -3,7 +3,7 @@ compile:
 	/usr/bin/dotnet build -c Release
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 10000" CSharp pidigits
+	/opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 10000" CSharp pidigits
 
 run:
 	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 10000

@@ -2,4 +2,4 @@ compile:
 
 
 measure:
-	sudo /opt/rapl/main "" Smalltalk regex-redux
+	/opt/rapl/main "" Smalltalk regex-redux

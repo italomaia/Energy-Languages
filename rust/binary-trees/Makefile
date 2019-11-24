@@ -2,7 +2,7 @@ compile:
 	${COMPILER}  -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs binarytrees.rs -o binarytrees.rust-2.rust_run
 
 measure:
-	sudo /opt/rapl/main "./binarytrees.rust-2.rust_run 21" Rust binary-trees
+	/opt/rapl/main "./binarytrees.rust-2.rust_run 21" Rust binary-trees
 
 run:
 	./binarytrees.rust-2.rust_run 21

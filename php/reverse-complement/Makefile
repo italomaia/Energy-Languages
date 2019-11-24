@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "php -n -d memory_limit=1024M revcomp.php-3.php 0 < /root/data/revcomp-input25000000.txt" PHP reverse-complement
+	/opt/rapl/main "php -n -d memory_limit=1024M revcomp.php-3.php 0 < /root/data/revcomp-input25000000.txt" PHP reverse-complement
 
 run:
 	php -n -d memory_limit=1024M revcomp.php-3.php 0 < /root/data/revcomp-input25000000.txt

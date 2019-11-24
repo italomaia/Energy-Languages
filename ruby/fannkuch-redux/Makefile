@@ -2,7 +2,7 @@ compile:
 
 
 measure:
-	sudo /opt/rapl/main "${BINARY} -W0 fannkuchredux.yarv-2.yarv 12" Ruby fannkuch-redux
+	/opt/rapl/main "${BINARY} -W0 fannkuchredux.yarv-2.yarv 12" Ruby fannkuch-redux
 
 run:
 	${BINARY} -W0 fannkuchredux.yarv-2.yarv 12

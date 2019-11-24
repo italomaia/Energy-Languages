@@ -2,7 +2,7 @@ compile:
 	/usr/bin/go build -o binarytrees.go-2.go_run
 
 measure:
-	sudo /opt/rapl/main "./binarytrees.go-2.go_run 21" Go binary-trees
+	/opt/rapl/main "./binarytrees.go-2.go_run 21" Go binary-trees
 
 run:
 	./binarytrees.go-2.go_run 21

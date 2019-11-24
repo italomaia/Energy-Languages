@@ -3,7 +3,7 @@ compile:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  fannkuchredux.ts
 
 measure:
-	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fannkuchredux.js 12" TypeScript fannkuch-redux
+	/opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fannkuchredux.js 12" TypeScript fannkuch-redux
 
 run:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fannkuchredux.js 12

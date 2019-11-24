@@ -2,7 +2,7 @@ compile:
 	/usr/bin/hh_client
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/hhvm  knucleotide.hack-4.hack 0 < /root/data/knucleotide-input25000000.txt" Hack k-nucleotide
+	/opt/rapl/main "/usr/bin/hhvm  knucleotide.hack-4.hack 0 < /root/data/knucleotide-input25000000.txt" Hack k-nucleotide
 
 run:
 	/usr/bin/hhvm  knucleotide.hack-4.hack 0 < /root/data/knucleotide-input25000000.txt

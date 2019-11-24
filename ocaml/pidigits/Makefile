@@ -4,7 +4,7 @@ compile:
 	rm pidigits.ocaml-3.ml
 
 xmeasure:
-	sudo /opt/rapl/main "./pidigits.ocaml-3.ocaml_run 2000" OCaml pidigits
+	/opt/rapl/main "./pidigits.ocaml-3.ocaml_run 2000" OCaml pidigits
 
 run:
 	./pidigits.ocaml-3.ocaml_run 2000

@@ -1,7 +1,7 @@
 compile:
 
 xmeasure:
-	sudo /opt/rapl/main "" TypeScript pidigits
+	/opt/rapl/main "" TypeScript pidigits
 
 mem:
 	/usr/bin/time -v ./binarytrees.gpp-9.gpp_run 21

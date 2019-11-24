@@ -3,7 +3,7 @@ compile:
 	/usr/bin/dotnet build -c Release
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 50000000" FSharp n-body
+	/opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 50000000" FSharp n-body
 
 run:
 	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 50000000

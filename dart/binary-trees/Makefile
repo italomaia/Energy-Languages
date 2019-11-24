@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/dart  binarytrees.dart 21" Dart binary-trees
+	/opt/rapl/main "/usr/bin/dart  binarytrees.dart 21" Dart binary-trees
 
 run:
 	/usr/bin/dart  binarytrees.dart 21

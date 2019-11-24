@@ -2,7 +2,7 @@ compile:
 	/usr/bin/hh_client
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/hhvm  spectralnorm.hack-3.hack 5500" Hack spectral-norm
+	/opt/rapl/main "/usr/bin/hhvm  spectralnorm.hack-3.hack 5500" Hack spectral-norm
 
 run:
 	/usr/bin/hhvm  spectralnorm.hack-3.hack 5500

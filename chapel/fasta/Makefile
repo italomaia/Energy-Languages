@@ -1,7 +1,7 @@
 compile:
 	/usr/local/src/chapel-1.15.0/bin/linux64/chpl --fast fasta.chapel-2.chpl -o fasta.chapel-2.chapel_run
 measure:
-	sudo /opt/rapl/main "./fasta.chapel-2.chapel_run --n=25000000" Chapel fasta
+	/opt/rapl/main "./fasta.chapel-2.chapel_run --n=25000000" Chapel fasta
 
 run:
 	./fasta.chapel-2.chapel_run --n=25000000

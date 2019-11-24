@@ -5,7 +5,7 @@ compile:
 	rm fasta.fpascal-4.pas
 
 measure:
-	sudo /opt/rapl/main "./fasta.fpascal-4.fpascal_run 25000000" Pascal fasta
+	/opt/rapl/main "./fasta.fpascal-4.fpascal_run 25000000" Pascal fasta
 
 run:
 	./fasta.fpascal-4.fpascal_run 25000000

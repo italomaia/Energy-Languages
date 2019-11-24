@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "php -n  fasta.php-3.php 25000000" PHP fasta
+	/opt/rapl/main "php -n  fasta.php-3.php 25000000" PHP fasta
 
 run:
 	php -n  fasta.php-3.php 25000000

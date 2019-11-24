@@ -4,7 +4,7 @@ compile:
 	mv FPASCAL_RUN revcomp.fpascal-2.fpascal_run
 	rm revcomp.fpascal-2.pas
 measure:
-	sudo /opt/rapl/main "./revcomp.fpascal-2.fpascal_run 0 < /root/data/revcomp-input25000000.txt" Pascal reverse-complement
+	/opt/rapl/main "./revcomp.fpascal-2.fpascal_run 0 < /root/data/revcomp-input25000000.txt" Pascal reverse-complement
 
 run:
 	./revcomp.fpascal-2.fpascal_run 0 < /root/data/revcomp-input25000000.txt

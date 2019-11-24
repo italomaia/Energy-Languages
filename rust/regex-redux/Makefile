@@ -2,7 +2,7 @@ compile:
 	${COMPILER}  -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs regexredux.rs -o regexredux.rust_run
 
 measure:
-	sudo /opt/rapl/main "./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt" Rust regex-redux
+	/opt/rapl/main "./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt" Rust regex-redux
 
 run:
 	./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt

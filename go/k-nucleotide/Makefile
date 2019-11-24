@@ -2,7 +2,7 @@ compile:
 	/usr/bin/go build -o knucleotide.go-6.go_run
 
 measure:
-	sudo /opt/rapl/main "./knucleotide.go-6.go_run 0 < /root/data/knucleotide-input25000000.txt" Go k-nucleotide
+	/opt/rapl/main "./knucleotide.go-6.go_run 0 < /root/data/knucleotide-input25000000.txt" Go k-nucleotide
 
 run:
 	./knucleotide.go-6.go_run 0 < /root/data/knucleotide-input25000000.txt

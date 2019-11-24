@@ -3,7 +3,7 @@ BINARY=/usr/bin/ravi
 compile:
 
 measure:
-	sudo /opt/rapl/main "${BINARY}  fannkuchredux.lua 12" Lua fannkuch-redux
+	/opt/rapl/main "${BINARY}  fannkuchredux.lua 12" Lua fannkuch-redux
 
 run:
 	${BINARY}  fannkuchredux.lua 12

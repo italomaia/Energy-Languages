@@ -1,7 +1,7 @@
 compile:
 	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native -mfpmath=sse -msse3 --std=c++11 nbody.gpp-8.c++ -o nbody.gpp-8.c++.o &&  /usr/bin/g++ nbody.gpp-8.c++.o -o nbody.gpp-8.gpp_run -fopenmp
 measure:
-	sudo /opt/rapl/main "./nbody.gpp-8.gpp_run 50000000" C++ n-body
+	/opt/rapl/main "./nbody.gpp-8.gpp_run 50000000" C++ n-body
 
 run:
 	./nbody.gpp-8.gpp_run 50000000

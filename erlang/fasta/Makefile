@@ -2,7 +2,7 @@ compile:
 	cp fasta.hipe-2.hipe fasta.erl
 	${COMPILER} +native +"{hipe, [o3]}" fasta.erl
 measure:
-	sudo /opt/rapl/main "${BINARY} -smp enable -noshell -run  fasta main 25000000" Erlang fasta
+	/opt/rapl/main "${BINARY} -smp enable -noshell -run  fasta main 25000000" Erlang fasta
 
 run:
 	${BINARY} -smp enable -noshell -run  fasta main 25000000

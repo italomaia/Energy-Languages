@@ -1,7 +1,7 @@
 cmpile:
 	cp mandelbrot.python3-7.python3 mandelbrot.python3-7.py
 measure:
-	sudo /opt/rapl/main "${BINARY} -OO mandelbrot.python3-7.py 16000" Python mandelbrot
+	/opt/rapl/main "${BINARY} -OO mandelbrot.python3-7.py 16000" Python mandelbrot
 
 run:
 	${BINARY} -OO mandelbrot.python3-7.py 16000

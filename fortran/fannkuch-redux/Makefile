@@ -1,7 +1,7 @@
 compile:
 	ifort -O3 -fast -openmp fannkuchredux.ifc-3.f90 -o fannkuchredux.ifc-3.ifc_run
 measure:
-	sudo /opt/rapl/main "./fannkuchredux.ifc-3.ifc_run 12" Fortran fannkuch-redux
+	/opt/rapl/main "./fannkuchredux.ifc-3.ifc_run 12" Fortran fannkuch-redux
 
 run:
 	./fannkuchredux.ifc-3.ifc_run 12

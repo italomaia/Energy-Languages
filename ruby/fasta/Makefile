@@ -2,7 +2,7 @@ compile:
 
 
 measure:
-	sudo /opt/rapl/main "${BINARY} -W0 fasta.yarv-3.yarv 25000000" Ruby fasta
+	/opt/rapl/main "${BINARY} -W0 fasta.yarv-3.yarv 25000000" Ruby fasta
 
 run:
 	${BINARY} -W0 fasta.yarv-3.yarv 25000000

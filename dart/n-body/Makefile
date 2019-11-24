@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/dart  nbody.dart-3.dart 50000000" Dart n-body
+	/opt/rapl/main "/usr/bin/dart  nbody.dart-3.dart 50000000" Dart n-body
 
 run:
 	/usr/bin/dart  nbody.dart-3.dart 50000000

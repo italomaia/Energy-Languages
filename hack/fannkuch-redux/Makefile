@@ -2,7 +2,7 @@ compile:
 	/usr/bin/hh_client
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/hhvm  fannkuchredux.hack-3.hack 12" Hack fannkuch-redux
+	/opt/rapl/main "/usr/bin/hhvm  fannkuchredux.hack-3.hack 12" Hack fannkuch-redux
 
 run:
 	/usr/bin/hhvm  fannkuchredux.hack-3.hack 12

@@ -2,7 +2,7 @@ compile:
 
 
 measure:
-	sudo /opt/rapl/main "${BINARY} -W0 mandelbrot.yarv-5.yarv 16000" Ruby mandelbrot
+	/opt/rapl/main "${BINARY} -W0 mandelbrot.yarv-5.yarv 16000" Ruby mandelbrot
 
 run:
 	${BINARY} -W0 mandelbrot.yarv-5.yarv 16000

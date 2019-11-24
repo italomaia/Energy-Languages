@@ -2,7 +2,7 @@ compile:
 	/usr/bin/hh_client
 
 xmeasure:
-	sudo /opt/rapl/main "/usr/bin/hhvm  nbody.hack-5.hack 50000000" Hack pidigits
+	/opt/rapl/main "/usr/bin/hhvm  nbody.hack-5.hack 50000000" Hack pidigits
 
 run:
 	/usr/bin/hhvm  nbody.hack-5.hack 50000000

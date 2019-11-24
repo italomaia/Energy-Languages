@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "${BINARY}  spectralnorm.lua 5500" Lua spectral-norm
+	/opt/rapl/main "${BINARY}  spectralnorm.lua 5500" Lua spectral-norm
 
 run:
 	${BINARY}  spectralnorm.lua 5500

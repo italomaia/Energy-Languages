@@ -1,7 +1,7 @@
 compile:
 	ifort -O3 -fast -openmp knucleotide.f90 -o knucleotide.ifc_run
 measure:
-	sudo /opt/rapl/main "./knucleotide.ifc_run 0 < /root/data/knucleotide-input25000000.txt" Fortran k-nucleotide
+	/opt/rapl/main "./knucleotide.ifc_run 0 < /root/data/knucleotide-input25000000.txt" Fortran k-nucleotide
 
 run:
 	./knucleotide.ifc_run 0 < /root/data/knucleotide-input25000000.txt

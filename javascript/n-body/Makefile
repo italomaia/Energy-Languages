@@ -1,7 +1,7 @@
 compile:
 	cp -L nbody.node nbody.js
 measure:
-	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node nbody.js 50000000" JavaScript n-body
+	/opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node nbody.js 50000000" JavaScript n-body
 
 run:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node nbody.js 50000000

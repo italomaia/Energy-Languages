@@ -2,7 +2,7 @@ compile:
 
 
 measure:
-	sudo /opt/rapl/main "${BINARY} -W0 revcomp.yarv-3.yarv 0 < /root/data/revcomp-input25000000.txt" Ruby reverse-complement
+	/opt/rapl/main "${BINARY} -W0 revcomp.yarv-3.yarv 0 < /root/data/revcomp-input25000000.txt" Ruby reverse-complement
 
 run:
 	${BINARY} -W0 revcomp.yarv-3.yarv 0 < /root/data/revcomp-input25000000.txt

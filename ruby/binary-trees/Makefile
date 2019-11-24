@@ -2,7 +2,7 @@ compile:
 
 
 measure:
-	sudo /opt/rapl/main "${BINARY} -W0 binarytrees.yarv-5.yarv 21" Ruby binary-trees
+	/opt/rapl/main "${BINARY} -W0 binarytrees.yarv-5.yarv 21" Ruby binary-trees
 
 run:
 	${BINARY} -W0 binarytrees.yarv-5.yarv 21

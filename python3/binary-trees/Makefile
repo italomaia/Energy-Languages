@@ -2,7 +2,7 @@ compile:
 	cp binarytrees.python3 binarytrees.py
 
 measure:
-	sudo /opt/rapl/main "${BINARY} -OO binarytrees.py 21" Python binary-trees
+	/opt/rapl/main "${BINARY} -OO binarytrees.py 21" Python binary-trees
 
 run:
 	${BINARY} -OO binarytrees.py 21

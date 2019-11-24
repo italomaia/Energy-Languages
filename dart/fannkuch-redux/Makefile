@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/dart  fannkuchredux.dart-2.dart 12" Dart fannkuch-redux
+	/opt/rapl/main "/usr/bin/dart  fannkuchredux.dart-2.dart 12" Dart fannkuch-redux
 
 run:
 	/usr/bin/dart  fannkuchredux.dart-2.dart 12

@@ -2,7 +2,7 @@ compile:
 	/usr/local/src/racket-6.8/bin/raco make nbody.racket-2.racket
 
 measure:
-	sudo /opt/rapl/main "/usr/local/src/racket-6.8/bin/racket ./compiled/nbody.racket-2_racket.zo 50000000" Racket n-body
+	/opt/rapl/main "/usr/local/src/racket-6.8/bin/racket ./compiled/nbody.racket-2_racket.zo 50000000" Racket n-body
 
 run:
 	/usr/local/src/racket-6.8/bin/racket ./compiled/nbody.racket-2_racket.zo 50000000

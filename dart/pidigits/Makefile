@@ -1,7 +1,7 @@
 compile:
 
 xmeasure:
-	sudo /opt/rapl/main "/usr/bin/dart  pidigits.dart 2000" Dart pidigits
+	/opt/rapl/main "/usr/bin/dart  pidigits.dart 2000" Dart pidigits
 
 run:
 	/usr/bin/dart  pidigits.dart 2000

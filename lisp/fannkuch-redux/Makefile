@@ -2,7 +2,7 @@ compile:
 	sbcl --load fannkuch.lisp --eval "(save-lisp-and-die \"fannkuch.core\" :purify t :toplevel (lambda () (main) (quit)))"
 
 measure:
-	sudo /opt/rapl/main "sbcl --noinform --core fannkuch.core 12" Lisp fannkuch-redux
+	/opt/rapl/main "sbcl --noinform --core fannkuch.core 12" Lisp fannkuch-redux
 
 run:
 	sbcl --noinform --core fannkuch.core 12

@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "php -n  nbody.php-3.php 50000000" PHP n-body
+	/opt/rapl/main "php -n  nbody.php-3.php 50000000" PHP n-body
 
 run:
 	php -n  nbody.php-3.php 50000000

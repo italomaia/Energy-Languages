@@ -11,7 +11,7 @@ compile:
 	gnatlink-6 fasta.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o fasta.gnat-5.gnat_run
 
 measure:
-	sudo /opt/rapl/main "./fasta.gnat-5.gnat_run 25000000" Ada fasta
+	/opt/rapl/main "./fasta.gnat-5.gnat_run 25000000" Ada fasta
 
 run:
 	./fasta.gnat-5.gnat_run 25000000

@@ -2,7 +2,7 @@ compile:
 	/usr/bin/hh_client
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/hhvm  regexredux.hack 0 < /root/data/regexredux-input5000000.txt" Hack regex-redux
+	/opt/rapl/main "/usr/bin/hhvm  regexredux.hack 0 < /root/data/regexredux-input5000000.txt" Hack regex-redux
 
 run:
 	/usr/bin/hhvm  regexredux.hack 0 < /root/data/regexredux-input5000000.txt

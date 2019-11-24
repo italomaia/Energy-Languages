@@ -2,7 +2,7 @@ compile:
 	cp pidigits.hipe pidigits.erl
 	${COMPILER} +native +"{hipe, [o3]}" pidigits.erl
 measure:
-	sudo /opt/rapl/main "${BINARY} -smp enable -noshell -run  pidigits main 10000" Erlang pidigits
+	/opt/rapl/main "${BINARY} -smp enable -noshell -run  pidigits main 10000" Erlang pidigits
 
 run:
 	${BINARY} -smp enable -noshell -run  pidigits main 10000

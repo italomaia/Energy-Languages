@@ -3,7 +3,7 @@ BINARY=/usr/bin/ravi
 compile:
 
 measure:
-	sudo /opt/rapl/main "${BINARY}  binarytrees.lua-2.lua 21" Lua binary-trees
+	/opt/rapl/main "${BINARY}  binarytrees.lua-2.lua 21" Lua binary-trees
 
 run:
 	${BINARY}  binarytrees.lua-2.lua 21

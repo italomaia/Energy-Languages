@@ -1,7 +1,7 @@
 compile:
 
 xmeasure:
-	sudo /opt/rapl/main "${BINARY}  pidigits.lua-5.lua 10000" Lua pidigits
+	/opt/rapl/main "${BINARY}  pidigits.lua-5.lua 10000" Lua pidigits
 
 run:
 	${BINARY}  pidigits.lua-5.lua 10000

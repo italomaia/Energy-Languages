@@ -5,7 +5,7 @@ compile:
 	rm binarytrees.pas
 
 measure:
-	sudo /opt/rapl/main "./binarytrees.fpascal_run 21" Pascal binary-trees
+	/opt/rapl/main "./binarytrees.fpascal_run 21" Pascal binary-trees
 
 run:
 	./binarytrees.fpascal_run 21

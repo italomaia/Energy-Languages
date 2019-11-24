@@ -2,7 +2,7 @@ compile:
 
 
 measure:
-	sudo /opt/rapl/main "${BINARY} -W0 spectralnorm.yarv-5.yarv 5500" Ruby spectral-norm
+	/opt/rapl/main "${BINARY} -W0 spectralnorm.yarv-5.yarv 5500" Ruby spectral-norm
 
 run:
 	${BINARY} -W0 spectralnorm.yarv-5.yarv 5500

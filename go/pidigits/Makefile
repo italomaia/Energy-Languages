@@ -2,7 +2,7 @@ compile:
 	/usr/bin/go build -o pidigits.go-3.go_run
 
 measure:
-	sudo /opt/rapl/main "./pidigits.go-3.go_run 10000" Go pidigits
+	/opt/rapl/main "./pidigits.go-3.go_run 10000" Go pidigits
 
 run:
 	./pidigits.go-3.go_run 10000

@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/dart  mandelbrot.dart 16000" Dart mandelbrot
+	/opt/rapl/main "/usr/bin/dart  mandelbrot.dart 16000" Dart mandelbrot
 
 run:
 	/usr/bin/dart  mandelbrot.dart 16000

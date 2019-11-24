@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/dart  knucleotide.dart-2.dart 0 < /root/data/knucleotide-input25000000.txt" Dart k-nucleotide
+	/opt/rapl/main "/usr/bin/dart  knucleotide.dart-2.dart 0 < /root/data/knucleotide-input25000000.txt" Dart k-nucleotide
 
 run:
 	/usr/bin/dart  knucleotide.dart-2.dart 0 < /root/data/knucleotide-input25000000.txt

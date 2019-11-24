@@ -2,7 +2,7 @@ compile:
 	sbcl --load pidigits.lisp --eval "(save-lisp-and-die \"pidigits.core\" :purify t :toplevel (lambda () (main) (quit)))"
 
 measure:
-	sudo /opt/rapl/main "sbcl --noinform --core pidigits.core 10000" Lisp pidigits
+	/opt/rapl/main "sbcl --noinform --core pidigits.core 10000" Lisp pidigits
 
 run:
 	sbcl --noinform --core pidigits.core 10000

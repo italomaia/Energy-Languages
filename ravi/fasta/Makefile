@@ -3,7 +3,7 @@ BINARY=/usr/bin/ravi
 compile:
 
 measure:
-	sudo /opt/rapl/main "${BINARY}  fasta.lua-3.lua 25000000" Lua fasta
+	/opt/rapl/main "${BINARY}  fasta.lua-3.lua 25000000" Lua fasta
 
 run:
 	${BINARY}  fasta.lua-3.lua 25000000

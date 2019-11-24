@@ -9,7 +9,7 @@ compile:
 	gnatlink-6 binarytrees.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o binarytrees.gnat-4.gnat_run -lapr-1
 
 measure:
-	sudo /opt/rapl/main "./binarytrees.gnat-4.gnat_run 21" Ada binary-trees
+	/opt/rapl/main "./binarytrees.gnat-4.gnat_run 21" Ada binary-trees
 
 run:
 	./binarytrees.gnat-4.gnat_run 21

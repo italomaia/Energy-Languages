@@ -2,7 +2,7 @@ compile:
 	sbcl --load binarytrees.lisp --eval "(save-lisp-and-die \"binarytrees.core\" :purify t :toplevel (lambda () (main) (quit)))"
 
 measure:
-	sudo /opt/rapl/main "sbcl --noinform --core binarytrees.core 21" Lisp binary-trees
+	/opt/rapl/main "sbcl --noinform --core binarytrees.core 21" Lisp binary-trees
 
 run:
 	sbcl --noinform --core binarytrees.core 21

@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/dart  regexredux.dart-2.dart 0 < /root/data/regexredux-input5000000.txt" Dart regex-redux
+	/opt/rapl/main "/usr/bin/dart  regexredux.dart-2.dart 0 < /root/data/regexredux-input5000000.txt" Dart regex-redux
 
 run:
 	/usr/bin/dart  regexredux.dart-2.dart 0 < /root/data/regexredux-input5000000.txt

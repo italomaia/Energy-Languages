@@ -2,7 +2,7 @@ compile:
 	${COMPILER}  -C opt-level=3 -C target-cpu=core2 -C lto  pidigits.rs -o pidigits.rust-2.rust_run
 
 measure:
-	sudo /opt/rapl/main "./pidigits.rust-2.rust_run 10000" Rust pidigits
+	/opt/rapl/main "./pidigits.rust-2.rust_run 10000" Rust pidigits
 
 run:
 	./pidigits.rust-2.rust_run 10000

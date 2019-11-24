@@ -2,7 +2,7 @@ compile:
 
 
 measure:
-	sudo /opt/rapl/main "${BINARY} -W0 nbody.yarv-2.yarv 50000000" Ruby n-body
+	/opt/rapl/main "${BINARY} -W0 nbody.yarv-2.yarv 50000000" Ruby n-body
 
 run:
 	${BINARY} -W0 nbody.yarv-2.yarv 50000000

@@ -9,7 +9,7 @@ compile:
 	gnatlink-6 knucleotide.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o knucleotide.gnat-2.gnat_run
 
 measure:
-	sudo /opt/rapl/main "./knucleotide.gnat-2.gnat_run 0 < /root/data/knucleotide-input25000000.txt" Ada k-nucleotide
+	/opt/rapl/main "./knucleotide.gnat-2.gnat_run 0 < /root/data/knucleotide-input25000000.txt" Ada k-nucleotide
 
 run:
 	./knucleotide.gnat-2.gnat_run 0 < /root/data/knucleotide-input25000000.txt

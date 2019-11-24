@@ -1,7 +1,7 @@
 compile:
 
 xmeasure:
-	sudo /opt/rapl/main "php -n  pidigits.php-5.php 10000" PHP pidigits
+	/opt/rapl/main "php -n  pidigits.php-5.php 10000" PHP pidigits
 
 run:
 	php -n  pidigits.php-5.php 10000

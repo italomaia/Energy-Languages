@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt" PHP regex-redux
+	/opt/rapl/main "php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt" PHP regex-redux
 
 run:
 	php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt

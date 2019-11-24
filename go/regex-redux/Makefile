@@ -2,7 +2,7 @@ compile:
 	/usr/bin/go build -o regexredux.go-2.go_run
 
 xmeasure:
-	sudo /opt/rapl/main "./regexredux.go-2.go_run 0 < /root/data/regexredux-input5000000.txt" Go regex-redux
+	/opt/rapl/main "./regexredux.go-2.go_run 0 < /root/data/regexredux-input5000000.txt" Go regex-redux
 
 run:
 	./regexredux.go-2.go_run 0 < /root/data/regexredux-input5000000.txt

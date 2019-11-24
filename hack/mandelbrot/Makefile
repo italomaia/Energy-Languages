@@ -2,7 +2,7 @@ compile:
 	/usr/bin/hh_client
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/hhvm  mandelbrot.hack-3.hack 16000" Hack mandelbrot
+	/opt/rapl/main "/usr/bin/hhvm  mandelbrot.hack-3.hack 16000" Hack mandelbrot
 
 run:
 	/usr/bin/hhvm  mandelbrot.hack-3.hack 16000

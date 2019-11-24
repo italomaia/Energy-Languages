@@ -3,7 +3,7 @@ compile:
 	/usr/local/src/ghc-8.0.2/bin/ghc --make -fllvm -O2 -XBangPatterns -threaded -rtsopts -funbox-strict-fields binarytrees.hs -o binarytrees.ghc_run
 
 measure:
-	sudo /opt/rapl/main "./binarytrees.ghc_run +RTS -N4 -K128M -H -RTS 21" Haskell binary-trees
+	/opt/rapl/main "./binarytrees.ghc_run +RTS -N4 -K128M -H -RTS 21" Haskell binary-trees
 
 run:
 	./binarytrees.ghc_run +RTS -N4 -K128M -H -RTS 21

@@ -1,7 +1,7 @@
 compile:
 	ifort -O3 -xHost -ipo -lgmp pidigits.ifc-3.f90 -o pidigits.ifc-3.ifc_run
 xmeasure:
-	sudo /opt/rapl/main "./pidigits.ifc-3.ifc_run 10000" Fortran pidigits
+	/opt/rapl/main "./pidigits.ifc-3.ifc_run 10000" Fortran pidigits
 
 run:
 	./pidigits.ifc-3.ifc_run 10000

@@ -2,7 +2,7 @@ compile:
 	/usr/bin/hh_client
 
 measure:
-	sudo /opt/rapl/main "/usr/bin/hhvm  fasta.hack-4.hack 25000000" Hack fasta
+	/opt/rapl/main "/usr/bin/hhvm  fasta.hack-4.hack 25000000" Hack fasta
 
 run:
 	/usr/bin/hhvm  fasta.hack-4.hack 25000000

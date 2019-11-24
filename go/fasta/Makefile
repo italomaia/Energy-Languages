@@ -2,7 +2,7 @@ compile:
 	/usr/bin/go build -o fasta.go-3.go_run
 
 measure:
-	sudo /opt/rapl/main "./fasta.go-3.go_run 25000000" Go fasta
+	/opt/rapl/main "./fasta.go-3.go_run 25000000" Go fasta
 
 run:
 	./fasta.go-3.go_run 25000000

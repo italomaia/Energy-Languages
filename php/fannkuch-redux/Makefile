@@ -1,7 +1,7 @@
 compile:
 
 measure:
-	sudo /opt/rapl/main "php  fannkuchredux.php-3.php 12" PHP fannkuch-redux
+	/opt/rapl/main "php  fannkuchredux.php-3.php 12" PHP fannkuch-redux
 
 run:
 	php  fannkuchredux.php-3.php 12
