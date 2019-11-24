@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/bin/dart --old_gen_heap_size=2048 revcomp.dart-3.dart 0 < /root/data/revcomp-input25000000.txt" Dart reverse-complement
 
 run:

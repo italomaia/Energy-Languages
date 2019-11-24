@@ -2,7 +2,6 @@ compile:
 	/usr/local/src/racket-6.8/bin/raco make binarytrees.racket-3.racket
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/local/src/racket-6.8/bin/racket ./compiled/binarytrees.racket-3_racket.zo 21" Racket binary-trees
 
 run:

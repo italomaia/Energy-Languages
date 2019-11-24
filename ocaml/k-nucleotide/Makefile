@@ -4,7 +4,6 @@ compile:
 	rm knucleotide.ocaml-3.ml
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./knucleotide.ocaml-3.ocaml_run 0 < /root/data/knucleotide-input25000000.txt" OCaml k-nucleotide
 
 run:

@@ -2,7 +2,6 @@ compile:
 	/usr/bin/go build -o revcomp.go-6.go_run
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./revcomp.go-6.go_run 0 < /root/data/revcomp-input25000000.txt" Go reverse-complement
 
 run:

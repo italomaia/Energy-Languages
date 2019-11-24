@@ -1,7 +1,6 @@
 compile:
 	cp -L mandelbrot.node mandelbrot.js
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node mandelbrot.js 16000" JavaScript mandelbrot
 
 run:

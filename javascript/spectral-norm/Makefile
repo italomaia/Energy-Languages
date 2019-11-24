@@ -1,7 +1,6 @@
 compile:
 	cp -L spectralnorm.node-2.node spectralnorm.node-2.js
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node spectralnorm.node-2.js 5500" JavaScript spectral-norm
 
 run:

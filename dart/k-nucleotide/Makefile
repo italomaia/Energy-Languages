@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/bin/dart  knucleotide.dart-2.dart 0 < /root/data/knucleotide-input25000000.txt" Dart k-nucleotide
 
 run:

@@ -2,7 +2,6 @@ compile:
 	/usr/bin/go build -o nbody.go_run
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./nbody.go_run 50000000" Go n-body
 
 run:

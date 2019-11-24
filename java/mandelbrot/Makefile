@@ -2,7 +2,6 @@ compile:
 	cp mandelbrot.java-2.java mandelbrot.java
 	/usr/local/src/jdk1.8.0_121/bin/javac -d .  mandelbrot.java
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/local/src/jdk1.8.0_121/bin/java   mandelbrot 16000" Java mandelbrot
 
 run:

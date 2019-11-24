@@ -3,7 +3,6 @@ BINARY=/usr/bin/ravi
 compile:
 
 xmeasure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY}  pidigits.lua-5.lua 10000" Lua pidigits
 
 run:

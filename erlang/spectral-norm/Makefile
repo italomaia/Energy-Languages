@@ -2,7 +2,6 @@ compile:
 	cp spectralnorm.hipe-2.hipe spectralnorm.erl
 	${COMPILER} +native +"{hipe, [o3]}" spectralnorm.erl
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} -smp enable -noshell -run  spectralnorm main 5500" Erlang spectral-norm
 
 run:

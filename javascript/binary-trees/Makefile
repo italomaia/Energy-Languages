@@ -1,7 +1,6 @@
 compile:
 	cp -L binarytrees.node binarytrees.js
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node binarytrees.js 21" JavaScript binary-trees
 
 run:

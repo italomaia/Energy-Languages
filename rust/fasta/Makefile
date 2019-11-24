@@ -2,7 +2,6 @@ compile:
 	${COMPILER}  -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs fasta.rs -o fasta.rust-2.rust_run
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./fasta.rust-2.rust_run 25000000" Rust fasta
 
 run:

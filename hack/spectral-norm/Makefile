@@ -2,7 +2,6 @@ compile:
 	/usr/bin/hh_client
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/bin/hhvm  spectralnorm.hack-3.hack 5500" Hack spectral-norm
 
 run:

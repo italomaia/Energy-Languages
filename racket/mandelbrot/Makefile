@@ -2,7 +2,6 @@ compile:
 	/usr/local/src/racket-6.8/bin/raco make mandelbrot.racket-3.racket
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/local/src/racket-6.8/bin/racket ./compiled/mandelbrot.racket-3_racket.zo 16000" Racket mandelbrot
 
 run:

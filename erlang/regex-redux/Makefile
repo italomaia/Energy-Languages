@@ -2,7 +2,6 @@ compile:
 	cp regexredux.hipe-6.hipe regexredux.erl
 	${COMPILER} +native +"{hipe, [o3]}" regexredux.erl
 xmeasure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} -smp enable -noshell -run -noinput -run regexredux main 0 < ../../regexredux-input50000.txt" Erlang regex-redux
 
 run:

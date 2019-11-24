@@ -2,7 +2,6 @@ compile:
 	${COMPILER}  -C opt-level=3 -C target-cpu=core2 -C lto -C llvm-args='-unroll-threshold=500' nbody.rs -o nbody.rust-2.rust_run
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./nbody.rust-2.rust_run 50000000" Rust n-body
 
 run:

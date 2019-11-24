@@ -2,7 +2,6 @@ compile:
 	cp binarytrees.hipe-2.hipe binarytrees.erl
 	${COMPILER} +native +"{hipe, [o3]}" binarytrees.erl
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} -smp enable -noshell -run  binarytrees main 21" Erlang binary-trees
 
 run:

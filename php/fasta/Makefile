@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "php -n  fasta.php-3.php 25000000" PHP fasta
 
 run:

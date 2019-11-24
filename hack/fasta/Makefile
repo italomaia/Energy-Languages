@@ -2,7 +2,6 @@ compile:
 	/usr/bin/hh_client
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/bin/hhvm  fasta.hack-4.hack 25000000" Hack fasta
 
 run:

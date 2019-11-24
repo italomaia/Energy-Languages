@@ -2,7 +2,6 @@ compile:
 
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} -W0 mandelbrot.yarv-5.yarv 16000" Ruby mandelbrot
 
 run:

@@ -2,7 +2,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY}  fannkuchredux.lua 12" Lua fannkuch-redux
 
 run:

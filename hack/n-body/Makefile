@@ -2,7 +2,6 @@ compile:
 	/usr/bin/hh_client
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/bin/hhvm  nbody.hack-5.hack 50000000" Hack n-body
 
 run:

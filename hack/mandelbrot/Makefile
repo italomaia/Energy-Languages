@@ -2,7 +2,6 @@ compile:
 	/usr/bin/hh_client
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/bin/hhvm  mandelbrot.hack-3.hack 16000" Hack mandelbrot
 
 run:

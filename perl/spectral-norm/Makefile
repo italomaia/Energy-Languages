@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} spectralnorm.perl-4.perl 5500" Perl spectral-norm
 
 run:

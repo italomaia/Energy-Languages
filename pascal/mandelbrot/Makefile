@@ -5,7 +5,6 @@ compile:
 	rm mandelbrot.fpascal-5.pas
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./mandelbrot.fpascal-5.fpascal_run 16000" Pascal mandelbrot
 
 run:

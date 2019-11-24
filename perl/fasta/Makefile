@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} fasta.perl 25000000" Perl fasta
 
 run:

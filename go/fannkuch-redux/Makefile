@@ -2,7 +2,6 @@ compile:
 	/usr/bin/go build -o fannkuchredux.go_run
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./fannkuchredux.go_run 12" Go fannkuch-redux
 
 run:

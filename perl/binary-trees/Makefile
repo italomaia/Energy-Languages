@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} binarytrees.perl-3.perl 21" Perl binary-trees
 
 run:

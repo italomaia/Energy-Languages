@@ -2,7 +2,6 @@ compile:
 
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} -W0 binarytrees.yarv-5.yarv 21" Ruby binary-trees
 
 run:

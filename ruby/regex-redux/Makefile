@@ -2,7 +2,6 @@ compile:i
 
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} -W0 regexredux.yarv-2.yarv 0 < /root/data/regexredux-input5000000.txt" Ruby regex-redux
 
 run:

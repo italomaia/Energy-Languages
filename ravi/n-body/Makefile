@@ -3,7 +3,6 @@ BINARY=/usr/bin/ravi
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY}  nbody.lua-2.lua 50000000" Lua n-body
 
 run:

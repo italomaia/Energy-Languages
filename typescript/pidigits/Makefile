@@ -1,7 +1,6 @@
 compile:
 
 xmeasure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "" TypeScript pidigits
 
 mem:

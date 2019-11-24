@@ -1,7 +1,6 @@
 compile:
 	cp fasta.python3-3.python3 fasta.python3-3.py
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} -OO fasta.python3-3.py 25000000" Python fasta
 
 run:

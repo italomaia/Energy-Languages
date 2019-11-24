@@ -4,7 +4,6 @@ compile:
 	mv FPASCAL_RUN pidigits.fpascal-3.fpascal_run
 	rm pidigits.fpascal-3.pas
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./pidigits.fpascal-3.fpascal_run 10000" Pascal pidigits
 
 run:

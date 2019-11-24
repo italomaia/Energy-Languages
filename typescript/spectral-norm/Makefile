@@ -3,7 +3,6 @@ compile:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  spectralnorm.ts
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict spectralnorm.js 5500" TypeScript spectral-norm
 
 run:

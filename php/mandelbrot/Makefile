@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "php  mandelbrot.php-3.php 16000" PHP mandelbrot
 
 run:

@@ -2,7 +2,6 @@ compile:
 	sbcl --load revcomp.lisp --eval "(save-lisp-and-die \"revcomp.core\" :purify t :toplevel (lambda () (main) (quit)))"
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt" Lisp reverse-complement
 
 run:

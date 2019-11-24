@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "php -n -d memory_limit=4096M binarytrees.php-5.php 21" PHP binary-trees
 
 run:

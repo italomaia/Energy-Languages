@@ -1,7 +1,6 @@
 compile:
 
 xmeasure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "php -n  pidigits.php-5.php 10000" PHP pidigits
 
 run:

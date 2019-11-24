@@ -3,7 +3,6 @@ compile:
 	/usr/bin/dotnet build -c Release
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/knucleotide-input25000000.txt" FSharp k-nucleotide
 
 run:

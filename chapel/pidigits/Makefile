@@ -1,7 +1,6 @@
 compile:
 	/usr/local/src/chapel-1.15.0/bin/linux64/chpl --fast pidigits.chapel-2.chpl -o pidigits.chapel-2.chapel_run
 xmeasure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./pidigits.chapel-2.chapel_run --n=10000" Chapel pidigits
 
 run:

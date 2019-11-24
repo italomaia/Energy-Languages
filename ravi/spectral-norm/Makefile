@@ -3,7 +3,6 @@ BINARY=/usr/bin/ravi
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY}  spectralnorm.lua 5500" Lua spectral-norm
 
 run:

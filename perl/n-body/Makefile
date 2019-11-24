@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} nbody.perl-2.perl 50000000" Perl n-body
 
 run:

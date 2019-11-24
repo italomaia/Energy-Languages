@@ -8,7 +8,6 @@ compile:
 	gnatbind-6 -x nbody.ali
 	gnatlink-6 nbody.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o nbody.gnat-2.gnat_run
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./nbody.gnat-2.gnat_run 50000000" Ada n-body
 
 run:

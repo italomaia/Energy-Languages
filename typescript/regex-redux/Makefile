@@ -3,7 +3,6 @@ compile:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT --lib es7 regexredux.typescript-3.ts
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict regexredux.typescript-3.js 0 < /root/data/regexredux-input5000000.txt" TypeScript regex-redux
 
 run:

@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/bin/dart  binarytrees.dart 21" Dart binary-trees
 
 run:

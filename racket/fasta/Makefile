@@ -2,7 +2,6 @@ compile:
 	/usr/local/src/racket-6.8/bin/raco make fasta.racket-3.racket
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/local/src/racket-6.8/bin/racket ./compiled/fasta.racket-3_racket.zo 25000000" Racket fasta
 
 run:

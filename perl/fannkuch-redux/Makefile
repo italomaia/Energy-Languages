@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} fannkuchredux.perl-2.perl 12" Perl fannkuch-redux
 
 run:

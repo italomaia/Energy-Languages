@@ -2,7 +2,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY}  binarytrees.lua-2.lua 21" Lua binary-trees
 
 run:

@@ -2,7 +2,6 @@ compile:
 	sbcl --load knucleotide.lisp --eval "(save-lisp-and-die \"knucleotide.core\" :purify t :toplevel (lambda () (main) (quit)))"
 
 xmeasure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "sbcl --noinform --core knucleotide.core 5500" Lisp k-nucleotide
 
 run:

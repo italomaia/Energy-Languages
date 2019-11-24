@@ -2,7 +2,6 @@ compile:
 	sbcl --load spectralnorm.lisp --eval "(save-lisp-and-die \"spectralnorm.core\" :purify t :toplevel (lambda () (main) (quit)))"
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "sbcl --noinform --core spectralnorm.core 5500" Lisp spectral-norm
 
 run:

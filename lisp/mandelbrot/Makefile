@@ -2,7 +2,6 @@ compile:
 	sbcl --load mandelbrot.lisp --eval "(save-lisp-and-die \"mandelbrot.core\" :purify t :toplevel (lambda () (main) (quit)))"
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "sbcl --noinform --core mandelbrot.core 16000" Lisp mandelbrot
 
 run:

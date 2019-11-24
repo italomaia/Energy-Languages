@@ -4,7 +4,6 @@ compile:
 	mv FPASCAL_RUN regexredux.fpascal-2.fpascal_run
 	rm regexredux.fpascal-2.pas
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./regexredux.fpascal-2.fpascal_run 0 < /root/data/regexredux-input5000000.txt" Pascal regex-redux
 
 run:

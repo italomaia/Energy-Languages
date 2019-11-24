@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} mandelbrot.perl 16000" Perl mandelbrot
 
 run:

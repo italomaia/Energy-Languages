@@ -2,7 +2,6 @@ compile:
 	${COMPILER}  -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs mandelbrot.rs -o mandelbrot.rust-4.rust_run
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./mandelbrot.rust-4.rust_run 16000" Rust mandelbrot
 
 run:

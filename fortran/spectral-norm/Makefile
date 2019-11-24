@@ -1,7 +1,6 @@
 compile:
 	ifort -O3 -fast -qopenmp spectralnorm.ifc-3.f90 -o spectralnorm.ifc-3.ifc_run
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./spectralnorm.ifc-3.ifc_run 5500" Fortran spectral-norm
 
 run:

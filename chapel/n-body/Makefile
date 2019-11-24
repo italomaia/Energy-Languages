@@ -1,7 +1,6 @@
 compile:
 	/usr/local/src/chapel-1.15.0/bin/linux64/chpl --fast nbody.chpl -o nbody.chapel_run
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./nbody.chapel_run --n=50000000" Chapel n-body
 
 run:

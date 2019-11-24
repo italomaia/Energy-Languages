@@ -11,7 +11,6 @@ compile:
 	gnatbind-6 -x regexredux.ali
 	gnatlink-6 regexredux.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o regexredux.gnat-5.gnat_run
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./regexredux.gnat-5.gnat_run 0 < /root/data/regexredux-input5000000.txt" Ada regex-redux
 
 run:

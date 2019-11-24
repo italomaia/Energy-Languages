@@ -2,7 +2,6 @@ compile:
 
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "${BINARY} -W0 spectralnorm.yarv-5.yarv 5500" Ruby spectral-norm
 
 run:

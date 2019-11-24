@@ -2,7 +2,6 @@ compile:
 	${COMPILER}  -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs spectralnorm.rs -o spectralnorm.rust-4.rust_run
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "./spectralnorm.rust-4.rust_run 5500" Rust spectral-norm
 
 run:

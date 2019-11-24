@@ -3,7 +3,6 @@ compile:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  binarytrees.typescript-2.ts
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict binarytrees.typescript-2.js 21" TypeScript binary-trees
 
 run:

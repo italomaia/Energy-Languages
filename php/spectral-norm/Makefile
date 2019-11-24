@@ -1,7 +1,6 @@
 compile:
 
 measure:
-	sudo modprobe msr
 	sudo /opt/rapl/main "php -n  spectralnorm.php 5500" PHP spectral-norm
 
 run:
