@@ -4,12 +4,12 @@
 int cpu_model;
 int core=0;
 
-double package_before,package_after;
-double pp0_before,pp0_after;
-double pp1_before=0.0,pp1_after;
-double dram_before=0.0,dram_after;
+double package_before, package_after;
+double pp0_before, pp0_after;
+double pp1_before=0.0, pp1_after;
+double dram_before=0.0, dram_after;
 
-double power_units,energy_units,time_units;
+double power_units, energy_units, time_units;
 
 int open_msr(int core) {
 
@@ -57,35 +57,37 @@ int detect_cpu(void) {
 
   FILE *fff;
 
-  int family,model=-1;
+  int family, model=-1;
   char buffer[BUFSIZ],*result;
   char vendor[BUFSIZ];
 
-  fff=fopen("/proc/cpuinfo","r");
+  fff = fopen("/proc/cpuinfo","r");
   if (fff==NULL) return -1;
 
   while(1) {
-    result=fgets(buffer,BUFSIZ,fff);
+    result=fgets(buffer, BUFSIZ, fff);
+
     if (result==NULL) break;
 
-    if (!strncmp(result,"vendor_id",8)) {
+    if (!strncmp(result,"vendor_id", 8)) {
       sscanf(result,"%*s%*s%s",vendor);
 
-      if (strncmp(vendor,"GenuineIntel",12)) {
-        printf("%s not an Intel chip\n",vendor);
+      if (strncmp(vendor,"GenuineIntel", 12)) {
+        printf("%s not an Intel chip\n", vendor);
         return -1;
       }
     }
 
-    if (!strncmp(result,"cpu family",10)) {
-      sscanf(result,"%*s%*s%*s%d",&family);
+    if (!strncmp(result, "cpu family",10)) {
+      sscanf(result, "%*s%*s%*s%d", &family);
+
       if (family!=6) {
         printf("Wrong CPU family %d\n",family);
         return -1;
       }
     }
 
-    if (!strncmp(result,"model",5)) {
+    if (!strncmp(result, "model",5)) {
       sscanf(result,"%*s%*s%d",&model);
     }
 
@@ -118,18 +120,16 @@ int detect_cpu(void) {
 }
 
 
-
-
-
-
 int rapl_init(int core)
-{ int fd;
+{
+  int fd;
   long long result;
 
   cpu_model=detect_cpu();
+
   if (cpu_model<0) {
-  printf("Unsupported CPU type\n");
-  return -1;
+    printf("Unsupported CPU type\n");
+    return -1;
   }
 
   // printf("Checking core #%d\n",core);
@@ -212,9 +212,9 @@ void show_power_limit(int core)
 
 
 void rapl_before(FILE * fp,int core)
-{ int fd;
+{
+  int fd;
   long long result;
-
 
   fd=open_msr(core);
   result=read_msr(fd,MSR_PKG_ENERGY_STATUS);
@@ -259,8 +259,11 @@ void rapl_before(FILE * fp,int core)
 
   /* Despite documentation saying otherwise, it looks like */
   /* You can get DRAM readings on regular Haswell          */
-  if ((cpu_model==CPU_SANDYBRIDGE_EP) || (cpu_model==CPU_IVYBRIDGE_EP) ||
-  (cpu_model==CPU_HASWELL)) {
+  if (
+    (cpu_model==CPU_SANDYBRIDGE_EP) ||
+    (cpu_model==CPU_IVYBRIDGE_EP) ||
+    (cpu_model==CPU_HASWELL)
+  ) {
      result=read_msr(fd,MSR_DRAM_ENERGY_STATUS);
      dram_before=(double)result*energy_units;
      // fprintf(fp,"DRAM energy before: %.6fJ\n",dram_before);
@@ -270,7 +273,8 @@ void rapl_before(FILE * fp,int core)
 
 
 void rapl_after(FILE * fp , int core)
-{ int fd;
+{
+  int fd;
   long long result;
 
   fd=open_msr(core);
@@ -283,26 +287,27 @@ void rapl_after(FILE * fp , int core)
   result=read_msr(fd,MSR_PP0_ENERGY_STATUS);
   pp0_after=(double)result*energy_units;
 
-  fprintf(fp,"%.18f, ",pp0_after-pp0_before);    // CORE
-
+  fprintf(fp, "%.18f, ", pp0_after-pp0_before);    // CORE
 
   /* not available on SandyBridge-EP */
-  if ((cpu_model==CPU_SANDYBRIDGE) || (cpu_model==CPU_IVYBRIDGE) ||
-  (cpu_model==CPU_HASWELL)) {
+  if (
+    (cpu_model==CPU_SANDYBRIDGE) ||
+    (cpu_model==CPU_IVYBRIDGE) ||
+    (cpu_model==CPU_HASWELL)
+  ) {
      result=read_msr(fd,MSR_PP1_ENERGY_STATUS);
-     pp1_after=(double)result*energy_units;
-     fprintf(fp,"%.18f, ",pp1_after-pp1_before);     // GPU
-  }
-  else
-    fprintf(fp," , ");
+     pp1_after=(double)result * energy_units;
+     fprintf(fp,"%.18f, ", pp1_after - pp1_before);     // GPU
+  } else fprintf(fp," , ");
 
-  if ((cpu_model==CPU_SANDYBRIDGE_EP) || (cpu_model==CPU_IVYBRIDGE_EP) ||
-  (cpu_model==CPU_HASWELL)) {
-     result=read_msr(fd,MSR_DRAM_ENERGY_STATUS);
-     dram_after=(double)result*energy_units;
-     fprintf(fp,"%.18f, ",dram_after-dram_before);     // DRAM
-  }
-  else
-    fprintf(fp," , ");  
+  if (
+    (cpu_model==CPU_SANDYBRIDGE_EP) ||
+    (cpu_model==CPU_IVYBRIDGE_EP) ||
+    (cpu_model==CPU_HASWELL)
+  ) {
+     result = read_msr(fd,MSR_DRAM_ENERGY_STATUS);
+     dram_after = (double)result*energy_units;
+     fprintf(fp, "%.18f, ", dram_after - dram_before);  // DRAM
+  } else fprintf(fp, " , ");
 
 }
