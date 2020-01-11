@@ -91,7 +91,7 @@ def file_exists(file_path):
 
 def main(lang_list: List[str], action: str, force_build):
     # builds base image for all other images
-    rapl_image_name = build_docker_image('rapl', force_build)  # noqa: F841
+    base_image_name = build_docker_image('base', force_build)  # noqa: F841
 
     for lang in lang_list:
         image_name = build_docker_image(lang.lower(), force_build)
