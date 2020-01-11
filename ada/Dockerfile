@@ -1,4 +1,4 @@
-FROM energy/rapl:1
+FROM energy/base:1
 
 COPY . /root
 

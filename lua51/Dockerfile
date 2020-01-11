@@ -1,4 +1,4 @@
-FROM energy/rapl:1
+FROM energy/base:1
 
 ENV BINARY=/usr/bin/lua5.1
 COPY . .
