@@ -1,14 +1,8 @@
-
 compile:
-
-measure:
-	/opt/rapl/main "${BINARY}  nbody.lua-2.lua 50000000" Lua n-body
+	echo "lua51: nothing to do"
 
 run:
 	${BINARY}  nbody.lua-2.lua 50000000
 
-mem:
+measure:
 	/usr/bin/time -v  ${BINARY}  nbody.lua-2.lua 50000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  ${BINARY}  nbody.lua-2.lua 50000000
