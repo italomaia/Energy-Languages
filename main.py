@@ -106,7 +106,7 @@ def make_parser():
     parser.add_argument(
         '-a', '--act',
         required=True,
-        choices=('mem', 'run', 'measure'),
+        choices=('run', 'measure'),
         help='action to execute'
     )
     parser.add_argument(
