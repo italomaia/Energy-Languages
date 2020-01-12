@@ -1,13 +1,8 @@
 compile:
 
-measure:
-	/opt/rapl/main "php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt" PHP regex-redux
-
 run:
 	php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt

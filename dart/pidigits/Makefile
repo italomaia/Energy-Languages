@@ -1,13 +1,8 @@
 compile:
 
-xmeasure:
-	/opt/rapl/main "/usr/bin/dart  pidigits.dart 2000" Dart pidigits
-
-run:
+xrun:
 	/usr/bin/dart  pidigits.dart 2000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  /usr/bin/dart  pidigits.dart 2000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/bin/dart  pidigits.dart 2000

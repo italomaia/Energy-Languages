@@ -2,17 +2,12 @@ compile:
 	cp regexredux.typescript-3.typescript regexredux.typescript-3.ts
 	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT --lib es7 regexredux.typescript-3.ts
 
-measure:
-	/opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict regexredux.typescript-3.js 0 < /root/data/regexredux-input5000000.txt" TypeScript regex-redux
-
 run:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict regexredux.typescript-3.js 0 < /root/data/regexredux-input5000000.txt
 
 clean:
 	rm -rf *.js *.ts
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict regexredux.typescript-3.js 0 < /root/data/regexredux-input5000000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict regexredux.typescript-3.js 0 < /root/data/regexredux-input5000000.txt

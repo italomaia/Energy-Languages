@@ -8,14 +8,9 @@ compile:
 	gnatbind-6 -x binarytrees.ali
 	gnatlink-6 binarytrees.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o binarytrees.gnat-4.gnat_run -lapr-1
 
-measure:
-	/opt/rapl/main "./binarytrees.gnat-4.gnat_run 21" Ada binary-trees
-
 run:
 	./binarytrees.gnat-4.gnat_run 21
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.gnat-4.gnat_run 21
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./binarytrees.gnat-4.gnat_run 21

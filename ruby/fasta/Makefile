@@ -1,14 +1,9 @@
 compile:
 
 
-measure:
-	/opt/rapl/main "${BINARY} -W0 fasta.yarv-3.yarv 25000000" Ruby fasta
-
 run:
 	${BINARY} -W0 fasta.yarv-3.yarv 25000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ${BINARY} -W0 fasta.yarv-3.yarv 25000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ${BINARY} -W0 fasta.yarv-3.yarv 25000000

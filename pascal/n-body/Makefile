@@ -4,14 +4,9 @@ compile:
 	mv FPASCAL_RUN nbody.fpascal_run
 	rm nbody.pas
 
-measure:
-	/opt/rapl/main "./nbody.fpascal_run 50000000" Pascal n-body
-
 run:
 	./nbody.fpascal_run 50000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./nbody.fpascal_run 50000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ./nbody.fpascal_run 50000000

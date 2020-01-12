@@ -1,13 +1,8 @@
 compile:
 
-measure:
-	/opt/rapl/main "php -n  nbody.php-3.php 50000000" PHP n-body
-
 run:
 	php -n  nbody.php-3.php 50000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  php -n  nbody.php-3.php 50000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  php -n  nbody.php-3.php 50000000

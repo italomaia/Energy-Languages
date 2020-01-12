@@ -4,14 +4,9 @@ compile:
 	mv FPASCAL_RUN fasta.fpascal-4.fpascal_run
 	rm fasta.fpascal-4.pas
 
-measure:
-	/opt/rapl/main "./fasta.fpascal-4.fpascal_run 25000000" Pascal fasta
-
 run:
 	./fasta.fpascal-4.fpascal_run 25000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./fasta.fpascal-4.fpascal_run 25000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ./fasta.fpascal-4.fpascal_run 25000000

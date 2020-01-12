@@ -2,16 +2,11 @@ BINARY=/usr/bin/ravi
 
 compile:
 
-xmeasure:
-	/opt/rapl/main "${BINARY} pidigits.lua-5.lua 10000" Lua pidigits
-
-run:
+xrun:
 	${BINARY} pidigits.lua-5.lua 10000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} pidigits.lua-5.lua 10000
 
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} pidigits.lua-5.lua 10000
 

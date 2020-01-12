@@ -2,14 +2,9 @@ compile:
 	cp nbody.ocaml nbody.ml
 	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100  nbody.ml -o nbody.ocaml_run
 	rm nbody.ml
-measure:
-	/opt/rapl/main "./nbody.ocaml_run 50000000" OCaml n-body
-
 run:
 	./nbody.ocaml_run 50000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./nbody.ocaml_run 50000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ./nbody.ocaml_run 50000000

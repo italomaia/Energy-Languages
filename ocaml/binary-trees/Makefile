@@ -3,14 +3,9 @@ compile:
 	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa binarytrees.ocaml-2.ml -o binarytrees.ocaml-2.ocaml_run
 	rm binarytrees.ocaml-2.ml
 
-measure:
-	/opt/rapl/main "./binarytrees.ocaml-2.ocaml_run 21" OCaml binary-trees
-
 run:
 	./binarytrees.ocaml-2.ocaml_run 21
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.ocaml-2.ocaml_run 21
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./binarytrees.ocaml-2.ocaml_run 21

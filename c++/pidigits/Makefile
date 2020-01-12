@@ -1,13 +1,8 @@
 compile:
 	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native  -std=c++14 -g pidigits.gpp-4.c++ -o pidigits.gpp-4.c++.o &&  /usr/bin/g++ pidigits.gpp-4.c++.o -o pidigits.gpp-4.gpp_run -lgmp -lgmpxx
-measure:
-	/opt/rapl/main "./pidigits.gpp-4.gpp_run 10000" C++ pidigits
-
 run:
 	./pidigits.gpp-4.gpp_run 10000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./pidigits.gpp-4.gpp_run 10000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./pidigits.gpp-4.gpp_run 10000

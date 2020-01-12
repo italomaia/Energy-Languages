@@ -1,17 +1,12 @@
 compile:
 	sbcl --load revcomp.lisp --eval "(save-lisp-and-die \"revcomp.core\" :purify t :toplevel (lambda () (main) (quit)))"
 
-measure:
-	/opt/rapl/main "sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt" Lisp reverse-complement
-
 run:
 	sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt
 
 clean:
 	rm -rf *.core
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt

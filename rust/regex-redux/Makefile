@@ -1,14 +1,9 @@
 compile:
 	${COMPILER}  -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs regexredux.rs -o regexredux.rust_run
 
-measure:
-	/opt/rapl/main "./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt" Rust regex-redux
-
 run:
 	./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt

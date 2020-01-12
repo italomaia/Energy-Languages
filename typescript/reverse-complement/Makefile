@@ -2,17 +2,12 @@ compile:
 	cp revcomp.typescript revcomp.ts
 	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  revcomp.ts
 
-xmeasure:
-	/opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict revcomp.js 0 < /root/data/revcomp-input25000000.txt" TypeScript reverse-complement
-
-run:
+xrun:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict revcomp.js 0 < /root/data/revcomp-input25000000.txt
 
 clean:
 	rm -rf *.js *.ts
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict revcomp.js 0 < /root/data/revcomp-input25000000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict revcomp.js 0 < /root/data/revcomp-input25000000.txt

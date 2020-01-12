@@ -3,14 +3,9 @@ compile:
 	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa knucleotide.ocaml-3.ml -o knucleotide.ocaml-3.ocaml_run
 	rm knucleotide.ocaml-3.ml
 
-measure:
-	/opt/rapl/main "./knucleotide.ocaml-3.ocaml_run 0 < /root/data/knucleotide-input25000000.txt" OCaml k-nucleotide
-
 run:
 	./knucleotide.ocaml-3.ocaml_run 0 < /root/data/knucleotide-input25000000.txt
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./knucleotide.ocaml-3.ocaml_run 0 < /root/data/knucleotide-input25000000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./knucleotide.ocaml-3.ocaml_run 0 < /root/data/knucleotide-input25000000.txt

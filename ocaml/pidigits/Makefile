@@ -3,14 +3,9 @@ compile:
 	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 -I /usr/local/lib/ocaml/gmp gmp.cmxa pidigits.ocaml-3.ml -o pidigits.ocaml-3.ocaml_run
 	rm pidigits.ocaml-3.ml
 
-xmeasure:
-	/opt/rapl/main "./pidigits.ocaml-3.ocaml_run 2000" OCaml pidigits
-
-run:
+xrun:
 	./pidigits.ocaml-3.ocaml_run 2000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ../pidigits.ocaml-3.ocaml_run 2000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./pidigits.ocaml-3.ocaml_run 2000

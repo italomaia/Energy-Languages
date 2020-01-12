@@ -1,10 +1,7 @@
 compile:
 	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -std=c99 -IInclude knucleotide.c -o knucleotide.gcc_run
-measure:
-	/opt/rapl/main "./knucleotide.gcc_run 0 < /root/data/knucleotide-input25000000.txt" C k-nucleotide
-
 run:
 	./knucleotide.gcc_run 0 < /root/data/knucleotide-input25000000.txt
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./knucleotide.gcc_run 0 < /root/data/knucleotide-input25000000.txt

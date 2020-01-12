@@ -4,14 +4,9 @@ compile:
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp mandelbrot.adb
 	gnatbind-6 -x mandelbrot.ali
 	gnatlink-6 mandelbrot.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o mandelbrot.gnat-3.gnat_run
-measure:
-	/opt/rapl/main "./mandelbrot.gnat-3.gnat_run 16000" Ada mandelbrot
-
 run:
 	./mandelbrot.gnat-3.gnat_run 16000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./mandelbrot.gnat-3.gnat_run 16000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./mandelbrot.gnat-3.gnat_run 16000

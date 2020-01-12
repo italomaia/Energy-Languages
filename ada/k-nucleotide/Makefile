@@ -8,14 +8,9 @@ compile:
 	gnatbind-6 -x knucleotide.ali
 	gnatlink-6 knucleotide.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o knucleotide.gnat-2.gnat_run
 
-measure:
-	/opt/rapl/main "./knucleotide.gnat-2.gnat_run 0 < /root/data/knucleotide-input25000000.txt" Ada k-nucleotide
-
 run:
 	./knucleotide.gnat-2.gnat_run 0 < /root/data/knucleotide-input25000000.txt
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./knucleotide.gnat-2.gnat_run 0 < /root/data/knucleotide-input25000000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./knucleotide.gnat-2.gnat_run 0 < /root/data/knucleotide-input25000000.txt

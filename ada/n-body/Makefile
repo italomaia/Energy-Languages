@@ -7,14 +7,9 @@ compile:
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp systems.adb
 	gnatbind-6 -x nbody.ali
 	gnatlink-6 nbody.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o nbody.gnat-2.gnat_run
-measure:
-	/opt/rapl/main "./nbody.gnat-2.gnat_run 50000000" Ada n-body
-
 run:
 	./nbody.gnat-2.gnat_run 50000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./nbody.gnat-2.gnat_run 50000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./nbody.gnat-2.gnat_run 50000000

@@ -1,13 +1,8 @@
 compile:
 	ifort -O3 -fast nbody.ifc-6.f90 -o nbody.ifc-6.ifc_run
-measure:
-	/opt/rapl/main "./nbody.ifc-6.ifc_run 50000000" Fortran n-body
-
 run:
 	./nbody.ifc-6.ifc_run 50000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./nbody.ifc-6.ifc_run 50000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./nbody.ifc-6.ifc_run 50000000

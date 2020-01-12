@@ -1,14 +1,9 @@
 compile:
 	/usr/bin/go build -o pidigits.go-3.go_run
 
-measure:
-	/opt/rapl/main "./pidigits.go-3.go_run 10000" Go pidigits
-
 run:
 	./pidigits.go-3.go_run 10000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./pidigits.go-3.go_run 10000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./pidigits.go-3.go_run 10000

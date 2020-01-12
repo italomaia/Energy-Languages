@@ -4,14 +4,9 @@ compile:
 	mv FPASCAL_RUN binarytrees.fpascal_run
 	rm binarytrees.pas
 
-measure:
-	/opt/rapl/main "./binarytrees.fpascal_run 21" Pascal binary-trees
-
 run:
 	./binarytrees.fpascal_run 21
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.fpascal_run 21
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./binarytrees.fpascal_run 21

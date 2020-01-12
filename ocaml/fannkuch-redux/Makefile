@@ -3,14 +3,9 @@ compile:
 	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa fannkuchredux.ocaml-4.ml -o fannkuchredux.ocaml-4.ocaml_run
 	rm fannkuchredux.ocaml-4.ml
 
-measure:
-	/opt/rapl/main "./fannkuchredux.ocaml-4.ocaml_run 12" OCaml fannkuch-redux
-
 run:
 	./fannkuchredux.ocaml-4.ocaml_run 12
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fannkuchredux.ocaml-4.ocaml_run 12
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./fannkuchredux.ocaml-4.ocaml_run 12

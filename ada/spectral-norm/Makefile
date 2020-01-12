@@ -12,14 +12,9 @@ compile:
 	gnatbind-6 -x spectralnorm.ali
 	gnatlink-6 spectralnorm.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o spectralnorm.gnat-4.gnat_run
 
-measure:
-	/opt/rapl/main "./spectralnorm.gnat-4.gnat_run 5500" Ada spectral-norm
-
 run:
 	./spectralnorm.gnat-4.gnat_run 5500
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.gnat-4.gnat_run 5500
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./spectralnorm.gnat-4.gnat_run 5500

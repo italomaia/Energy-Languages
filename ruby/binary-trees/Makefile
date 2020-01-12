@@ -1,14 +1,9 @@
 compile:
 
 
-measure:
-	/opt/rapl/main "${BINARY} -W0 binarytrees.yarv-5.yarv 21" Ruby binary-trees
-
 run:
 	${BINARY} -W0 binarytrees.yarv-5.yarv 21
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -W0 binarytrees.yarv-5.yarv 21
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} -W0 binarytrees.yarv-5.yarv 21

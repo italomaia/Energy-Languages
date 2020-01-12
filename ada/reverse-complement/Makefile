@@ -7,14 +7,9 @@ compile:
 	gnatbind-6 -x revcomp.ali
 	gnatlink-6 revcomp.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o revcomp.gnat-2.gnat_run
 
-measure:
-	/opt/rapl/main "./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt" Ada reverse-complement
-
 run:
 	./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt

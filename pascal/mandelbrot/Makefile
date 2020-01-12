@@ -4,14 +4,9 @@ compile:
 	mv FPASCAL_RUN mandelbrot.fpascal-5.fpascal_run
 	rm mandelbrot.fpascal-5.pas
 
-measure:
-	/opt/rapl/main "./mandelbrot.fpascal-5.fpascal_run 16000" Pascal mandelbrot
-
 run:
 	./mandelbrot.fpascal-5.fpascal_run 16000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./mandelbrot.fpascal-5.fpascal_run 16000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ./mandelbrot.fpascal-5.fpascal_run 16000

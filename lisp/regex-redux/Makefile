@@ -9,8 +9,6 @@ xmeasure:
 clean:
 	rm -rf *core
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v regexredux.core < 0 < /root/data/regexredux-input5000000.txt Lisp regex-redux
 
-valgrind:
-	valgrind --tool=massif --stacks=yes sbcl --noinform --core regexredux.core < 0 < /root/data/regexredux-input5000000.txt Lisp regex-redux

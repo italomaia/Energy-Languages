@@ -1,17 +1,12 @@
 compile:
 	/usr/bin/hh_client
 
-xmeasure:
-	/opt/rapl/main "/usr/bin/hhvm  nbody.hack-5.hack 50000000" Hack pidigits
-
-run:
+xrun:
 	/usr/bin/hhvm  nbody.hack-5.hack 50000000
 	killall hh_server
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/bin/hhvm  nbody.hack-5.hack 50000000
 	killall hh_server
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/hhvm  nbody.hack-5.hack 50000000
 	killall hh_server

@@ -1,13 +1,8 @@
 compile:
 	ifort -O3 -fast -qopenmp mandelbrot.ifc-4.f90 -o mandelbrot.ifc-4.ifc_run
-measure:
-	/opt/rapl/main "./mandelbrot.ifc-4.ifc_run 16000" Fortran mandelbrot
-
 run:
 	./mandelbrot.ifc-4.ifc_run 16000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./mandelbrot.ifc-4.ifc_run 16000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./mandelbrot.ifc-4.ifc_run 16000

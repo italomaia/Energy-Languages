@@ -1,13 +1,8 @@
 compile:
 
-measure:
-	/opt/rapl/main "php -n -d memory_limit=4096M binarytrees.php-5.php 21" PHP binary-trees
-
 run:
 	php -n -d memory_limit=4096M binarytrees.php-5.php 21
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v php -n -d memory_limit=4096M binarytrees.php-5.php 21
 
-valgrind:
-	valgrind --tool=massif --stacks=yes php -n -d memory_limit=4096M binarytrees.php-5.php 21

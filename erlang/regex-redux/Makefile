@@ -1,14 +1,9 @@
 compile:
 	cp regexredux.hipe-6.hipe regexredux.erl
 	${COMPILER} +native +"{hipe, [o3]}" regexredux.erl
-xmeasure:
-	/opt/rapl/main "${BINARY} -smp enable -noshell -run -noinput -run regexredux main 0 < ../../regexredux-input50000.txt" Erlang regex-redux
-
-run:
+xrun:
 	${BINARY} -smp enable -noshell -run -noinput -run regexredux main 0 < ../../regexredux-input50000.txt
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ${BINARY} -smp enable -noshell -run -noinput -run regexredux main 0 < ../../regexredux-input50000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ${BINARY} -smp enable -noshell -run -noinput -run regexredux main 0 < ../../regexredux-input50000.txt

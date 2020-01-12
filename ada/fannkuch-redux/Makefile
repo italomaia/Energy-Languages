@@ -5,14 +5,9 @@ compile:
 	gnatbind-6 -x fannkuchredux.ali
 	gnatlink-6 fannkuchredux.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o fannkuchredux.gnat-3.gnat_run
 
-measure:
-	/opt/rapl/main "./fannkuchredux.gnat-3.gnat_run 12" Ada fannkuch-redux
-
 run:
 	./fannkuchredux.gnat-3.gnat_run 12
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./fannkuchredux.gnat-3.gnat_run 12
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ./fannkuchredux.gnat-3.gnat_run 12

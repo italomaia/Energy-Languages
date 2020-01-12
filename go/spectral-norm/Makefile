@@ -1,14 +1,9 @@
 compile:
 	/usr/bin/go build -o spectralnorm.go-4.go_run
 
-measure:
-	/opt/rapl/main "./spectralnorm.go-4.go_run 5500" Go spectral-norm
-
 run:
 	./spectralnorm.go-4.go_run 5500
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./spectralnorm.go-4.go_run 5500
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ./spectralnorm.go-4.go_run 5500

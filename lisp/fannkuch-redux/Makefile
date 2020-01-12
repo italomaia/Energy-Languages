@@ -1,19 +1,14 @@
 compile:
 	sbcl --load fannkuch.lisp --eval "(save-lisp-and-die \"fannkuch.core\" :purify t :toplevel (lambda () (main) (quit)))"
 
-measure:
-	/opt/rapl/main "sbcl --noinform --core fannkuch.core 12" Lisp fannkuch-redux
-
 run:
 	sbcl --noinform --core fannkuch.core 12
 
 clean:
 	rm -rf *core
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v sbcl --noinform --core fannkuch.core 12
 
 
-valgrind:
-	valgrind --tool=massif --stacks=yes sbcl --noinform --core fannkuch.core 12
 

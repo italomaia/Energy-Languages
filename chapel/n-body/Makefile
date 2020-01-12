@@ -1,13 +1,8 @@
 compile:
 	/usr/local/src/chapel-1.15.0/bin/linux64/chpl --fast nbody.chpl -o nbody.chapel_run
-measure:
-	/opt/rapl/main "./nbody.chapel_run --n=50000000" Chapel n-body
-
 run:
 	./nbody.chapel_run --n=50000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./nbody.chapel_run --n=50000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./nbody.chapel_run --n=50000000

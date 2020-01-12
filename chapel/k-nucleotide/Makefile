@@ -1,15 +1,10 @@
 compile:
 	/usr/local/src/chapel-1.15.0/bin/linux64/chpl --fast knucleotide.chpl -o knucleotide.chapel_run
-measure:
-	/opt/rapl/main "./knucleotide.chapel_run --n=0 < /root/data/knucleotide-input25000000.txt" Chapel k-nucleotide
-
 run:
 	./knucleotide.chapel_run --n=0 < /root/data/knucleotide-input25000000.txt
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./knucleotide.chapel_run --n=0 < /root/data/knucleotide-input25000000.txt
 
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./knucleotide.chapel_run --n=0 < /root/data/knucleotide-input25000000.txt
 

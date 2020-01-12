@@ -1,14 +1,9 @@
 compile:
 	${COMPILER}  -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs spectralnorm.rs -o spectralnorm.rust-4.rust_run
 
-measure:
-	/opt/rapl/main "./spectralnorm.rust-4.rust_run 5500" Rust spectral-norm
-
 run:
 	./spectralnorm.rust-4.rust_run 5500
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.rust-4.rust_run 5500
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./spectralnorm.rust-4.rust_run 5500

@@ -1,14 +1,9 @@
 compile:
 	/usr/bin/go build -o regexredux.go-2.go_run
 
-xmeasure:
-	/opt/rapl/main "./regexredux.go-2.go_run 0 < /root/data/regexredux-input5000000.txt" Go regex-redux
-
-run:
+xrun:
 	./regexredux.go-2.go_run 0 < /root/data/regexredux-input5000000.txt
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./regexredux.go-2.go_run 0 < /root/data/regexredux-input5000000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./regexredux.go-2.go_run 0 < /root/data/regexredux-input5000000.txt

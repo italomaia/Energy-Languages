@@ -5,14 +5,9 @@ compile:
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp pidigits.adb
 	gnatbind-6 -x pidigits.ali
 	gnatlink-6 pidigits.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o pidigits.gnat-2.gnat_run
-measure:
-	/opt/rapl/main "./pidigits.gnat-2.gnat_run 10000" Ada pidigits
-
 run:
 	./pidigits.gnat-2.gnat_run 10000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./pidigits.gnat-2.gnat_run 10000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ./pidigits.gnat-2.gnat_run 10000

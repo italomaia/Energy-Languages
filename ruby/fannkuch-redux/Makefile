@@ -1,14 +1,9 @@
 compile:
 
 
-measure:
-	/opt/rapl/main "${BINARY} -W0 fannkuchredux.yarv-2.yarv 12" Ruby fannkuch-redux
-
 run:
 	${BINARY} -W0 fannkuchredux.yarv-2.yarv 12
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -W0 fannkuchredux.yarv-2.yarv 12
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} -W0 fannkuchredux.yarv-2.yarv 12

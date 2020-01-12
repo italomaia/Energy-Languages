@@ -10,14 +10,9 @@ compile:
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp u.ads
 	gnatbind-6 -x regexredux.ali
 	gnatlink-6 regexredux.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o regexredux.gnat-5.gnat_run
-measure:
-	/opt/rapl/main "./regexredux.gnat-5.gnat_run 0 < /root/data/regexredux-input5000000.txt" Ada regex-redux
-
 run:
 	./regexredux.gnat-5.gnat_run 0 < /root/data/regexredux-input5000000.txt
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./regexredux.gnat-5.gnat_run 0 < /root/data/regexredux-input5000000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./regexredux.gnat-5.gnat_run 0 < /root/data/regexredux-input5000000.txt

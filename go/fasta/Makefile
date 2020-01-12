@@ -1,14 +1,9 @@
 compile:
 	/usr/bin/go build -o fasta.go-3.go_run
 
-measure:
-	/opt/rapl/main "./fasta.go-3.go_run 25000000" Go fasta
-
 run:
 	./fasta.go-3.go_run 25000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.go-3.go_run 25000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./fasta.go-3.go_run 25000000

@@ -1,13 +1,8 @@
 compile:
 
-measure:
-	/opt/rapl/main "php  mandelbrot.php-3.php 16000" PHP mandelbrot
-
 run:
 	php  mandelbrot.php-3.php 16000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v php  mandelbrot.php-3.php 16000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes php  mandelbrot.php-3.php 16000

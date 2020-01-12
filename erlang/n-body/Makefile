@@ -1,14 +1,9 @@
 compile:
 	cp nbody.hipe-3.hipe nbody.erl
 	${COMPILER} +native +"{hipe, [o3]}" nbody.erl
-measure:
-	/opt/rapl/main "${BINARY} -smp enable -noshell -run  nbody main 50000000" Erlang n-body
-
 run:
 	${BINARY} -smp enable -noshell -run  nbody main 50000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ${BINARY} -smp enable -noshell -run  nbody main 50000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ${BINARY} -smp enable -noshell -run  nbody main 50000000

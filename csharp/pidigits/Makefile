@@ -2,14 +2,9 @@ compile:
 	cp pidigits.csharpcore-3.csharpcore Program.cs
 	/usr/bin/dotnet build -c Release
 
-measure:
-	/opt/rapl/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 10000" CSharp pidigits
-
 run:
 	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 10000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 10000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 10000

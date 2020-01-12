@@ -1,14 +1,9 @@
 compile:
 
 
-xmeasure:
-	/opt/rapl/main "${BINARY} -W0 pidigits.yarv-5.yarv 10000" Ruby pidigits
-
-run:
+xrun:
 	${BINARY} -W0 pidigits.yarv-5.yarv 10000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ${BINARY} -W0 pidigits.yarv-5.yarv 10000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ${BINARY} -W0 pidigits.yarv-5.yarv 10000

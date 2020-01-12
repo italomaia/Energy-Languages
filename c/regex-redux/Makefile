@@ -1,9 +1,6 @@
 compile:
 	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp regexredux.gcc-4.c -o regexredux.gcc-4.gcc_run -lpcre
-measure:
-	/opt/rapl/main "./regexredux.gcc-4.gcc_run 0 < /root/data/regexredux-input5000000.txt" C regex-redux
-
 run:
 	./regexredux.gcc-4.gcc_run 0 < /root/data/regexredux-input5000000.txt
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./regexredux.gcc-4.gcc_run 0 < /root/data/regexredux-input5000000.txt

@@ -1,9 +1,6 @@
 compile:
 	/usr/local/src/chapel-1.15.0/bin/linux64/chpl --fast pidigits.chapel-2.chpl -o pidigits.chapel-2.chapel_run
-xmeasure:
-	/opt/rapl/main "./pidigits.chapel-2.chapel_run --n=10000" Chapel pidigits
-
-run:
+xrun:
 	./pidigits.chapel-2.chapel_run --n=10000
 
 comp2:
@@ -17,8 +14,6 @@ comp2:
 	echo ""; \
 	fi
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./pidigits.chapel-2.chapel_run --n=10000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./pidigits.chapel-2.chapel_run --n=10000

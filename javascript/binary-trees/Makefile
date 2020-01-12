@@ -1,13 +1,8 @@
 compile:
 	cp -L binarytrees.node binarytrees.js
-measure:
-	/opt/rapl/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node binarytrees.js 21" JavaScript binary-trees
-
 run:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node binarytrees.js 21
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/local/src/node-v7.9.0-linux-x64/bin/node binarytrees.js 21
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node binarytrees.js 21

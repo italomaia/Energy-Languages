@@ -10,14 +10,9 @@ compile:
 	gnatbind-6 -x fasta.ali
 	gnatlink-6 fasta.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o fasta.gnat-5.gnat_run
 
-measure:
-	/opt/rapl/main "./fasta.gnat-5.gnat_run 25000000" Ada fasta
-
 run:
 	./fasta.gnat-5.gnat_run 25000000
 
-mem:
+measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.gnat-5.gnat_run 25000000
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./fasta.gnat-5.gnat_run 25000000
