@@ -41,17 +41,23 @@ def get_data_folder():
     return os.path.join(os.getcwd(), "data/")
 
 
-def get_result_folder():
-    return os.path.join(os.getcwd(), "result/")
+def get_results_folder():
+    return os.path.join(os.getcwd(), "results/")
+
+
+def get_measures_folder():
+    return os.path.join(os.getcwd(), "measures/")
 
 
 def run_docker_image(image_name: str, action: str):
     data_folder = get_data_folder()
-    result_folder = get_result_folder()
+    results_folder = get_results_folder()
+    measures_folder = get_measures_folder()
     cmd = [
         "docker", 'run', '--rm',
         "-v", "%s:/root/data/" % data_folder,
-        "-v", "%s:/opt/result/" % result_folder,
+        "-v", "%s:/opt/results/" % results_folder,
+        "-v", "%s:/opt/measures/" % measures_folder,
         image_name, "/usr/bin/python3", "compile_all.py", action
     ]
 

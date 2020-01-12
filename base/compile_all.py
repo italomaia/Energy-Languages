@@ -25,13 +25,21 @@ def main(action):
             cmd = ['make', action]
             print("compile_all: " + ' '.join(cmd))
 
+            if action == 'run':
+                t_lang = os.getenv('TLANG')  # language name
+                results_filepath = f"/opt/results/{t_lang}.txt"
+
+                # clean measures before running
+                if os.path.exists(results_filepath):
+                    os.remove(results_filepath)
+
             if action == 'measure':
                 t_lang = os.getenv('TLANG')  # language name
-                output_filepath = f"/opt/result/{t_lang}.txt"
+                measures_filepath = f"/opt/measures/{t_lang}.txt"
 
-                # clean output before running
-                if os.path.exists(output_filepath):
-                    os.remove(output_filepath)
+                # clean measures before running
+                if os.path.exists(measures_filepath):
+                    os.remove(measures_filepath)
 
             pipes = Popen(cmd, cwd=root, bufsize=0, stdout=PIPE, stderr=PIPE)
             std_out, std_err = pipes.communicate()
