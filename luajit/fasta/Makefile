@@ -1,13 +1,8 @@
 compile:
-
-measure:
-	/opt/rapl/main "${BINARY} fasta.lua-3.lua 25000000" Lua fasta
+	echo "luajit: nothing to do"
 
 run:
-	${BINARY} fasta.lua-3.lua 25000000
+	${BINARY} fasta.lua-3.lua 25000000 >> /opt/results/${TLANG}.txt
 
-mem:
-	/usr/bin/time -v  ${BINARY} fasta.lua-3.lua 25000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  ${BINARY} fasta.lua-3.lua 25000000
+measure:
+	/usr/bin/time -v  ${BINARY} fasta.lua-3.lua 25000000 >> /opt/measures/${TLANG}.txt

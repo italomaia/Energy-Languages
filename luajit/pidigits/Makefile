@@ -1,15 +1,8 @@
 compile:
-
-xmeasure:
-	/opt/rapl/main "${BINARY} pidigits.lua-5.lua 10000" Lua pidigits
+	echo "luajit: nothing to do"
 
 run:
-	${BINARY} pidigits.lua-5.lua 10000
+	${BINARY} pidigits.lua-5.lua 10000 >> /opt/results/${TLANG}.txt
 
-mem:
-	/usr/bin/time -v ${BINARY} pidigits.lua-5.lua 10000
-
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} pidigits.lua-5.lua 10000
-
+measure:
+	/usr/bin/time -v ${BINARY} pidigits.lua-5.lua 10000 >> /opt/measures/${TLANG}.txt

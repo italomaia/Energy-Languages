@@ -1,13 +1,8 @@
 compile:
-
-measure:
-	/opt/rapl/main "${BINARY} knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt" Lua k-nucleotide
+	echo "luajit: nothing to do"
 
 run:
-	${BINARY} knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt
+	${BINARY} knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt >> /opt/results/${TLANG}.txt
 
-mem:
-	/usr/bin/time -v ${BINARY} knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt
+measure:
+	/usr/bin/time -v ${BINARY} knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt >> /opt/measures/${TLANG}.txt

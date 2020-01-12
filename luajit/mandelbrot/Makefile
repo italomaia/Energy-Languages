@@ -1,13 +1,8 @@
 compile:
-
-measure:
-	/opt/rapl/main "${BINARY} mandelbrot.lua-6.lua 16000" Lua mandelbrot
+	echo "luajit: nothing to do"
 
 run:
-	${BINARY} mandelbrot.lua-6.lua 16000
+	${BINARY} mandelbrot.lua-6.lua 16000 >> /opt/results/${TLANG}.txt
 
-mem:
-	/usr/bin/time -v  ${BINARY} mandelbrot.lua-6.lua 16000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  ${BINARY} mandelbrot.lua-6.lua 16000
+measure:
+	/usr/bin/time -v  ${BINARY} mandelbrot.lua-6.lua 16000 >> /opt/measures/${TLANG}.txt

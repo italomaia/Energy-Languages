@@ -1,13 +1,8 @@
 compile:
-
-measure:
-	/opt/rapl/main "${BINARY} nbody.lua-2.lua 50000000" Lua n-body
+	echo "luajit: nothing to do"
 
 run:
-	${BINARY} nbody.lua-2.lua 50000000
+	${BINARY} nbody.lua-2.lua 50000000 >> /opt/results/${TLANG}.txt
 
-mem:
-	/usr/bin/time -v  ${BINARY} nbody.lua-2.lua 50000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  ${BINARY} nbody.lua-2.lua 50000000
+measure:
+	/usr/bin/time -v  ${BINARY} nbody.lua-2.lua 50000000 >> /opt/measures/${TLANG}.txt

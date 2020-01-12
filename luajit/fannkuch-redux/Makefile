@@ -1,13 +1,8 @@
 compile:
-
-measure:
-	/opt/rapl/main "${BINARY} fannkuchredux.lua 12" Lua fannkuch-redux
+	echo "luajit: nothing to do"
 
 run:
-	${BINARY} fannkuchredux.lua 12
+	${BINARY} fannkuchredux.lua 12 >> /opt/results/${TLANG}.txt
 
-mem:
-	/usr/bin/time -v ${BINARY} fannkuchredux.lua 12
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} fannkuchredux.lua 12
+measure:
+	/usr/bin/time -v ${BINARY} fannkuchredux.lua 12 >> /opt/measures/${TLANG}.txt

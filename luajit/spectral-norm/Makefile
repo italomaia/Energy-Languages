@@ -1,13 +1,8 @@
 compile:
-
-measure:
-	/opt/rapl/main "${BINARY} spectralnorm.lua 5500" Lua spectral-norm
+	echo "luajit: nothing to do"
 
 run:
-	${BINARY} spectralnorm.lua 5500
+	${BINARY} spectralnorm.lua 5500 >> /opt/results/${TLANG}.txt
 
-mem:
-	/usr/bin/time -v ${BINARY} spectralnorm.lua 5500
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} spectralnorm.lua 5500
+measure:
+	/usr/bin/time -v ${BINARY} spectralnorm.lua 5500 >> /opt/measures/${TLANG}.txt
