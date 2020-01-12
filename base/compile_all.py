@@ -27,9 +27,11 @@ def main(action):
 
             if action == 'measure':
                 t_lang = os.getenv('TLANG')  # language name
+                output_filepath = f"/opt/result/{t_lang}.txt"
 
                 # clean output before running
-                check_output(["rm", f"/opt/result/{t_lang}.txt"])
+                if os.path.exists(output_filepath):
+                    os.remove(output_filepath)
 
             pipes = Popen(cmd, cwd=root, bufsize=0, stdout=PIPE, stderr=PIPE)
             std_out, std_err = pipes.communicate()
