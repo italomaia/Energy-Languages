@@ -1,10 +1,8 @@
 compile:
 	cp nbody.python3 nbody.py
-measure:
-	/opt/rapl/main "${BINARY} -OO nbody.py 50000000" Python n-body
 
 run:
 	${BINARY} -OO nbody.py 50000000
 
-mem:
+measure:
 	/usr/bin/time -v ${BINARY} -OO nbody.py 50000000

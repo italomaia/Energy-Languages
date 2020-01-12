@@ -1,10 +1,8 @@
 compile:
 	cp knucleotide.python3-3.python3 knucleotide.python3-3.py
-measure:
-	/opt/rapl/main "${BINARY} -OO knucleotide.python3-3.py 0 < /root/data/knucleotide-input25000000.txt" Python k-nucleotide
 
 run:
 	${BINARY} -OO knucleotide.python3-3.py 0 < /root/data/knucleotide-input25000000.txt
 
-mem:
+measure:
 	/usr/bin/time -v ${BINARY} -OO knucleotide.python3-3.py 0 < /root/data/knucleotide-input25000000.txt

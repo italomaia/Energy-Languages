@@ -1,11 +1,8 @@
 compile:
 	cp binarytrees.python3 binarytrees.py
 
-measure:
-	/opt/rapl/main "${BINARY} -OO binarytrees.py 21" Python binary-trees
-
 run:
 	${BINARY} -OO binarytrees.py 21
 
-mem:
+measure:
 	/usr/bin/time -v ${BINARY} -OO binarytrees.py 21
