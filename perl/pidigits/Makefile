@@ -1,13 +1,7 @@
 compile:
 
-measure:
-	/opt/rapl/main "perl pidigits.perl-4.perl 10000" Perl pidigits
-
 run:
 	perl pidigits.perl-4.perl 10000
 
-mem:
+measure:
 	/usr/bin/time -v perl pidigits.perl-4.perl 10000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes perl pidigits.perl-4.perl 10000

@@ -1,13 +1,7 @@
 compile:
 
-measure:
-	/opt/rapl/main "${BINARY} knucleotide.perl 0 < /root/data/knucleotide-input25000000.txt" Perl k-nucleotide
-
 run:
 	${BINARY} knucleotide.perl 0 < /root/data/knucleotide-input25000000.txt
 
-mem:
+measure:
 	/usr/bin/time -v ${BINARY} knucleotide.perl 0 < /root/data/knucleotide-input25000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} knucleotide.perl 0 < /root/data/knucleotide-input25000000.txt

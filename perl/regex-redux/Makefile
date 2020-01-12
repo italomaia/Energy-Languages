@@ -1,13 +1,7 @@
 compile:
 
-measure:
-	/opt/rapl/main "${BINARY} regexredux.perl-4.perl 0 < /root/data/regexredux-input5000000.txt" Perl regex-redux
-
 run:
 	${BINARY} regexredux.perl-4.perl 0 < /root/data/regexredux-input5000000.txt
 
-mem:
+measure:
 	/usr/bin/time -v ${BINARY} regexredux.perl-4.perl 0 < /root/data/regexredux-input5000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} regexredux.perl-4.perl 0 < /root/data/regexredux-input5000000.txt
