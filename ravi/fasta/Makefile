@@ -3,13 +3,13 @@ BINARY=/usr/bin/ravi
 compile:
 
 measure:
-	/opt/rapl/main "${BINARY}  fasta.lua-3.lua 25000000" Lua fasta
+	/opt/rapl/main "${BINARY} fasta.lua-3.lua 25000000" Lua fasta
 
 run:
-	${BINARY}  fasta.lua-3.lua 25000000
+	${BINARY} fasta.lua-3.lua 25000000
 
 mem:
-	/usr/bin/time -v  ${BINARY}  fasta.lua-3.lua 25000000
+	/usr/bin/time -v  ${BINARY} fasta.lua-3.lua 25000000
 
 valgrind:
-	valgrind --tool=massif --stacks=yes  ${BINARY}  fasta.lua-3.lua 25000000
+	valgrind --tool=massif --stacks=yes  ${BINARY} fasta.lua-3.lua 25000000

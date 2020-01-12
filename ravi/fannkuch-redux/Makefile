@@ -3,13 +3,13 @@ BINARY=/usr/bin/ravi
 compile:
 
 measure:
-	/opt/rapl/main "${BINARY}  fannkuchredux.lua 12" Lua fannkuch-redux
+	/opt/rapl/main "${BINARY} fannkuchredux.lua 12" Lua fannkuch-redux
 
 run:
-	${BINARY}  fannkuchredux.lua 12
+	${BINARY} fannkuchredux.lua 12
 
 mem:
-	/usr/bin/time -v ${BINARY}  fannkuchredux.lua 12
+	/usr/bin/time -v ${BINARY} fannkuchredux.lua 12
 
 valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY}  fannkuchredux.lua 12
+	valgrind --tool=massif --stacks=yes ${BINARY} fannkuchredux.lua 12
