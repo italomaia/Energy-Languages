@@ -1,14 +1,8 @@
-
 compile:
-
-xmeasure:
-	/opt/rapl/main "${BINARY} regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt" Lua regex-redux
+	echo "lua53: nothing to do"
 
 run:
 	${BINARY} regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt
 
-mem:
+measure:
 	/usr/bin/time -v ${BINARY} regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ${BINARY} regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt
