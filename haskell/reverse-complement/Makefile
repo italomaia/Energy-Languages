@@ -8,7 +8,7 @@ run:
 	./revcomp.ghc-3.ghc_run +RTS -N4 -RTS 0 < /root/data/revcomp-input25000000.txt
 
 mem:
-	/usr/bin/time -v  ./revcomp.ghc-3.ghc_run +RTS -N4 -RTS 0 < /root/data/revcomp-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./revcomp.ghc-3.ghc_run +RTS -N4 -RTS 0 < /root/data/revcomp-input25000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./revcomp.ghc-3.ghc_run +RTS -N4 -RTS 0 < /root/data/revcomp-input25000000.txt

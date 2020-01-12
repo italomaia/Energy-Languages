@@ -7,5 +7,5 @@ run:
 	./spectralnorm.gcc-4.gcc_run 5500
 
 mem:
-	/usr/bin/time -v ./spectralnorm.gcc-4.gcc_run 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.gcc-4.gcc_run 5500
 

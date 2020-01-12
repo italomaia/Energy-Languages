@@ -7,7 +7,7 @@ run:
 	./chameneosredux.chapel_run --n=6000000
 
 mem:
-	/usr/bin/time -v ./chameneosredux.chapel_run --n=6000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./chameneosredux.chapel_run --n=6000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./chameneosredux.chapel_run --n=6000000

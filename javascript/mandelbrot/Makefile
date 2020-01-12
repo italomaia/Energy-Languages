@@ -7,7 +7,7 @@ run:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node mandelbrot.js 16000
 
 mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node mandelbrot.js 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/local/src/node-v7.9.0-linux-x64/bin/node mandelbrot.js 16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node mandelbrot.js 16000

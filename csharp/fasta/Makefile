@@ -9,7 +9,7 @@ run:
 	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 25000000
 
 mem:
-	/usr/bin/time -v  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 25000000

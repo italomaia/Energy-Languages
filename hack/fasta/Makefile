@@ -9,7 +9,7 @@ run:
 	killall hh_server
 
 mem:
-	/usr/bin/time -v /usr/bin/hhvm  fasta.hack-4.hack 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/bin/hhvm  fasta.hack-4.hack 25000000
 	killall hh_server
 
 valgrind:

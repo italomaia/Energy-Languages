@@ -7,4 +7,4 @@ run:
 	./knucleotide.gcc_run 0 < /root/data/knucleotide-input25000000.txt
 
 mem:
-	/usr/bin/time -v ./knucleotide.gcc_run 0 < /root/data/knucleotide-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./knucleotide.gcc_run 0 < /root/data/knucleotide-input25000000.txt

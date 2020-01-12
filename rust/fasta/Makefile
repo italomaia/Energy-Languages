@@ -8,7 +8,7 @@ run:
 	./fasta.rust-2.rust_run 25000000
 
 mem:
-	/usr/bin/time -v ./fasta.rust-2.rust_run 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.rust-2.rust_run 25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./fasta.rust-2.rust_run 25000000

@@ -8,7 +8,7 @@ run:
 	/usr/local/src/jdk1.8.0_121/bin/java   regexredux 0 < /root/data/regexredux-input5000000.txt
 
 mem:
-	/usr/bin/time -v /usr/local/src/jdk1.8.0_121/bin/java   regexredux 0 < /root/data/regexredux-input5000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/local/src/jdk1.8.0_121/bin/java   regexredux 0 < /root/data/regexredux-input5000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes /usr/local/src/jdk1.8.0_121/bin/java   regexredux 0 < /root/data/regexredux-input5000000.txt

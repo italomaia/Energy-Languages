@@ -7,7 +7,7 @@ run:
 	./fasta.chapel-2.chapel_run --n=25000000
 
 mem:
-	/usr/bin/time -v ./fasta.chapel-2.chapel_run --n=25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.chapel-2.chapel_run --n=25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./fasta.chapel-2.chapel_run --n=25000000

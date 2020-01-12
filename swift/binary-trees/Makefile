@@ -8,7 +8,7 @@ run:
 	./binarytrees.swift-9.swift_run 21
 
 mem:
-	/usr/bin/time -v ./binarytrees.swift-9.swift_run 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.swift-9.swift_run 21
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./binarytrees.swift-9.swift_run 21

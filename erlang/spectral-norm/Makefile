@@ -8,7 +8,7 @@ run:
 	${BINARY} -smp enable -noshell -run  spectralnorm main 5500
 
 mem:
-	/usr/bin/time -v ${BINARY} -smp enable -noshell -run  spectralnorm main 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -smp enable -noshell -run  spectralnorm main 5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ${BINARY} -smp enable -noshell -run  spectralnorm main 5500

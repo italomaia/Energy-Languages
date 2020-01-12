@@ -7,7 +7,7 @@ run:
 	./pidigits.ifc-3.ifc_run 10000
 
 mem:
-	/usr/bin/time -v  ./pidigits.ifc-3.ifc_run 10000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./pidigits.ifc-3.ifc_run 10000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./pidigits.ifc-3.ifc_run 10000

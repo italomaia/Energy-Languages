@@ -6,4 +6,4 @@ measure:
 run:
 	./pidigits.gcc_run 10000
 mem:
-	/usr/bin/time -v ./pidigits.gcc_run 10000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./pidigits.gcc_run 10000

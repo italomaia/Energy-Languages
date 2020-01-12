@@ -9,7 +9,7 @@ run:
 	./binarytrees.ghc_run +RTS -N4 -K128M -H -RTS 21
 
 mem:
-	/usr/bin/time -v  ./binarytrees.ghc_run +RTS -N4 -K128M -H -RTS 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./binarytrees.ghc_run +RTS -N4 -K128M -H -RTS 21
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./binarytrees.ghc_run +RTS -N4 -K128M -H -RTS 21

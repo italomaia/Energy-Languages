@@ -8,7 +8,7 @@ run:
 	./pidigits.rust-2.rust_run 10000
 
 mem:
-	/usr/bin/time -v ./pidigits.rust-2.rust_run 10000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./pidigits.rust-2.rust_run 10000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./pidigits.rust-2.rust_run 10000

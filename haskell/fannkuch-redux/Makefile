@@ -8,7 +8,7 @@ run:
 	./fannkuchredux.ghc-3.ghc_run +RTS -N4 -RTS 12
 
 mem:
-	/usr/bin/time -v  ./fannkuchredux.ghc-3.ghc_run +RTS -N4 -RTS 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./fannkuchredux.ghc-3.ghc_run +RTS -N4 -RTS 12
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./fannkuchredux.ghc-3.ghc_run +RTS -N4 -RTS 12

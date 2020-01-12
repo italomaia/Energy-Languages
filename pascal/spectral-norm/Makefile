@@ -10,7 +10,7 @@ run:
 	./spectralnorm.fpascal-2.fpascal_run 5500
 
 mem:
-	/usr/bin/time -v ./spectralnorm.fpascal-2.fpascal_run 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.fpascal-2.fpascal_run 5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./spectralnorm.fpascal-2.fpascal_run 5500

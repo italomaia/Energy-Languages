@@ -8,7 +8,7 @@ run:
 	./mandelbrot.go-3.go_run 16000
 
 mem:
-	/usr/bin/time -v ./mandelbrot.go-3.go_run 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./mandelbrot.go-3.go_run 16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./mandelbrot.go-3.go_run 16000

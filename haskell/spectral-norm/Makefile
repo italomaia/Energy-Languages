@@ -8,7 +8,7 @@ run:
 	./spectralnorm.ghc-4.ghc_run +RTS -N4 -RTS 5500
 
 mem:
-	/usr/bin/time -v ./spectralnorm.ghc-4.ghc_run +RTS -N4 -RTS 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.ghc-4.ghc_run +RTS -N4 -RTS 5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./spectralnorm.ghc-4.ghc_run +RTS -N4 -RTS 5500

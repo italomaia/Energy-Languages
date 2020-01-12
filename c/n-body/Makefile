@@ -7,4 +7,4 @@ run:
 	./nbody.gcc-4.gcc_run 50000000
 
 mem:
-	/usr/bin/time -v ./nbody.gcc-4.gcc_run 50000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./nbody.gcc-4.gcc_run 50000000

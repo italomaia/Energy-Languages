@@ -9,7 +9,7 @@ run:
 	killall hh_server
 
 mem:
-	/usr/bin/time -v /usr/bin/hhvm  mandelbrot.hack-3.hack 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/bin/hhvm  mandelbrot.hack-3.hack 16000
 	killall hh_server
 
 valgrind:

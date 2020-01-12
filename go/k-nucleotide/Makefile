@@ -8,7 +8,7 @@ run:
 	./knucleotide.go-6.go_run 0 < /root/data/knucleotide-input25000000.txt
 
 mem:
-	/usr/bin/time -v  ./knucleotide.go-6.go_run 0 < /root/data/knucleotide-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./knucleotide.go-6.go_run 0 < /root/data/knucleotide-input25000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./knucleotide.go-6.go_run 0 < /root/data/knucleotide-input25000000.txt

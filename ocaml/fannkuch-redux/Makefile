@@ -10,7 +10,7 @@ run:
 	./fannkuchredux.ocaml-4.ocaml_run 12
 
 mem:
-	/usr/bin/time -v ./fannkuchredux.ocaml-4.ocaml_run 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fannkuchredux.ocaml-4.ocaml_run 12
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./fannkuchredux.ocaml-4.ocaml_run 12

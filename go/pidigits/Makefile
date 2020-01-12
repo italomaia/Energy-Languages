@@ -8,7 +8,7 @@ run:
 	./pidigits.go-3.go_run 10000
 
 mem:
-	/usr/bin/time -v ./pidigits.go-3.go_run 10000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./pidigits.go-3.go_run 10000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./pidigits.go-3.go_run 10000

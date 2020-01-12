@@ -8,4 +8,4 @@ run:
 	./fannkuchredux.gcc-5.gcc_run 12
 
 mem:
-	 /usr/bin/time -v ./fannkuchredux.gcc-5.gcc_run 12
+	 /usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fannkuchredux.gcc-5.gcc_run 12

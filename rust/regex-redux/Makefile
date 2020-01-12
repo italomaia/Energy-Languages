@@ -8,7 +8,7 @@ run:
 	./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt
 
 mem:
-	/usr/bin/time -v ./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./regexredux.rust_run 0 < /root/data/regexredux-input5000000.txt

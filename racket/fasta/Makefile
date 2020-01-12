@@ -8,7 +8,7 @@ run:
 	/usr/local/src/racket-6.8/bin/racket ./compiled/fasta.racket-3_racket.zo 25000000
 
 mem:
-	/usr/bin/time -v /usr/local/src/racket-6.8/bin/racket ./compiled/fasta.racket-3_racket.zo 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/local/src/racket-6.8/bin/racket ./compiled/fasta.racket-3_racket.zo 25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes /usr/local/src/racket-6.8/bin/racket ./compiled/fasta.racket-3_racket.zo 25000000

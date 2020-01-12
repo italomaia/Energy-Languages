@@ -8,7 +8,7 @@ run:
 	./spectralnorm.go-4.go_run 5500
 
 mem:
-	/usr/bin/time -v  ./spectralnorm.go-4.go_run 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./spectralnorm.go-4.go_run 5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./spectralnorm.go-4.go_run 5500

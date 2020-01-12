@@ -7,7 +7,7 @@ run:
 	php  mandelbrot.php-3.php 16000
 
 mem:
-	/usr/bin/time -v php  mandelbrot.php-3.php 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v php  mandelbrot.php-3.php 16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes php  mandelbrot.php-3.php 16000

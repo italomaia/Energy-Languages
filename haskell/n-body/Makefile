@@ -8,7 +8,7 @@ run:
 	./nbody.ghc-2.ghc_run +RTS -N4 -RTS 50000000
 
 mem:
-	/usr/bin/time -v  ./nbody.ghc-2.ghc_run +RTS -N4 -RTS 50000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./nbody.ghc-2.ghc_run +RTS -N4 -RTS 50000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./nbody.ghc-2.ghc_run +RTS -N4 -RTS 50000000

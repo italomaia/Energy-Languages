@@ -18,7 +18,7 @@ comp2:
 	fi
 
 mem:
-	/usr/bin/time -v ./pidigits.chapel-2.chapel_run --n=10000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./pidigits.chapel-2.chapel_run --n=10000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./pidigits.chapel-2.chapel_run --n=10000

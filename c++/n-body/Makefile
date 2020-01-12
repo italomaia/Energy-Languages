@@ -7,7 +7,7 @@ run:
 	./nbody.gpp-8.gpp_run 50000000
 
 mem:
-	/usr/bin/time -v ./nbody.gpp-8.gpp_run 50000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./nbody.gpp-8.gpp_run 50000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./nbody.gpp-8.gpp_run 50000000

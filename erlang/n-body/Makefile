@@ -8,7 +8,7 @@ run:
 	${BINARY} -smp enable -noshell -run  nbody main 50000000
 
 mem:
-	/usr/bin/time -v  ${BINARY} -smp enable -noshell -run  nbody main 50000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ${BINARY} -smp enable -noshell -run  nbody main 50000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ${BINARY} -smp enable -noshell -run  nbody main 50000000

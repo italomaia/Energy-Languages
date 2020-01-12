@@ -9,7 +9,7 @@ run:
 	${BINARY} pidigits.lua-5.lua 10000
 
 mem:
-	/usr/bin/time -v ${BINARY} pidigits.lua-5.lua 10000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} pidigits.lua-5.lua 10000
 
 
 valgrind:

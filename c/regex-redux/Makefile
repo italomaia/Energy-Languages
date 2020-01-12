@@ -6,4 +6,4 @@ measure:
 run:
 	./regexredux.gcc-4.gcc_run 0 < /root/data/regexredux-input5000000.txt
 mem:
-	/usr/bin/time -v ./regexredux.gcc-4.gcc_run 0 < /root/data/regexredux-input5000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./regexredux.gcc-4.gcc_run 0 < /root/data/regexredux-input5000000.txt

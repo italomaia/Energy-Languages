@@ -17,7 +17,7 @@ run:
 	./fasta.gnat-5.gnat_run 25000000
 
 mem:
-	/usr/bin/time -v ./fasta.gnat-5.gnat_run 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.gnat-5.gnat_run 25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./fasta.gnat-5.gnat_run 25000000

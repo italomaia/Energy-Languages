@@ -7,7 +7,7 @@ run:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node revcomp.node-7.js 0 < /root/data/revcomp-input25000000.txt
 
 mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node revcomp.node-7.js 0 < /root/data/revcomp-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/local/src/node-v7.9.0-linux-x64/bin/node revcomp.node-7.js 0 < /root/data/revcomp-input25000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node revcomp.node-7.js 0 < /root/data/revcomp-input25000000.txt

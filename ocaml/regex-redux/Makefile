@@ -9,7 +9,7 @@ run:
 	./regexredux.ocaml-2.ocaml_run 0 < /root/data/regexredux-input5000000.txt
 
 mem:
-	/usr/bin/time -v  /usr/bin/time -v  /usr/bin/time -v  ./regexredux.ocaml-2.ocaml_run 0 < /root/data/regexredux-input5000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  /usr/bin/time -o /opt/measures/${TLANG}.txt -v  /usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./regexredux.ocaml-2.ocaml_run 0 < /root/data/regexredux-input5000000.txt
 
 valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/bin/time -v  ./regexredux.ocaml-2.ocaml_run 0 < /root/data/regexredux-input5000000.txt
+	valgrind --tool=massif --stacks=yes  /usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./regexredux.ocaml-2.ocaml_run 0 < /root/data/regexredux-input5000000.txt

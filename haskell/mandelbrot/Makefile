@@ -8,7 +8,7 @@ run:
 	./mandelbrot.ghc-2.ghc_run +RTS -N4 -RTS 16000
 
 mem:
-	/usr/bin/time -v ./mandelbrot.ghc-2.ghc_run +RTS -N4 -RTS 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./mandelbrot.ghc-2.ghc_run +RTS -N4 -RTS 16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./mandelbrot.ghc-2.ghc_run +RTS -N4 -RTS 16000

@@ -12,7 +12,7 @@ run:
 	./fannkuchredux.gnat-3.gnat_run 12
 
 mem:
-	/usr/bin/time -v  ./fannkuchredux.gnat-3.gnat_run 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./fannkuchredux.gnat-3.gnat_run 12
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./fannkuchredux.gnat-3.gnat_run 12

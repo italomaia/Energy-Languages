@@ -8,7 +8,7 @@ run:
 	./fasta.gpp-5.gpp_run 25000000
 
 mem:
-	/usr/bin/time -v ./fasta.gpp-5.gpp_run 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.gpp-5.gpp_run 25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./fasta.gpp-5.gpp_run 25000000

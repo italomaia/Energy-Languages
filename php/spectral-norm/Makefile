@@ -7,7 +7,7 @@ run:
 	php -n  spectralnorm.php 5500
 
 mem:
-	/usr/bin/time -v php -n  spectralnorm.php 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v php -n  spectralnorm.php 5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes php -n  spectralnorm.php 5500

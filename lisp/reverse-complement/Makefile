@@ -11,7 +11,7 @@ clean:
 	rm -rf *.core
 
 mem:
-	/usr/bin/time -v  sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt

@@ -11,7 +11,7 @@ clean:
 	rm -rf *core
 
 mem:
-	/usr/bin/time -v sbcl --noinform --core fasta.core 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v sbcl --noinform --core fasta.core 25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes sbcl --noinform --core fasta.core 25000000

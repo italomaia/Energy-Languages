@@ -11,7 +11,7 @@ run:
 	./mandelbrot.fpascal-5.fpascal_run 16000
 
 mem:
-	/usr/bin/time -v  ./mandelbrot.fpascal-5.fpascal_run 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./mandelbrot.fpascal-5.fpascal_run 16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./mandelbrot.fpascal-5.fpascal_run 16000

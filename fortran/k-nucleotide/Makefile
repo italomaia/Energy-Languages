@@ -7,7 +7,7 @@ run:
 	./knucleotide.ifc_run 0 < /root/data/knucleotide-input25000000.txt
 
 mem:
-	/usr/bin/time -v  ./knucleotide.ifc_run 0 < /root/data/knucleotide-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./knucleotide.ifc_run 0 < /root/data/knucleotide-input25000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./knucleotide.ifc_run 0 < /root/data/knucleotide-input25000000.txt

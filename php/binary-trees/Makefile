@@ -7,7 +7,7 @@ run:
 	php -n -d memory_limit=4096M binarytrees.php-5.php 21
 
 mem:
-	/usr/bin/time -v php -n -d memory_limit=4096M binarytrees.php-5.php 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v php -n -d memory_limit=4096M binarytrees.php-5.php 21
 
 valgrind:
 	valgrind --tool=massif --stacks=yes php -n -d memory_limit=4096M binarytrees.php-5.php 21

@@ -8,7 +8,7 @@ run:
 	./mandelbrot.swift-3.swift_run 16000
 
 mem:
-	/usr/bin/time -v  ./mandelbrot.swift-3.swift_run 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./mandelbrot.swift-3.swift_run 16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./mandelbrot.swift-3.swift_run 16000

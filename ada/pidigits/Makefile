@@ -12,7 +12,7 @@ run:
 	./pidigits.gnat-2.gnat_run 10000
 
 mem:
-	/usr/bin/time -v  ./pidigits.gnat-2.gnat_run 10000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./pidigits.gnat-2.gnat_run 10000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./pidigits.gnat-2.gnat_run 10000

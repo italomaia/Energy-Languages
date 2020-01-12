@@ -7,7 +7,7 @@ run:
 	./binarytrees.chapel_run --n=21
 
 mem:
-	/usr/bin/time -v ./binarytrees.chapel_run --n=21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.chapel_run --n=21
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./binarytrees.chapel_run --n=21

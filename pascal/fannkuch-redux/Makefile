@@ -10,7 +10,7 @@ run:
 	./fannkuchredux.fpascal_run 12
 
 mem:
-	/usr/bin/time -v ./fannkuchredux.fpascal_run 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fannkuchredux.fpascal_run 12
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./fannkuchredux.fpascal_run 12

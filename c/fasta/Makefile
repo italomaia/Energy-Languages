@@ -8,4 +8,4 @@ run:
 	./fasta.gcc-2.gcc_run 25000000
 
 mem:
-	/usr/bin/time -v ./fasta.gcc-2.gcc_run 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.gcc-2.gcc_run 25000000

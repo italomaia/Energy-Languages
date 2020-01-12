@@ -9,7 +9,7 @@ run:
 	${BINARY} knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt
 
 mem:
-	/usr/bin/time -v ${BINARY} knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ${BINARY} knucleotide.lua-2.lua 0 < /root/data/knucleotide-input25000000.txt

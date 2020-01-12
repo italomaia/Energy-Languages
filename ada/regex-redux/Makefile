@@ -17,7 +17,7 @@ run:
 	./regexredux.gnat-5.gnat_run 0 < /root/data/regexredux-input5000000.txt
 
 mem:
-	/usr/bin/time -v ./regexredux.gnat-5.gnat_run 0 < /root/data/regexredux-input5000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./regexredux.gnat-5.gnat_run 0 < /root/data/regexredux-input5000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./regexredux.gnat-5.gnat_run 0 < /root/data/regexredux-input5000000.txt

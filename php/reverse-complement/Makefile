@@ -7,7 +7,7 @@ run:
 	php -n -d memory_limit=1024M revcomp.php-3.php 0 < /root/data/revcomp-input25000000.txt
 
 mem:
-	/usr/bin/time -v php -n -d memory_limit=1024M revcomp.php-3.php 0 < /root/data/revcomp-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v php -n -d memory_limit=1024M revcomp.php-3.php 0 < /root/data/revcomp-input25000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes php -n -d memory_limit=1024M revcomp.php-3.php 0 < /root/data/revcomp-input25000000.txt

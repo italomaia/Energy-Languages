@@ -9,7 +9,7 @@ run:
 	${BINARY} fasta.lua-3.lua 25000000
 
 mem:
-	/usr/bin/time -v  ${BINARY} fasta.lua-3.lua 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ${BINARY} fasta.lua-3.lua 25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ${BINARY} fasta.lua-3.lua 25000000

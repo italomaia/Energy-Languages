@@ -11,7 +11,7 @@ clean:
 	rm -rf *core
 
 mem:
-	/usr/bin/time -v sbcl --noinform --core fannkuch.core 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v sbcl --noinform --core fannkuch.core 12
 
 
 valgrind:

@@ -7,7 +7,7 @@ run:
 	./fasta.ifc-4.ifc_run 25000000
 
 mem:
-	/usr/bin/time -v ./fasta.ifc-4.ifc_run 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.ifc-4.ifc_run 25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./fasta.ifc-4.ifc_run 25000000

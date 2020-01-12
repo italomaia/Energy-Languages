@@ -14,7 +14,7 @@ run:
 	./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt
 
 mem:
-	/usr/bin/time -v ./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt

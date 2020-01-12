@@ -7,7 +7,7 @@ run:
 	php  fannkuchredux.php-3.php 12
 
 mem:
-	/usr/bin/time -v php  fannkuchredux.php-3.php 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v php  fannkuchredux.php-3.php 12
 
 valgrind:
 	valgrind --tool=massif --stacks=yes php  fannkuchredux.php-3.php 12

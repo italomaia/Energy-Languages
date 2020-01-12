@@ -7,7 +7,7 @@ run:
 	./mandelbrot.gpp-6.gpp_run 16000
 
 mem:
-	/usr/bin/time -v ./mandelbrot.gpp-6.gpp_run 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./mandelbrot.gpp-6.gpp_run 16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./mandelbrot.gpp-6.gpp_run 16000

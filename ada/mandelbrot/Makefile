@@ -11,7 +11,7 @@ run:
 	./mandelbrot.gnat-3.gnat_run 16000
 
 mem:
-	/usr/bin/time -v ./mandelbrot.gnat-3.gnat_run 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./mandelbrot.gnat-3.gnat_run 16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./mandelbrot.gnat-3.gnat_run 16000

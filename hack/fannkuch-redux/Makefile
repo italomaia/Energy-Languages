@@ -8,7 +8,7 @@ run:
 	/usr/bin/hhvm  fannkuchredux.hack-3.hack 12
 	killall hh_server
 mem:
-	/usr/bin/time -v /usr/bin/hhvm  fannkuchredux.hack-3.hack 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/bin/hhvm  fannkuchredux.hack-3.hack 12
 	killall hh_server
 
 valgrind:

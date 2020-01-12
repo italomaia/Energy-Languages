@@ -9,7 +9,7 @@ run:
 	${BINARY} binarytrees.lua-2.lua 21
 
 mem:
-	/usr/bin/time -v ${BINARY} binarytrees.lua-2.lua 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} binarytrees.lua-2.lua 21
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ${BINARY} binarytrees.lua-2.lua 21

@@ -7,7 +7,7 @@ run:
 	/usr/bin/dart  fannkuchredux.dart-2.dart 12
 
 mem:
-	/usr/bin/time -v /usr/bin/dart  fannkuchredux.dart-2.dart 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/bin/dart  fannkuchredux.dart-2.dart 12
 
 valgrind:
 	valgrind --tool=massif --stacks=yes /usr/bin/dart  fannkuchredux.dart-2.dart 12

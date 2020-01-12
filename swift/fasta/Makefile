@@ -8,7 +8,7 @@ run:
 	./fasta.swift-3.swift_run 25000000
 
 mem:
-	/usr/bin/time -v  ./fasta.swift-3.swift_run 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./fasta.swift-3.swift_run 25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./fasta.swift-3.swift_run 25000000

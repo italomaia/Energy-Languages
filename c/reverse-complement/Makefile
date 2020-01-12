@@ -7,4 +7,4 @@ run:
 	./revcomp.gcc-6.gcc_run 0 < /root/data/revcomp-input25000000.txt
 
 mem:
-	/usr/bin/time -v ./revcomp.gcc-6.gcc_run 0 < /root/data/revcomp-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./revcomp.gcc-6.gcc_run 0 < /root/data/revcomp-input25000000.txt

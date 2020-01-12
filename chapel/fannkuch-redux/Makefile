@@ -7,7 +7,7 @@ run:
 	./fannkuchredux.chapel_run --n=12
 
 mem:
-	/usr/bin/time -v ./fannkuchredux.chapel_run --n=12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fannkuchredux.chapel_run --n=12
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./fannkuchredux.chapel_run --n=12

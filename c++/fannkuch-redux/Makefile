@@ -7,7 +7,7 @@ run:
 	./fannkuchredux.gpp-5.gpp_run 12
 
 mem:
-	 /usr/bin/time -v  ./fannkuchredux.gpp-5.gpp_run 12
+	 /usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./fannkuchredux.gpp-5.gpp_run 12
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./fannkuchredux.gpp-5.gpp_run 12
 

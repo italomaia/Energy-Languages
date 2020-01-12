@@ -7,7 +7,7 @@ run:
 	php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt
 
 mem:
-	/usr/bin/time -v php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt

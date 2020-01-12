@@ -9,7 +9,7 @@ run:
 	killall hh_server
 
 mem:
-	/usr/bin/time -v /usr/bin/hhvm binarytrees.hack-4.hack 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/bin/hhvm binarytrees.hack-4.hack 21
 	killall hh_server
 
 valgrind:

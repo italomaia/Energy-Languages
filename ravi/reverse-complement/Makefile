@@ -9,7 +9,7 @@ run:
 	${BINARY} revcomp.lua-2.lua 0 < /root/data/revcomp-input25000000.txt
 
 mem:
-	/usr/bin/time -v ${BINARY} revcomp.lua-2.lua 0 < /root/data/revcomp-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} revcomp.lua-2.lua 0 < /root/data/revcomp-input25000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ${BINARY} revcomp.lua-2.lua 0 < /root/data/revcomp-input25000000.txt

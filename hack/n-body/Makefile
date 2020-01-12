@@ -9,7 +9,7 @@ run:
 	killall hh_server
 
 mem:
-	/usr/bin/time -v  /usr/bin/hhvm  nbody.hack-5.hack 50000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  /usr/bin/hhvm  nbody.hack-5.hack 50000000
 	killall hh_server
 
 valgrind:

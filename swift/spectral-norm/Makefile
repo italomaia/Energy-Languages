@@ -8,7 +8,7 @@ run:
 	./spectralnorm.swift-3.swift_run 5500
 
 mem:
-	/usr/bin/time -v ./spectralnorm.swift-3.swift_run 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.swift-3.swift_run 5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./spectralnorm.swift-3.swift_run 5500

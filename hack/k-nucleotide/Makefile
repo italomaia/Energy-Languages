@@ -9,7 +9,7 @@ run:
 	killall hh_server
 
 mem:
-	/usr/bin/time -v  /usr/bin/hhvm  knucleotide.hack-4.hack 0 < /root/data/knucleotide-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  /usr/bin/hhvm  knucleotide.hack-4.hack 0 < /root/data/knucleotide-input25000000.txt
 	 killall hh_server
 
 valgrind:

@@ -7,7 +7,7 @@ run:
 	/usr/bin/dart  binarytrees.dart 21
 
 mem:
-	/usr/bin/time -v  /usr/bin/dart  binarytrees.dart 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  /usr/bin/dart  binarytrees.dart 21
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  /usr/bin/dart  binarytrees.dart 21

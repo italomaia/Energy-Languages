@@ -11,7 +11,7 @@ clean:
 	rm -rf *.core
 
 mem:
-	/usr/bin/time -v  sbcl --noinform --core spectralnorm.core 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  sbcl --noinform --core spectralnorm.core 5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  sbcl --noinform --core spectralnorm.core 5500

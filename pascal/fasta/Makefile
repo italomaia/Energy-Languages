@@ -11,7 +11,7 @@ run:
 	./fasta.fpascal-4.fpascal_run 25000000
 
 mem:
-	/usr/bin/time -v  ./fasta.fpascal-4.fpascal_run 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./fasta.fpascal-4.fpascal_run 25000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./fasta.fpascal-4.fpascal_run 25000000

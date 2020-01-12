@@ -7,7 +7,7 @@ run:
 	./spectralnorm.chapel_run --n=5500
 
 mem:
-	/usr/bin/time -v ./spectralnorm.chapel_run --n=5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.chapel_run --n=5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./spectralnorm.chapel_run --n=5500

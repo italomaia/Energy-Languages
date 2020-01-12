@@ -9,7 +9,7 @@ run:
 	./nbody.ocaml_run 50000000
 
 mem:
-	/usr/bin/time -v  ./nbody.ocaml_run 50000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./nbody.ocaml_run 50000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./nbody.ocaml_run 50000000

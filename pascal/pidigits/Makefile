@@ -10,7 +10,7 @@ run:
 	./pidigits.fpascal-3.fpascal_run 10000
 
 mem:
-	/usr/bin/time -v ./pidigits.fpascal-3.fpascal_run 10000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./pidigits.fpascal-3.fpascal_run 10000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./pidigits.fpascal-3.fpascal_run 10000

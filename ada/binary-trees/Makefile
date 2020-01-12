@@ -15,7 +15,7 @@ run:
 	./binarytrees.gnat-4.gnat_run 21
 
 mem:
-	/usr/bin/time -v ./binarytrees.gnat-4.gnat_run 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.gnat-4.gnat_run 21
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./binarytrees.gnat-4.gnat_run 21

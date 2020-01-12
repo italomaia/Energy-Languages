@@ -5,4 +5,4 @@ run:
 	${BINARY} binarytrees.lua-2.lua 21 >> /opt/results/${TLANG}.txt
 
 measure:
-	/usr/bin/time -v ${BINARY} binarytrees.lua-2.lua 21 >> /opt/measures/${TLANG}.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} binarytrees.lua-2.lua 21

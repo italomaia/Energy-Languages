@@ -11,7 +11,7 @@ run:
 	./binarytrees.fpascal_run 21
 
 mem:
-	/usr/bin/time -v ./binarytrees.fpascal_run 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.fpascal_run 21
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./binarytrees.fpascal_run 21

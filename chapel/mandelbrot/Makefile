@@ -7,7 +7,7 @@ run:
 	./mandelbrot.chapel-2.chapel_run --n=16000
 
 mem:
-	/usr/bin/time -v ./mandelbrot.chapel-2.chapel_run --n=16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./mandelbrot.chapel-2.chapel_run --n=16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./mandelbrot.chapel-2.chapel_run --n=16000

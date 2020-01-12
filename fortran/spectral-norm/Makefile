@@ -7,7 +7,7 @@ run:
 	./spectralnorm.ifc-3.ifc_run 5500
 
 mem:
-	/usr/bin/time -v ./spectralnorm.ifc-3.ifc_run 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.ifc-3.ifc_run 5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./spectralnorm.ifc-3.ifc_run 5500

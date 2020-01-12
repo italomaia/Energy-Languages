@@ -8,7 +8,7 @@ run:
 	./mandelbrot.rust-4.rust_run 16000
 
 mem:
-	/usr/bin/time -v  ./mandelbrot.rust-4.rust_run 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./mandelbrot.rust-4.rust_run 16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./mandelbrot.rust-4.rust_run 16000

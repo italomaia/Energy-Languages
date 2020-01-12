@@ -10,7 +10,7 @@ run:
 	./binarytrees.ocaml-2.ocaml_run 21
 
 mem:
-	/usr/bin/time -v ./binarytrees.ocaml-2.ocaml_run 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.ocaml-2.ocaml_run 21
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./binarytrees.ocaml-2.ocaml_run 21

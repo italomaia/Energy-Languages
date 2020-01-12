@@ -8,4 +8,4 @@ run:
 	./binarytrees.gcc-3.gcc_run 21
 
 mem:
-	/usr/bin/time -v ./binarytrees.gcc-3.gcc_run 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.gcc-3.gcc_run 21

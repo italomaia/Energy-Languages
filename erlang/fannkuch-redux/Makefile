@@ -8,7 +8,7 @@ run:
 	${BINARY} -smp enable -noshell -run  fannkuchredux main 12
 
 mem:
-	/usr/bin/time -v ${BINARY} -smp enable -noshell -run  fannkuchredux main 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -smp enable -noshell -run  fannkuchredux main 12
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ${BINARY} -smp enable -noshell -run  fannkuchredux main 12

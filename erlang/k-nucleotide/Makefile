@@ -8,7 +8,7 @@ run:
 	${BINARY} -smp enable -noshell -run  knucleotide main 0 < /root/data/knucleotide-input25000000.txt
 
 mem:
-	/usr/bin/time -v ${BINARY} -smp enable -noshell -run  knucleotide main 0 < /root/data/knucleotide-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -smp enable -noshell -run  knucleotide main 0 < /root/data/knucleotide-input25000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ${BINARY} -smp enable -noshell -run  knucleotide main 0 < /root/data/knucleotide-input25000000.txt

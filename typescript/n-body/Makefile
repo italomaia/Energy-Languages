@@ -12,7 +12,7 @@ clean:
 	rm -rf *.js *.ts
 
 mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict nbody.typescript-3.js 50000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict nbody.typescript-3.js 50000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict nbody.typescript-3.js 50000000

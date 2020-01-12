@@ -7,4 +7,4 @@ run:
 	./mandelbrot.gcc-6.gcc_run 16000
 
 mem:
-	/usr/bin/time -v ./mandelbrot.gcc-6.gcc_run 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./mandelbrot.gcc-6.gcc_run 16000

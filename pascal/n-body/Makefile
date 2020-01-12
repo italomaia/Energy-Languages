@@ -11,7 +11,7 @@ run:
 	./nbody.fpascal_run 50000000
 
 mem:
-	/usr/bin/time -v  ./nbody.fpascal_run 50000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./nbody.fpascal_run 50000000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes  ./nbody.fpascal_run 50000000

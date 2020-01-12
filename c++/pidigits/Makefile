@@ -7,7 +7,7 @@ run:
 	./pidigits.gpp-4.gpp_run 10000
 
 mem:
-	/usr/bin/time -v ./pidigits.gpp-4.gpp_run 10000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./pidigits.gpp-4.gpp_run 10000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./pidigits.gpp-4.gpp_run 10000

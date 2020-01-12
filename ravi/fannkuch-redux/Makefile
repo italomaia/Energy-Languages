@@ -9,7 +9,7 @@ run:
 	${BINARY} fannkuchredux.lua 12
 
 mem:
-	/usr/bin/time -v ${BINARY} fannkuchredux.lua 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} fannkuchredux.lua 12
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ${BINARY} fannkuchredux.lua 12

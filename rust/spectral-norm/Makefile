@@ -8,7 +8,7 @@ run:
 	./spectralnorm.rust-4.rust_run 5500
 
 mem:
-	/usr/bin/time -v ./spectralnorm.rust-4.rust_run 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.rust-4.rust_run 5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./spectralnorm.rust-4.rust_run 5500

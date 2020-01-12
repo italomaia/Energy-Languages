@@ -7,7 +7,7 @@ run:
 	./fannkuchredux.ifc-3.ifc_run 12
 
 mem:
-	/usr/bin/time -v ./fannkuchredux.ifc-3.ifc_run 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fannkuchredux.ifc-3.ifc_run 12
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./fannkuchredux.ifc-3.ifc_run 12

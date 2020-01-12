@@ -10,7 +10,7 @@ run:
 	./spectralnorm.ocaml-3.ocaml_run 5500
 
 mem:
-	/usr/bin/time -v ./spectralnorm.ocaml-3.ocaml_run 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.ocaml-3.ocaml_run 5500
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./spectralnorm.ocaml-3.ocaml_run 5500

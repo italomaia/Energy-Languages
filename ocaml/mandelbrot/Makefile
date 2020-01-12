@@ -10,7 +10,7 @@ run:
 	./mandelbrot.ocaml_run 16000
 
 mem:
-	/usr/bin/time -v ./mandelbrot.ocaml_run 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./mandelbrot.ocaml_run 16000
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ./mandelbrot.ocaml_run 16000

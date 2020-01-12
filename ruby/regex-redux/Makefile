@@ -8,7 +8,7 @@ run:
 	${BINARY} -W0 regexredux.yarv-2.yarv 0 < /root/data/regexredux-input5000000.txt
 
 mem:
-	/usr/bin/time -v ${BINARY} -W0 regexredux.yarv-2.yarv 0 < /root/data/regexredux-input5000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -W0 regexredux.yarv-2.yarv 0 < /root/data/regexredux-input5000000.txt
 
 valgrind:
 	valgrind --tool=massif --stacks=yes ${BINARY} -W0 regexredux.yarv-2.yarv 0 < /root/data/regexredux-input5000000.txt
