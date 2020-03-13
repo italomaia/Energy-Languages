@@ -5,56 +5,73 @@ import subprocess
 from lazyme.string import color_print
 from typing import List
 
-PATH = os.path.abspath(os.path.dirname('.'))
+# current directory
+CUR_DIR = os.path.abspath(os.path.dirname('.'))
 
 
 def make_root(name):
-    return os.path.join(PATH, name)
+    "Creates the filepath for a language folder"
+    return os.path.join(CUR_DIR, name)
 
 
-def _build_docker_image(root, image_name):
+def _build_docker_image(dir_path: str, image_name: str):
+    """Builds a docker image from given folder with given name.
+
+    Arguments:
+        dir_path {str} -- path to docker image
+        image_name {str} -- target docker image name
+    """
     args = ["docker", "build", "-t", image_name, "."]
-    output = subprocess.check_output(args, cwd=root).decode('utf-8')
-    print(output)
+    return subprocess.check_output(args, cwd=dir_path).decode('utf-8')  # nosec B603
 
 
-def build_docker_image(name, force_build=False):
+def build_docker_image(name: str, force_build: bool = False):
     image_name = make_docker_image_name(name)
 
     if force_build or not docker_image_exists(image_name):
         # docker folder root
         root = make_root(name)
-        _build_docker_image(root, image_name)
-        print("image %s built" % image_name)
+        print(_build_docker_image(root, image_name))
+        print(f"image {image_name} built")
     else:
-        print("image %s was not built" % image_name)
+        print(f"image {image_name} was not built")
 
     print("")
     return image_name
 
 
-def make_docker_image_name(name):
-    return f"energy/{name}:1"
+def make_docker_image_name(name, version: int = 1):
+    "Builds a docker image name"
+
+    return f"energy/{name}:{version}"
 
 
-def get_data_folder():
-    return os.path.join(os.getcwd(), "data/")
+def get_data_folder() -> str:
+    return make_root("data")
 
 
-def get_results_folder():
-    return os.path.join(os.getcwd(), "results/")
+def get_results_folder() -> str:
+    return make_root("results")
 
 
-def get_measures_folder():
-    return os.path.join(os.getcwd(), "measures/")
+def get_measures_folder() -> str:
+    return make_root("measures")
 
 
 def run_docker_image(image_name: str, action: str):
+    """Runs whatever `action` is requested for the given image, that
+    should already exist.
+
+    Arguments:
+        image_name {str} -- existing image name
+        action {str} -- 'run' or 'measure'
+    """
     data_folder = get_data_folder()
     results_folder = get_results_folder()
     measures_folder = get_measures_folder()
+
     cmd = [
-        "docker", 'run', '--rm',
+        "docker", 'run', '--rm', '-t',
         "-v", "%s:/root/data/" % data_folder,
         "-v", "%s:/opt/results/" % results_folder,
         "-v", "%s:/opt/measures/" % measures_folder,
@@ -66,7 +83,6 @@ def run_docker_image(image_name: str, action: str):
     prc = subprocess.Popen(
         cmd,
         stdout=subprocess.PIPE,
-        bufsize=1,
         universal_newlines=True
     )
 
@@ -75,8 +91,9 @@ def run_docker_image(image_name: str, action: str):
             print(line)
 
 
-def docker_image_exists(image):
-    return len(subprocess.check_output(["docker", "images", "-q", image])) > 0
+def docker_image_exists(name: str) -> bool:
+    "Checks if image `name` exists"
+    return len(subprocess.check_output(["docker", "images", "-q", name])) > 0
 
 
 def run_command(name):
@@ -95,8 +112,8 @@ def file_exists(file_path):
     return os.path.isfile(file_path) if file_path else False
 
 
-def main(lang_list: List[str], action: str, force_build):
-    # builds base image for all other images
+def main(lang_list: List[str], action: str, force_build) -> None:
+    # builds base image used by all other images
     base_image_name = build_docker_image('base', force_build)  # noqa: F841
 
     for lang in lang_list:
