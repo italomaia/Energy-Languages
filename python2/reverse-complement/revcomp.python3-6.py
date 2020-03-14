@@ -76,7 +76,9 @@ if __name__ == '__main__':
 
         def merge(v, g):
             yield v
-            yield from g
+
+            for _ in g:
+                yield _
 
         for h, r in starmap(reverse_complement, merge(data, s)):
             write(h)
