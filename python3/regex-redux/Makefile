@@ -1,5 +1,5 @@
 compile:
-	cp regexredux.python3 regexredux.py
+	echo "nothing to do"
 
 run:
 	${BINARY} -OO regexredux.py 0 < /root/data/regexredux-input5000000.txt >> /opt/results/${TLANG}.txt

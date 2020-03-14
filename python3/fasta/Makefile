@@ -1,8 +1,8 @@
 compile:
-	cp fasta.python3-3.python3 fasta.python3-3.py
+	echo "nothing to do"
 
 run:
-	${BINARY} -OO fasta.python3-3.py 25000000 >> /opt/results/${TLANG}.txt
+	${BINARY} -OO fasta.py 25000000 >> /opt/results/${TLANG}.txt
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO fasta.python3-3.py 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO fasta.py 25000000

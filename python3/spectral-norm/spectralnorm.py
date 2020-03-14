@@ -9,9 +9,9 @@
 # 2to3
 
 from multiprocessing import Pool
-from math            import sqrt
+from math import sqrt
+from sys import argv
 
-from sys             import argv
 
 def eval_A (i, j):
     return 1.0 / ((i + j) * (i + j + 1) / 2 + i + 1)

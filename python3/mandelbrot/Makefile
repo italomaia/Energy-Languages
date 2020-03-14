@@ -1,8 +1,8 @@
 cmpile:
-	cp mandelbrot.python3-7.python3 mandelbrot.python3-7.py
+	echo "nothing to do"
 
 run:
-	${BINARY} -OO mandelbrot.python3-7.py 16000 >> /opt/results/${TLANG}.txt
+	${BINARY} -OO mandelbrot.py 16000 >> /opt/results/${TLANG}.txt
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO mandelbrot.python3-7.py 16000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO mandelbrot.py 16000

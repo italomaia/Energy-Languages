@@ -1,8 +1,8 @@
 compile:
-	cp spectralnorm.python3-5.python3 spectralnorm.python3-5.py
+	echo "nothing to do"
 
 run:
-	${BINARY} -OO spectralnorm.python3-5.py 5500 >> /opt/results/${TLANG}.txt
+	${BINARY} -OO spectralnorm.py 5500 >> /opt/results/${TLANG}.txt
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO spectralnorm.python3-5.py 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO spectralnorm.py 5500

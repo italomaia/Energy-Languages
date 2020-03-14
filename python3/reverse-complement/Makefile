@@ -1,9 +1,9 @@
 compile:
-	cp revcomp.python3-6.python3 revcomp.python3-6.py
+	echo "nothing to do"
 
 run:
-	${BINARY} -OO revcomp.python3-6.py 0 < /root/data/revcomp-input25000000.txt >> /opt/results/${TLANG}.txt
+	${BINARY} -OO revcomp.py 0 < /root/data/revcomp-input25000000.txt >> /opt/results/${TLANG}.txt
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO revcomp.python3-6.py 0 < /root/data/revcomp-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO revcomp.py 0 < /root/data/revcomp-input25000000.txt
 

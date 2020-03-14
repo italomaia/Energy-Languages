@@ -1,8 +1,8 @@
 compile:
-	cp fannkuchredux.python3-4.python3 fannkuchredux.python3-4.py
+	echo "nothing to do"
 
 run:
-	${BINARY} -OO fannkuchredux.python3-4.py 12 >> /opt/results/${TLANG}.txt
+	${BINARY} -OO fannkuchredux.py 12 >> /opt/results/${TLANG}.txt
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO fannkuchredux.python3-4.py 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO fannkuchredux.py 12

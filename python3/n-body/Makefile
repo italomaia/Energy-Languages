@@ -1,5 +1,5 @@
 compile:
-	cp nbody.python3 nbody.py
+	echo "nothing to do"
 
 run:
 	${BINARY} -OO nbody.py 50000000 >> /opt/results/${TLANG}.txt

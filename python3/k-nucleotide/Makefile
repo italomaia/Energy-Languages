@@ -1,8 +1,8 @@
 compile:
-	cp knucleotide.python3-3.python3 knucleotide.python3-3.py
+	echo "nothing to do"
 
 run:
-	${BINARY} -OO knucleotide.python3-3.py 0 < /root/data/knucleotide-input25000000.txt >> /opt/results/${TLANG}.txt
+	${BINARY} -OO knucleotide.py 0 < /root/data/knucleotide-input25000000.txt >> /opt/results/${TLANG}.txt
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO knucleotide.python3-3.py 0 < /root/data/knucleotide-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO knucleotide.py 0 < /root/data/knucleotide-input25000000.txt

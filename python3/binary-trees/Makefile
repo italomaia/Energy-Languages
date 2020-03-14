@@ -1,5 +1,5 @@
 compile:
-	cp binarytrees.python3 binarytrees.py
+	echo "nothing to do"
 
 run:
 	${BINARY} -OO binarytrees.py 21 >> /opt/results/${TLANG}.txt
