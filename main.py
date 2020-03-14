@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import os
-import subprocess
+from subprocess import check_output
+from subprocess import PIPE
+from subprocess import CalledProcessError
+from subprocess import Popen
 
 from lazyme.string import color_print
 from typing import List
@@ -22,7 +25,12 @@ def _build_docker_image(dir_path: str, image_name: str):
         image_name {str} -- target docker image name
     """
     args = ["docker", "build", "-t", image_name, "."]
-    return subprocess.check_output(args, cwd=dir_path).decode('utf-8')  # nosec B603
+
+    return check_output(
+        args,
+        cwd=dir_path,
+        stderr=PIPE
+    ).decode('utf-8').strip()  # nosec B603
 
 
 def build_docker_image(name: str, force_build: bool = False):
@@ -71,18 +79,19 @@ def run_docker_image(image_name: str, action: str):
     measures_folder = get_measures_folder()
 
     cmd = [
-        "docker", 'run', '--rm', '-t',
-        "-v", "%s:/root/data/" % data_folder,
-        "-v", "%s:/opt/results/" % results_folder,
-        "-v", "%s:/opt/measures/" % measures_folder,
-        image_name, "/usr/bin/python3", "compile_all.py", action
+        'docker', 'run', '--rm', '-t',
+        '-v', "%s:/root/data/" % data_folder,
+        '-v', "%s:/opt/results/" % results_folder,
+        '-v', "%s:/opt/measures/" % measures_folder,
+        # -u allows us to see the output faster
+        image_name, '/usr/bin/python3', '-u', 'compile_all.py', action
     ]
 
     print("running: " + ' '.join(cmd))
 
-    prc = subprocess.Popen(
+    prc = Popen(
         cmd,
-        stdout=subprocess.PIPE,
+        stdout=PIPE,
         universal_newlines=True
     )
 
@@ -93,7 +102,7 @@ def run_docker_image(image_name: str, action: str):
 
 def docker_image_exists(name: str) -> bool:
     "Checks if image `name` exists"
-    return len(subprocess.check_output(["docker", "images", "-q", name])) > 0
+    return len(check_output(["docker", "images", "-q", name])) > 0
 
 
 def run_command(name):
@@ -112,13 +121,21 @@ def file_exists(file_path):
     return os.path.isfile(file_path) if file_path else False
 
 
-def main(lang_list: List[str], action: str, force_build) -> None:
-    # builds base image used by all other images
-    base_image_name = build_docker_image('base', force_build)  # noqa: F841
+def main(lang_list: List[str], action: str, force_build: bool) -> None:
+    try:
+        # builds base image used by all other images
+        base_image_name = build_docker_image('base', force_build)  # noqa: F841
 
-    for lang in lang_list:
-        image_name = build_docker_image(lang.lower(), force_build)
-        run_docker_image(image_name, action)
+        for lang in lang_list:
+            image_name = build_docker_image(lang.lower(), force_build)
+            run_docker_image(image_name, action)
+    except CalledProcessError as err:
+        out_msg = err.stdout.decode().strip()
+        err_msg = err.stderr.decode().strip()
+        err_code = err.returncode
+
+        print(f"[M][{lang}] {out_msg}; Code {err_code}")
+        print(f"[E][{lang}] {err_msg}; Code {err_code}")
 
 
 def make_parser():
