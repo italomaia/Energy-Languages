@@ -9,6 +9,7 @@ from math import factorial
 from multiprocessing import cpu_count, Pool
 from itertools import islice, starmap
 
+
 def permutations(n, start, size):
     p = bytearray(range(n))
     count = bytearray(n)
@@ -50,17 +51,22 @@ def permutations(n, start, size):
                 for dst, src in rotation_swaps[i]:
                     p[dst] = t[src]
 
+
 def alternating_flips_generator(n, start, size):
     maximum_flips = 0
     alternating_factor = 1
     for permutation in islice(permutations(n, start, size), size):
         first = permutation[0]
+
         if first:
             flips_count = 1
             while True:
                 permutation[:first + 1] = permutation[first::-1]
                 first = permutation[0]
-                if not first: break
+
+                if not first:
+                    break
+
                 flips_count += 1
             if maximum_flips < flips_count:
                 maximum_flips = flips_count
@@ -70,9 +76,11 @@ def alternating_flips_generator(n, start, size):
         alternating_factor = -alternating_factor
     yield maximum_flips
 
+
 def task(n, start, size):
     alternating_flips = alternating_flips_generator(n, start, size)
     return sum(islice(alternating_flips, size)), next(alternating_flips)
+
 
 def fannkuch(n):
     if n < 0:
@@ -94,13 +102,14 @@ def fannkuch(n):
         task_args = [(n, i * task_size, task_size) for i in range(task_count)]
 
         if task_count > 1:
-            with Pool() as pool:
-                checksums, maximums = zip(*pool.starmap(task, task_args))
+            pool = Pool()
+            checksums, maximums = zip(*pool.map(task, *task_args))
         else:
             checksums, maximums = zip(*starmap(task, task_args))
 
         checksum, maximum = sum(checksums), max(maximums)
         print("{0}\nPfannkuchen({1}) = {2}".format(checksum, n, maximum))
+
 
 if __name__ == "__main__":
     fannkuch(int(argv[1]))

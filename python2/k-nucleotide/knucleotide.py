@@ -4,12 +4,13 @@
 # submitted by Joerg Baumann
 
 from os import cpu_count
-from sys import stdin
+from sys import stdin, stdout
 from collections import defaultdict
 from itertools import starmap, chain
 from multiprocessing import Pool
 
 lean_buffer = {}
+
 
 def lean_args(sequence, reading_frames, i, j):
     global lean_buffer
@@ -17,6 +18,7 @@ def lean_args(sequence, reading_frames, i, j):
     lean_key = len(lean_buffer)
     lean_buffer[lean_key] = sequence
     return lean_key, reading_frames, i, j
+
 
 class lean_call:
     def __init__(self, func):
@@ -37,9 +39,10 @@ class lean_call:
             lean_results.append((frame, n, lean_frequences))
         return lean_results
 
+
 def count_frequencies(sequence, reading_frames, i, j):
     frames = tuple(
-        sorted([frame for frame,_ in reading_frames], reverse=True))
+        sorted([frame for frame, _ in reading_frames], reverse=True))
     frequences_mask_list = tuple(
         ((defaultdict(int), (1 << (2 * frame)) - 1) for frame in frames))
     frame = frames[0]
@@ -48,10 +51,12 @@ def count_frequencies(sequence, reading_frames, i, j):
 
     mono_nucleotides = []
     frame_tail = len(frames) - 1
+
     if frame_tail >= 0 and frames[frame_tail] == 1:
         freq = frequences_mask_list[frame_tail][0]
         worklist = sequence[i:j]
         len_before = len(worklist)
+
         while len_before > 0:
             n = worklist[0:1]
             worklist = worklist.translate(None, n)
@@ -65,6 +70,7 @@ def count_frequencies(sequence, reading_frames, i, j):
         freq = frequences_mask_list[frame_tail][0]
         worklist = sequence[i:min(j+1, len(sequence))]
         overlaps = []
+
         for v in (n + m for n in mono_nucleotides for m in mono_nucleotides):
             bits = v[0]*4+v[1]
             freq[bits] = worklist.count(v)
@@ -81,6 +87,7 @@ def count_frequencies(sequence, reading_frames, i, j):
         frame_tail -= 1
 
     short_frame_frequences = short_frame_frequences[:frame_tail]
+
     if len(short_frame_frequences):
         bits = 0
         if i == 0:
@@ -99,11 +106,14 @@ def count_frequencies(sequence, reading_frames, i, j):
             for f, m in short_frame_frequences:
                 f[bits & m] += 1
 
+    # TODO _i, _frame are already defined in the body; check varname usage
     return [
-        (frame, len(sequence) - frame + 1, frequences_mask_list[i][0])
-            for i, frame in enumerate(frames)]
+        (_frame, len(sequence) - _frame + 1, frequences_mask_list[_i][0])
+        for _i, _frame in enumerate(frames)
+    ]
 
-def read_sequence(file, header, translation) :
+
+def read_sequence(file, header, translation):
     for line in file:
         if line[0] == ord('>'):
             if line[1:len(header)+1] == header:
@@ -117,57 +127,77 @@ def read_sequence(file, header, translation) :
 
     return sequence.translate(translation, b'\n\r\t ')
 
+
 def lookup_frequency(results, frame, bits):
     n = 1
     frequency = 0
+
     for _, n, frequencies in filter(lambda r: r[0] == frame, results):
         frequency += frequencies[bits]
+
     return frequency, n if n > 0 else 1
+
 
 def display(results, display_list, sort=False, relative=False, end='\n'):
     lines = [
         (k_nucleotide, lookup_frequency(results, frame, bits))
-            for k_nucleotide, frame, bits in display_list
+        for k_nucleotide, frame, bits in display_list
     ]
-    if sort: lines = sorted(lines, key=lambda v: (-v[1][0], v[0]))
+
+    if sort:
+        lines = sorted(lines, key=lambda v: (-v[1][0], v[0]))
+
     for k_nucleotide, (frequency, n) in lines:
         if relative:
             print("{0} {1:.3f}".format(k_nucleotide, frequency * 100. / n))
         else:
             print("{1}\t{0}".format(k_nucleotide, frequency))
-    print(end=end)
+
+    stdout.write(end)
+
 
 def main():
-    translation = bytes.maketrans(b'GTCAgtca',
-        b'\x00\x01\x02\x03\x00\x01\x02\x03')
+    translation = bytes.maketrans(
+        b'GTCAgtca',
+        b'\x00\x01\x02\x03\x00\x01\x02\x03'
+    )
+
     def str_to_bits(text):
         buffer = text.encode('latin1').translate(translation)
         bits = 0
         for k in range(len(buffer)):
             bits = bits * 4 + buffer[k]
         return bits
+
     def display_list(k_nucleotides):
         return [(n, len(n), str_to_bits(n)) for n in k_nucleotides]
 
     sequence = read_sequence(stdin.buffer, b'THREE', translation)
 
     mono_nucleotides = ('G', 'A', 'T', 'C')
-    di_nucleotides = tuple(n + m
-        for n in mono_nucleotides for m in mono_nucleotides)
+
+    di_nucleotides = tuple(
+        n + m for n in mono_nucleotides for m in mono_nucleotides
+    )
+
     k_nucleotides = (
-        'GGT', 'GGTA', 'GGTATT', 'GGTATTTTAATT', 'GGTATTTTAATTTATAGT')
+        'GGT', 'GGTA', 'GGTATT', 'GGTATTTTAATT', 'GGTATTTTAATTTATAGT'
+    )
 
     reading_frames = [
         (1, tuple(map(str_to_bits, mono_nucleotides))),
         (2, tuple(map(str_to_bits, di_nucleotides))),
     ] + list(map(lambda s: (len(s), (str_to_bits(s),)), k_nucleotides))
 
-    if len(sequence) > 128 * cpu_count(): n = cpu_count()
-    else: n = 1
+    if len(sequence) > 128 * cpu_count():
+        n = cpu_count()
+    else:
+        n = 1
+
     partitions = [len(sequence) * i // n for i in range(n+1)]
     count_jobs = [
         (sequence, reading_frames, partitions[i], partitions[i + 1])
-            for i in range(len(partitions) - 1)]
+        for i in range(len(partitions) - 1)]
 
     if n == 1:
         results = list(chain(*starmap(count_frequencies, count_jobs)))
@@ -182,5 +212,6 @@ def main():
     display(results, display_list(di_nucleotides), relative=True, sort=True)
     display(results, display_list(k_nucleotides), end='')
 
-if __name__=='__main__' :
+
+if __name__ == '__main__':
     main()

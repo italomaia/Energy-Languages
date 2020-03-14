@@ -4,7 +4,7 @@
 # contributed by Joerg Baumann
 
 from sys import stdin, stdout
-from os import cpu_count
+from multiprocessing import cpu_count
 
 reverse_translation = bytes.maketrans(
    b'ABCDGHKMNRSTUVWYabcdghkmnrstuvwy',

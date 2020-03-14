@@ -120,19 +120,22 @@ def random_fasta(table, n, seed):
 
     return seed
 
+
 def main():
     n = int(sys.argv[1])
-    nprint = sys.stdout.buffer.write
+    # this used to be buffered
+    nprint = sys.stdout.write
     nprint(b'>ONE Homo sapiens alu\n')
     repeat_fasta(alu, n * 2)
 
     # We need to keep track of the state of 'seed' so we pass it in, and return
     # it back so our output can pass the diff test
     nprint(b'>TWO IUB ambiguity codes\n')
-    seed=random_fasta(iub, n * 3, seed=42.0)
+    seed = random_fasta(iub, n * 3, seed=42.0)
 
     nprint(b'>THREE Homo sapiens frequency\n')
     random_fasta(homosapiens, n * 5, seed)
+
 
 if __name__ == "__main__":
     main()
