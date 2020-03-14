@@ -1,5 +1,5 @@
+.vscode/
 venv/
 settings.json
-.vscode
 *.txt
 *.csv
