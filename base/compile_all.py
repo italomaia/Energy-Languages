@@ -64,6 +64,8 @@ def main(action: str):
 
                 print(f"[M] {out_msg}; Code {err_code}")
                 print(f"[E] {err_msg}; Code {err_code}")
+        else:
+            print('compile_all: ignoring ' + root)
 
         if action == 'measure':
             time.sleep(5)
