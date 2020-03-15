@@ -66,7 +66,7 @@ def get_measures_folder() -> str:
     return make_root("measures")
 
 
-def run_docker_image(image_name: str, action: str):
+def run_docker_image(image_name: str, action: str, only: str):
     """Runs whatever `action` is requested for the given image, that
     should already exist.
 
@@ -78,14 +78,22 @@ def run_docker_image(image_name: str, action: str):
     results_folder = get_results_folder()
     measures_folder = get_measures_folder()
 
+    options = []
+
+    if only:
+        options += ['-o', only]
+
     cmd = [
         'docker', 'run', '--rm', '-t',
         '-v', "%s:/root/data/" % data_folder,
         '-v', "%s:/opt/results/" % results_folder,
         '-v', "%s:/opt/measures/" % measures_folder,
         # -u allows us to see the output faster
-        image_name, '/usr/bin/python3', '-u', 'compile_all.py', action
+        image_name, '/usr/bin/python3', '-u',
+        'compile_all.py'
     ]
+
+    cmd = cmd + options + [action]
 
     print("running: " + ' '.join(cmd))
 
@@ -121,14 +129,14 @@ def file_exists(file_path):
     return os.path.isfile(file_path) if file_path else False
 
 
-def main(lang_list: List[str], action: str, force_build: bool) -> None:
+def main(lang_list: List[str], action: str, force_build: bool, only: str) -> None:
     try:
         # builds base image used by all other images
         base_image_name = build_docker_image('base', force_build)  # noqa: F841
 
         for lang in lang_list:
             image_name = build_docker_image(lang.lower(), force_build)
-            run_docker_image(image_name, action)
+            run_docker_image(image_name, action, only)
     except CalledProcessError as err:
         out_msg = err.stdout.decode().strip()
         err_msg = err.stderr.decode().strip()
@@ -155,6 +163,13 @@ def make_parser():
         help='build docker images even if they already exist',
         action='store_true'
     )
+    parser.add_argument(
+        '-o', '--only',
+        type=str,
+        default=None,
+        required=False,
+        help='only run the requested test'
+    )
 
     return parser
 
@@ -164,4 +179,4 @@ if __name__ == '__main__':
     namespace, args = parser.parse_known_args()
 
     color_print(f"Preparing to measure languages performance", color='yellow', bold=True)
-    main(namespace.languages, namespace.act, namespace.force_build)
+    main(namespace.languages, namespace.act, namespace.force_build, namespace.only)

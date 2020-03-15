@@ -33,9 +33,14 @@ def clean_measures(lang):
         os.remove(measures_filepath)
 
 
-def main(action: str):
+def main(action: str, only: str = ''):
     for root, dirs, files in os.walk(path):
-        print('compile_all: checking ' + root)
+        if only not in root:
+            print(f"compile_all: skipping {root}")
+            continue
+
+        print(f"compile_all: checking {root}")
+
         makefile = os.path.join(root, "Makefile")
 
         if file_exists(makefile):
@@ -65,7 +70,7 @@ def main(action: str):
                 print(f"[M] {out_msg}; Code {err_code}")
                 print(f"[E] {err_msg}; Code {err_code}")
         else:
-            print('compile_all: ignoring ' + root)
+            print(f"compile_all: ignoring {root}")
 
         if action == 'measure':
             time.sleep(5)
@@ -74,10 +79,14 @@ def main(action: str):
 def make_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('action', choices=('compile', 'run', 'clean', 'measure'))
+    parser.add_argument(
+        '-o', '--only', type=str, default='',
+        help='only run requested test'
+    )
     return parser
 
 
 if __name__ == '__main__':
     parser = make_parser()
     namespace, args = parser.parse_known_args()
-    main(namespace.action)
+    main(namespace.action, namespace.only)
