@@ -77,7 +77,8 @@ def alternating_flips_generator(n, start, size):
     yield maximum_flips
 
 
-def task(n, start, size):
+def task(args):
+    n, start, size = args
     alternating_flips = alternating_flips_generator(n, start, size)
     return sum(islice(alternating_flips, size)), next(alternating_flips)
 
@@ -99,13 +100,16 @@ def fannkuch(n):
 
         assert(task_size % 2 == 0)
 
-        task_args = [(n, i * task_size, task_size) for i in range(task_count)]
+        task_args = [
+            (n, i * task_size, task_size)
+            for i in range(task_count)
+        ]
 
         if task_count > 1:
             pool = Pool()
-            checksums, maximums = zip(*pool.map(task, *task_args))
+            checksums, maximums = zip(*pool.map(task, task_args))
         else:
-            checksums, maximums = zip(*starmap(task, task_args))
+            checksums, maximums = zip(*map(task, task_args))
 
         checksum, maximum = sum(checksums), max(maximums)
         print("{0}\nPfannkuchen({1}) = {2}".format(checksum, n, maximum))
