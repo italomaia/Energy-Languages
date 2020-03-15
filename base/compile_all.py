@@ -41,10 +41,11 @@ def main(action: str, only: str = ''):
 
         print(f"compile_all: checking {root}")
 
+        test_name = os.path.basename(root)
         makefile = os.path.join(root, "Makefile")
 
         if file_exists(makefile):
-            cmd = ['make', action]
+            cmd = ['make', f'TEST_NAME={test_name}', action]
             print(("compile_all: " + ' '.join(cmd)).strip())
 
             if action == 'run':
