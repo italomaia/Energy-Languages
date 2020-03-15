@@ -41,7 +41,7 @@ def make_cumulative(table):
 
 def repeat_fasta(src, n):
     width = 60
-    nprint = sys.stdout.buffer.write
+    nprint = sys.stdout.write
 
     is_trailing_line = False
     count_modifier = 0.0
@@ -80,7 +80,7 @@ def random_fasta(table, n, seed):
 
     # CSF - nprint allows us to print a bytearray directly to stdout, avoiding
     # some conversion steps along the way, including a call to join
-    nprint = sys.stdout.buffer.write
+    nprint = sys.stdout.write
     line = bytearray(width + 1)    # Width of 60 + 1 for the \n char
 
     probs, chars = make_cumulative(table)
