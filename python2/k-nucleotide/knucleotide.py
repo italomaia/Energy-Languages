@@ -3,6 +3,7 @@
 #
 # submitted by Joerg Baumann
 
+from string import maketrans
 from sys import stdin, stdout
 from collections import defaultdict
 from itertools import starmap, chain
@@ -157,7 +158,7 @@ def display(results, display_list, sort=False, relative=False, end='\n'):
 
 
 def main():
-    translation = bytes.maketrans(
+    translation = maketrans(
         b'GTCAgtca',
         b'\x00\x01\x02\x03\x00\x01\x02\x03'
     )
