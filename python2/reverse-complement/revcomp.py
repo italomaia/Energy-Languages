@@ -3,12 +3,16 @@
 #
 # contributed by Joerg Baumann
 
+from string import maketrans
 from sys import stdin, stdout
-from multiprocessing import cpu_count
+from multiprocessing import cpu_count as _cpu_count
 
-reverse_translation = bytes.maketrans(
-   b'ABCDGHKMNRSTUVWYabcdghkmnrstuvwy',
-   b'TVGHCDMKNYSAABWRTVGHCDMKNYSAABWR')
+reverse_translation = maketrans(
+   'ABCDGHKMNRSTUVWYabcdghkmnrstuvwy',
+   'TVGHCDMKNYSAABWRTVGHCDMKNYSAABWR'
+)
+
+data = None
 
 
 def reverse_complement(header, sequence):
@@ -24,81 +28,94 @@ def reverse_complement(header, sequence):
     return header, output[::-1]
 
 
-def read_sequences(file):
-    for line in file:
-        if line[0] == ord('>'):
+def read_sequences(handler):
+    header, sequence = None, None
+
+    for line in handler:
+        if line.startswith('>'):
+            if header is not None:
+                yield header, ''.join(sequence)
+
             header = line
-            sequence = bytearray()
+            sequence = []
+        else:
+            sequence.append(line)
 
-            for line in file:
-                if line[0] == ord('>'):
-                    yield header, sequence
-                    header = line
-                    sequence = bytearray()
-                else:
-                    sequence += line
-
-            yield header, sequence
-            break
+    yield header, ''.join(sequence)
 
 
 def reverse_and_print_task(q, c, v):
+    """[summary]
+
+    Arguments:
+        q {multiprocessing.Queue} --
+        c {multiprocessing.Condition} --
+        v {multiprocessing.Value} --
+    """
     while True:
-        i = q.get()
+        i = q.get()  # controls access to data
 
         if i is None:
-            break
+            break  # done
 
         h, r = reverse_complement(*data[i])
 
+        # TODO change design
+        # makes sure sequences are written in the correct order
         with c:
             while i != v.value:
                 c.wait()
 
-        write(h)
-        write(r)
-        flush()
+        stdout.write(h)
+        stdout.write(r)
 
         with c:
             v.value = i + 1
             c.notify_all()
 
 
+def main_mono_prc(seq_iter):
+    from itertools import starmap
+
+    for h, rev_seq in starmap(reverse_complement, seq_iter):
+        stdout.write(h)
+        stdout.write(rev_seq)
+
+
+def main_multi_prc(seq_iter, cpu_count):
+    # execute task using parallelism
+    from multiprocessing import Process, Queue, Value, Condition
+    from ctypes import c_int
+
+    q, c, v = (Queue(), Condition(), Value(c_int, 0))
+
+    # TODO improve design
+    global data
+    data = tuple(seq_iter)
+
+    # creates min(len(data), cpu_count) processes
+    processes = [
+        Process(target=reverse_and_print_task, args=(q, c, v))
+        for _ in range(min(len(data), cpu_count))
+    ]
+
+    for p in processes:
+        p.start()
+    for i in range(len(data)):
+        q.put(i)  # mark entries in queue
+    for p in processes:
+        q.put(None)
+    for p in processes:
+        p.join()
+
+
 if __name__ == '__main__':
-    write = stdout.buffer.write
-    flush = stdout.buffer.flush
+    # generates each sequence
+    seq_iter = read_sequences(stdin)
+    cpu_count = _cpu_count()
 
-    s = read_sequences(stdin.buffer)
-    data = next(s)
-
-    if cpu_count() == 1 or len(data[1]) < 1000000:
-        from itertools import starmap
-
-        def merge(v, g):
-            yield v
-
-            for _ in g:
-                yield _
-
-        for h, r in starmap(reverse_complement, merge(data, s)):
-            write(h)
-            write(r)
+    if cpu_count == 1:
+        main_mono_prc(seq_iter)
     else:
-        from multiprocessing import Process, Queue, Value, Condition
-        from ctypes import c_int
-
-        data = [data] + list(s)
-        q, c, v = (Queue(), Condition(), Value(c_int, 0))
-        processes = [
-            Process(target=reverse_and_print_task, args=(q, c, v))
-            for _ in range(min(len(data), cpu_count()))
-        ]
-
-        for p in processes:
-            p.start()
-        for i in range(len(data)):
-            q.put(i)
-        for p in processes:
-            q.put(None)
-        for p in processes:
-            p.join()
+        # TODO function can fail silently; fix
+        main_multi_prc(seq_iter, cpu_count)
