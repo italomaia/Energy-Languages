@@ -65,7 +65,9 @@ def compute_rows(n, f):
         from multiprocessing import Pool
         with Pool() as pool:
             unordered_rows = pool.imap_unordered(f, row_jobs)
-            yield from ordered_rows(unordered_rows, n)
+
+            for v in ordered_rows(unordered_rows, n):
+                yield v
 
 
 def mandelbrot(n):
