@@ -3,11 +3,11 @@
 #
 # submitted by Joerg Baumann
 
-from os import cpu_count
 from sys import stdin, stdout
 from collections import defaultdict
 from itertools import starmap, chain
 from multiprocessing import Pool
+from multiprocessing import cpu_count
 
 lean_buffer = {}
 
