@@ -5,7 +5,7 @@
 # fixed by Isaac Gouy
 
 import sys
-from io import StringIO
+from StringIO import StringIO
 
 N = int(sys.argv[1])
 f = StringIO()
