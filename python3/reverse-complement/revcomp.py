@@ -10,6 +10,8 @@ reverse_translation = bytes.maketrans(
    b'ABCDGHKMNRSTUVWYabcdghkmnrstuvwy',
    b'TVGHCDMKNYSAABWRTVGHCDMKNYSAABWR')
 
+data = None
+
 
 def reverse_complement(header, sequence):
     t = sequence.translate(reverse_translation, b'\n\r ')
@@ -83,6 +85,7 @@ if __name__ == '__main__':
         from multiprocessing import Process, Queue, Value, Condition
         from ctypes import c_int
 
+        global data
         data = [data] + list(s)
         q, c, v = (Queue(), Condition(), Value(c_int, 0))
         processes = [
