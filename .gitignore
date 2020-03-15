@@ -3,3 +3,4 @@ venv/
 settings.json
 *.txt
 *.csv
+*.pyc
