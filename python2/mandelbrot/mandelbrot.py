@@ -5,7 +5,7 @@
 
 from contextlib import closing
 from itertools import islice
-from os import cpu_count
+from multiprocessing import cpu_count
 from sys import argv, stdout
 
 
