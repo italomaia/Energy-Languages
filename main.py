@@ -93,7 +93,7 @@ def run_docker_image(image_name: str, action: str, only: str):
         'compile_all.py'
     ]
 
-    cmd = cmd + options + ['prepare', action]
+    cmd = cmd + options + ['prepare', 'compile', action]
 
     print("running: " + ' '.join(cmd))
 
