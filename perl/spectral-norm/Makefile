@@ -1,5 +1,9 @@
 compile:
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} spectralnorm.perl-4.perl 5500 > /opt/results/${TEST_NAME}.${TLANG}.txt
 

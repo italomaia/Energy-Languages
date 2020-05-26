@@ -1,5 +1,9 @@
 compile:
 	cp -L regexredux.node-2.node regexredux.node-2.js
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	/usr/local/src/node-v7.9.0-linux-x64/bin/node regexredux.node-2.js 0 < /root/data/regexredux-input5000000.txt
 

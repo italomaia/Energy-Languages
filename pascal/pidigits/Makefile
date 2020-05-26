@@ -3,6 +3,10 @@ compile:
 	/usr/local/src/fpc-3.0.2.x86_64-linux/bin/fpc -FuInclude/fpascal -XXs -O4 -Tlinux -oFPASCAL_RUN pidigits.fpascal-3.pas
 	mv FPASCAL_RUN pidigits.fpascal-3.fpascal_run
 	rm pidigits.fpascal-3.pas
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./pidigits.fpascal-3.fpascal_run 10000
 

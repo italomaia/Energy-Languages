@@ -1,6 +1,10 @@
 compile:
 
-xrun:
+xprepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
+run:
 	/usr/bin/dart  pidigits.dart 2000
 
 measure:

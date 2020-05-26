@@ -1,6 +1,10 @@
 compile:
 	echo "lua51: nothing to do"
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} binarytrees.lua-2.lua 21 > /opt/results/${TEST_NAME}.${TLANG}.txt
 

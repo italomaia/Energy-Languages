@@ -1,6 +1,10 @@
 compile:
 	sbcl --load revcomp.lisp --eval "(save-lisp-and-die \"revcomp.core\" :purify t :toplevel (lambda () (main) (quit)))"
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	sbcl --noinform --core revcomp.core 0 < /root/data/revcomp-input25000000.txt
 

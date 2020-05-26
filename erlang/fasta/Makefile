@@ -1,6 +1,10 @@
 compile:
 	cp fasta.hipe-2.hipe fasta.erl
 	${COMPILER} +native +"{hipe, [o3]}" fasta.erl
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} -smp enable -noshell -run  fasta main 25000000
 

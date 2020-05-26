@@ -5,6 +5,10 @@ compile:
 	gnatbind-6 -x fannkuchredux.ali
 	gnatlink-6 fannkuchredux.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o fannkuchredux.gnat-3.gnat_run
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./fannkuchredux.gnat-3.gnat_run 12
 

@@ -3,7 +3,11 @@ compile:
 	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 -I /usr/local/lib/ocaml/gmp gmp.cmxa pidigits.ocaml-3.ml -o pidigits.ocaml-3.ocaml_run
 	rm pidigits.ocaml-3.ml
 
-xrun:
+xprepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
+run:
 	./pidigits.ocaml-3.ocaml_run 2000
 
 measure:

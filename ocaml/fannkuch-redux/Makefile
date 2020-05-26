@@ -3,6 +3,10 @@ compile:
 	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa fannkuchredux.ocaml-4.ml -o fannkuchredux.ocaml-4.ocaml_run
 	rm fannkuchredux.ocaml-4.ml
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./fannkuchredux.ocaml-4.ocaml_run 12
 

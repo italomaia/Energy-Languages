@@ -4,6 +4,10 @@ compile:
 	mv FPASCAL_RUN mandelbrot.fpascal-5.fpascal_run
 	rm mandelbrot.fpascal-5.pas
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./mandelbrot.fpascal-5.fpascal_run 16000
 

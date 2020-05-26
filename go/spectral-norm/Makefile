@@ -1,6 +1,10 @@
 compile:
 	/usr/bin/go build -o spectralnorm.go-4.go_run
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./spectralnorm.go-4.go_run 5500
 

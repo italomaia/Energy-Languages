@@ -1,5 +1,9 @@
 compile:
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} nbody.perl-2.perl 50000000 > /opt/results/${TEST_NAME}.${TLANG}.txt
 

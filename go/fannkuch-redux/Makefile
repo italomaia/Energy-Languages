@@ -1,6 +1,10 @@
 compile:
 	/usr/bin/go build -o fannkuchredux.go_run
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./fannkuchredux.go_run 12
 

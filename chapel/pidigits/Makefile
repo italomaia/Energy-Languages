@@ -1,6 +1,10 @@
 compile:
 	/usr/local/src/chapel-1.15.0/bin/linux64/chpl --fast pidigits.chapel-2.chpl -o pidigits.chapel-2.chapel_run
-xrun:
+xprepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
+run:
 	./pidigits.chapel-2.chapel_run --n=10000
 
 comp2:

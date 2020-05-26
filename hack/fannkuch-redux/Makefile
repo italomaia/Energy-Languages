@@ -1,6 +1,10 @@
 compile:
 	/usr/bin/hh_client
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	/usr/bin/hhvm  fannkuchredux.hack-3.hack 12
 	killall hh_server

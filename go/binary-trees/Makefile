@@ -1,6 +1,10 @@
 compile:
 	/usr/bin/go build -o binarytrees.go-2.go_run
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./binarytrees.go-2.go_run 21
 

@@ -12,6 +12,10 @@ compile:
 	gnatbind-6 -x spectralnorm.ali
 	gnatlink-6 spectralnorm.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o spectralnorm.gnat-4.gnat_run
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./spectralnorm.gnat-4.gnat_run 5500
 

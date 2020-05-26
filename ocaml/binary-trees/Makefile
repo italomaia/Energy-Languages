@@ -3,6 +3,10 @@ compile:
 	${COMPILER} -noassert -unsafe -fPIC -nodynlink -inline 100 unix.cmxa binarytrees.ocaml-2.ml -o binarytrees.ocaml-2.ocaml_run
 	rm binarytrees.ocaml-2.ml
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./binarytrees.ocaml-2.ocaml_run 21
 

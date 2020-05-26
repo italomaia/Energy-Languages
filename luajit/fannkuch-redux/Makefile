@@ -1,6 +1,10 @@
 compile:
 	echo "luajit: nothing to do"
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} fannkuchredux.lua 12 > /opt/results/${TEST_NAME}.${TLANG}.txt
 

@@ -1,7 +1,11 @@
 compile:
 	/usr/bin/hh_client
 
-xrun:
+xprepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
+run:
 	/usr/bin/hhvm  nbody.hack-5.hack 50000000
 	killall hh_server
 

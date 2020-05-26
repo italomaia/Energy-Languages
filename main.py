@@ -93,7 +93,7 @@ def run_docker_image(image_name: str, action: str, only: str):
         'compile_all.py'
     ]
 
-    cmd = cmd + options + [action]
+    cmd = cmd + options + ['prepare', action]
 
     print("running: " + ' '.join(cmd))
 
@@ -129,27 +129,40 @@ def file_exists(file_path):
     return os.path.isfile(file_path) if file_path else False
 
 
-def main(lang_list: List[str], action: str, force_build: bool, only: str) -> None:
+def main(
+    lang_list: List[str],
+    action: str,
+    force_build: bool,
+    only: str
+) -> None:
     try:
         # builds base image used by all other images
         base_image_name = build_docker_image('base', force_build)  # noqa: F841
+    except CalledProcessError as err:
+        color_print(
+            "Could not create base docker image",
+            color="red", bold=True)
 
-        for lang in lang_list:
+        raise err
+
+    for lang in lang_list:
+        try:
             image_name = build_docker_image(lang.lower(), force_build)
             run_docker_image(image_name, action, only)
-    except CalledProcessError as err:
-        out_msg = err.stdout.decode().strip()
-        err_msg = err.stderr.decode().strip()
-        err_code = err.returncode
+        except CalledProcessError as err:
+            out_msg = err.stdout.decode().strip()
+            err_msg = err.stderr.decode().strip()
+            err_code = err.returncode
 
-        print(f"[M][{lang}] {out_msg}; Code {err_code}")
-        print(f"[E][{lang}] {err_msg}; Code {err_code}")
+            print(f"[M][{lang}] {out_msg}; Code {err_code}")
+            print(f"[E][{lang}] {err_msg}; Code {err_code}")
 
 
 def make_parser():
     from argparse import ArgumentParser
 
-    parser = ArgumentParser(description='If testing a language, be sure to build first')
+    parser = ArgumentParser(
+        description='If testing a language, be sure to build first')
     parser.add_argument('languages', nargs='+', help='languages to be used')
     parser.add_argument(
         '-a', '--act',
@@ -178,5 +191,13 @@ if __name__ == '__main__':
     parser = make_parser()
     namespace, args = parser.parse_known_args()
 
-    color_print(f"Preparing to measure languages performance", color='yellow', bold=True)
-    main(namespace.languages, namespace.act, namespace.force_build, namespace.only)
+    color_print(
+        "Preparing to measure languages performance",
+        color='yellow',
+        bold=True)
+
+    main(
+        namespace.languages,
+        namespace.act,
+        namespace.force_build,
+        namespace.only)
