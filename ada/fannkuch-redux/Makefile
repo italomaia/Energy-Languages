@@ -4,6 +4,7 @@ compile:
 	gcc -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp fannkuchredux.adb
 	gnatbind -x fannkuchredux.ali
 	gnatlink fannkuchredux.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o fannkuchredux.gnat-3.gnat_run
+    chmod a+x /root/${TEST_NAME}/*.gnat_run
 
 prepare:
 	mkdir -p /opt/results/${TLANG}

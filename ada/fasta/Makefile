@@ -9,6 +9,7 @@ compile:
 	gcc -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp line_io.adb
 	gnatbind -x fasta.ali
 	gnatlink fasta.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o fasta.gnat-5.gnat_run
+    chmod a+x /root/${TEST_NAME}/*.gnat_run
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
