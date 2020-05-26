@@ -1,6 +1,10 @@
 compile:
 	echo "lua53: nothing to do"
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} spectralnorm.lua 5500 > /opt/results/${TEST_NAME}.${TLANG}.txt
 

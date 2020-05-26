@@ -1,6 +1,10 @@
 compile:
 	echo "lua53: nothing to do"
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} pidigits.lua-5.lua 10000 > /opt/results/${TEST_NAME}.${TLANG}.txt
 

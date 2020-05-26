@@ -1,5 +1,9 @@
 compile:
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	/usr/bin/dart  knucleotide.dart-2.dart 0 < /root/data/knucleotide-input25000000.txt
 

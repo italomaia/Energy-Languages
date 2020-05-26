@@ -1,5 +1,9 @@
 compile:
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} fannkuchredux.perl-2.perl 12 > /opt/results/${TEST_NAME}.${TLANG}.txt
 

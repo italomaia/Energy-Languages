@@ -4,6 +4,10 @@ compile:
 	mv FPASCAL_RUN binarytrees.fpascal_run
 	rm binarytrees.pas
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./binarytrees.fpascal_run 21
 

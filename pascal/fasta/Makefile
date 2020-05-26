@@ -4,6 +4,10 @@ compile:
 	mv FPASCAL_RUN fasta.fpascal-4.fpascal_run
 	rm fasta.fpascal-4.pas
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./fasta.fpascal-4.fpascal_run 25000000
 

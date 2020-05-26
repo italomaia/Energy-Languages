@@ -1,5 +1,9 @@
 compile:
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	/usr/bin/dart  spectralnorm.dart 5500
 

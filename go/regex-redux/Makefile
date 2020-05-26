@@ -1,7 +1,11 @@
 compile:
 	/usr/bin/go build -o regexredux.go-2.go_run
 
-xrun:
+xprepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
+run:
 	./regexredux.go-2.go_run 0 < /root/data/regexredux-input5000000.txt
 
 measure:

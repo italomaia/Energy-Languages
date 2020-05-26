@@ -7,6 +7,10 @@ compile:
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp systems.adb
 	gnatbind-6 -x nbody.ali
 	gnatlink-6 nbody.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o nbody.gnat-2.gnat_run
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./nbody.gnat-2.gnat_run 50000000
 

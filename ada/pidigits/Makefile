@@ -5,6 +5,10 @@ compile:
 	gcc-6 -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp pidigits.adb
 	gnatbind-6 -x pidigits.ali
 	gnatlink-6 pidigits.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o pidigits.gnat-2.gnat_run
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./pidigits.gnat-2.gnat_run 10000
 

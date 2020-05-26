@@ -3,6 +3,10 @@ compile:
 	/usr/local/src/fpc-3.0.2.x86_64-linux/bin/fpc -FuInclude/fpascal -XXs -O4 -Tlinux -oFPASCAL_RUN regexredux.fpascal-2.pas
 	mv FPASCAL_RUN regexredux.fpascal-2.fpascal_run
 	rm regexredux.fpascal-2.pas
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./regexredux.fpascal-2.fpascal_run 0 < /root/data/regexredux-input5000000.txt
 

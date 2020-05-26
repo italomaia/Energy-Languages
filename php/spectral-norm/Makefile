@@ -1,5 +1,9 @@
 compile:
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	php -n  spectralnorm.php 5500
 

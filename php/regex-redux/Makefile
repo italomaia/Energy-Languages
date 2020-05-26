@@ -1,5 +1,9 @@
 compile:
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	php -d memory_limit=512M regexredux.php 0 < /root/data/regexredux-input5000000.txt
 

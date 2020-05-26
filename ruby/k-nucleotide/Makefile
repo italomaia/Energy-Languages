@@ -1,6 +1,10 @@
 compile:
 
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} -W0 knucleotide.yarv-7.yarv 0 < /root/data/knucleotide-input25000000.txt
 

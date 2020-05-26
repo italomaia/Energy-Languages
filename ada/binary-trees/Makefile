@@ -8,6 +8,10 @@ compile:
 	gnatbind-6 -x binarytrees.ali
 	gnatlink-6 binarytrees.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o binarytrees.gnat-4.gnat_run -lapr-1
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./binarytrees.gnat-4.gnat_run 21
 

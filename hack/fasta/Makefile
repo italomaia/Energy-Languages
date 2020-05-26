@@ -1,6 +1,10 @@
 compile:
 	/usr/bin/hh_client
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	/usr/bin/hhvm  fasta.hack-4.hack 25000000
 	killall hh_server

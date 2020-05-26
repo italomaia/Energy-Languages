@@ -10,6 +10,10 @@ compile:
 	gnatbind-6 -x fasta.ali
 	gnatlink-6 fasta.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o fasta.gnat-5.gnat_run
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./fasta.gnat-5.gnat_run 25000000
 
