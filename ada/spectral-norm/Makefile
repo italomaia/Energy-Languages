@@ -11,7 +11,7 @@ compile:
 	gcc -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp spectral_utils-s.adb
 	gnatbind -x spectralnorm.ali
 	gnatlink spectralnorm.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o spectralnorm.gnat-4.gnat_run
-    chmod a+x /root/${TEST_NAME}/*.gnat_run
+	chmod a+x /root/${TEST_NAME}/*.gnat_run
 
 prepare:
 	mkdir -p /opt/results/${TLANG}

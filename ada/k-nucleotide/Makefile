@@ -7,7 +7,7 @@ compile:
 	gcc -c -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -gnatNp line_io.adb
 	gnatbind -x knucleotide.ali
 	gnatlink knucleotide.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o knucleotide.gnat-2.gnat_run
-    chmod a+x /root/${TEST_NAME}/*.gnat_run
+	chmod a+x /root/${TEST_NAME}/*.gnat_run
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
