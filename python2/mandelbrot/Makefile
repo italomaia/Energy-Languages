@@ -1,4 +1,4 @@
-cmpile:
+compile:
 	echo "python2: nothing to compile"
 
 prepare:
