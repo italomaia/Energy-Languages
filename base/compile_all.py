@@ -35,6 +35,8 @@ def clean_measures(lang):
 
 def main(actions: str, only: str = ''):
     for action in actions:
+        print(f"> ACTION: {action}")
+
         for root, dirs, files in os.walk(path):
             if only not in root:
                 print(f"compile_all: skipping {root}")
