@@ -95,7 +95,7 @@ def run_docker_image(image_name: str, action: str, only: str):
 
     cmd = cmd + options + ['prepare', 'compile', action]
 
-    print("running: " + ' '.join(cmd))
+    print("running: " + ' '.join(cmd), end='\n\n')
 
     prc = Popen(
         cmd,
