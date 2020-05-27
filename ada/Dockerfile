@@ -4,4 +4,4 @@ ENV TLANG=ada
 
 COPY . /root
 
-RUN apk add gcc-gnat libc-dev apr-util
+RUN apk add gcc-gnat libc-dev gmp-dev apr-util
