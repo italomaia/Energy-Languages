@@ -1,7 +1,11 @@
 compile:
 	cp regexredux.hipe-6.hipe regexredux.erl
 	${COMPILER} +native +"{hipe, [o3]}" regexredux.erl
-xrun:
+xprepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
+run:
 	${BINARY} -smp enable -noshell -run -noinput -run regexredux main 0 < ../../regexredux-input50000.txt
 
 measure:

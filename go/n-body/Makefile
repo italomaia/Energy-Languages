@@ -1,6 +1,10 @@
 compile:
 	/usr/bin/go build -o nbody.go_run
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./nbody.go_run 50000000
 

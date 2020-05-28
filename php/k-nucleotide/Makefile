@@ -1,5 +1,9 @@
 compile:
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	php -d memory_limit=1024M knucleotide.php-4.php 0 < /root/data/knucleotide-input25000000.txt
 

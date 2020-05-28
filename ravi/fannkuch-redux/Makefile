@@ -2,6 +2,10 @@ BINARY=/usr/bin/ravi
 
 compile:
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} fannkuchredux.lua 12
 

@@ -1,6 +1,10 @@
 compile:
 
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} -W0 spectralnorm.yarv-5.yarv 5500
 

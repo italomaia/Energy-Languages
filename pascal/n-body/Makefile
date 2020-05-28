@@ -4,6 +4,10 @@ compile:
 	mv FPASCAL_RUN nbody.fpascal_run
 	rm nbody.pas
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./nbody.fpascal_run 50000000
 

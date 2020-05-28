@@ -1,6 +1,10 @@
 compile:
 	echo "luajit: nothing to do"
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	${BINARY} regexredux.lua-2.lua 0 < ../../regexredux-input50000.txt > /opt/results/${TEST_NAME}.${TLANG}.txt
 

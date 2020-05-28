@@ -27,13 +27,36 @@ spot.
 
 ## Language Images That Compile
 
-* c
-* c++
-* erlang
-* lua51
-* lua53
-* luajit
-* python2
-* python3
-* ruby
-* rust
+[-] ada
+[ ] c
+[ ] c++
+[ ] chapel
+[ ] csharp
+[ ] dart
+[ ] erlang
+[ ] fortran
+[ ] fsharp
+[ ] go
+[ ] hack
+[ ] haskell
+[ ] java
+[ ] javascript
+[ ] jruby
+[ ] lisp
+[ ] lua51
+[ ] lua53
+[ ] luajit
+[ ] ocalm
+[ ] pascal
+[ ] perl
+[ ] php
+[-] python2
+[ ] python3
+[ ] racket
+[ ] rapl
+[ ] ravi
+[ ] ruby
+[ ] rust
+[ ] smalltalk
+[ ] swift
+[ ] typescript

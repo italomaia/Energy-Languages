@@ -1,6 +1,10 @@
 compile:
 	/usr/bin/go build -o fasta.go-3.go_run
 
+prepare:
+	mkdir -p /opt/results/${TLANG}
+	mkdir -p /opt/measures/${TLANG}
+
 run:
 	./fasta.go-3.go_run 25000000
 
