@@ -41,8 +41,8 @@ def compute_row(p):
 
 def ordered_rows(rows, n):
     order = [None] * n
-    i = 0
-    j = n
+    i, j = 0, n
+
     while i < len(order):
         if j > 0:
             row = next(rows)
@@ -66,7 +66,6 @@ def compute_rows(n, f):
 
         pool = Pool()
         unordered_rows = pool.imap_unordered(f, row_jobs)
-        pool.join()
 
         for v in ordered_rows(unordered_rows, n):
             yield v
