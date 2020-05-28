@@ -41,8 +41,8 @@ def compute_row(p):
 
 def ordered_rows(rows, n):
     order = [None] * n
-    i = 0
-    j = n
+    i, j = 0, n
+
     while i < len(order):
         if j > 0:
             row = next(rows)
@@ -63,15 +63,16 @@ def compute_rows(n, f):
             yield v
     else:
         from multiprocessing import Pool
-        with Pool() as pool:
-            unordered_rows = pool.imap_unordered(f, row_jobs)
 
-            for v in ordered_rows(unordered_rows, n):
-                yield v
+        pool = Pool()
+        unordered_rows = pool.imap_unordered(f, row_jobs)
+
+        for v in ordered_rows(unordered_rows, n):
+            yield v
 
 
 def mandelbrot(n):
-    write = stdout.buffer.write
+    write = stdout.write
 
     with closing(compute_rows(n, compute_row)) as rows:
         write("P4\n{0} {0}\n".format(n).encode())

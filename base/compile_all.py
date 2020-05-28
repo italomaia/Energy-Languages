@@ -95,7 +95,7 @@ def main(actions: str, only: str):
                     logger.error(f"[M] {out_msg}; Code {err_code}")
                     logger.error(f"[E] {err_msg}; Code {err_code}")
             else:
-                logger.warn(f"compile_all: ignoring {root}")
+                logger.warning(f"compile_all: ignoring {root}")
 
             if action == 'measure':
                 time.sleep(5)

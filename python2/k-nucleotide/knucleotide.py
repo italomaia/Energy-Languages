@@ -3,6 +3,7 @@
 #
 # submitted by Joerg Baumann
 
+import array
 from string import maketrans
 from sys import stdin, stdout
 from collections import defaultdict
@@ -94,6 +95,7 @@ def count_frequencies(sequence, reading_frames, i, j):
         if i == 0:
             for k in range(i, i + frame - 1):
                 bits = bits * 4 + sequence[k]
+
                 for t, (f, m) in enumerate(short_frame_frequences, 1):
                     if k - i + 1 >= frames[t]:
                         f[bits & m] += 1
@@ -166,14 +168,15 @@ def main():
     def str_to_bits(text):
         buffer = text.encode('latin1').translate(translation)
         bits = 0
-        for k in range(len(buffer)):
-            bits = bits * 4 + buffer[k]
+
+        for bit in array.array('B', buffer):
+            bits = bits * 4 + bit
         return bits
 
     def display_list(k_nucleotides):
         return [(n, len(n), str_to_bits(n)) for n in k_nucleotides]
 
-    sequence = read_sequence(stdin.buffer, b'THREE', translation)
+    sequence = read_sequence(stdin, b'THREE', translation)
 
     mono_nucleotides = ('G', 'A', 'T', 'C')
 

@@ -1,5 +1,4 @@
-cmpile:
-	echo "python2: nothing to compile"
+compile: ;
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
