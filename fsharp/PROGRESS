@@ -1,10 +1,11 @@
-[ ] reverse-complement
-[ ] mandelbrot
-[ ] n-body
-[ ] k-nucleotide
+[ ] binary-trees
 [ ] fannkuch-redux
 [ ] fasta
-[ ] regex-redux
-[ ] binary-trees
+[ ] k-nucleotide
+[ ] mandelbrot
+[ ] n-body
 [ ] pidigits
+[ ] regex-redux
+[ ] reverse-complement
 [ ] spectral-norm
+
