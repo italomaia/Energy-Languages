@@ -27,7 +27,7 @@ spot.
 
 ## Language Images That Compile
 
-[-] ada
+[x] ada
 [ ] c
 [ ] c++
 [ ] chapel
