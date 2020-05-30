@@ -1,14 +1,14 @@
 compile:
 	cp revcomp.csharpcore-2.csharpcore Program.cs
-	/usr/bin/dotnet build -c Release
+	${BINARY} build -c Release
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/revcomp-input25000000.txt
+	${BINARY} ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/revcomp-input25000000.txt
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/revcomp-input25000000.txt
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ${BINARY} ./bin/Release/netcoreapp1.1/tmp.dll 0 < /root/data/revcomp-input25000000.txt
 
