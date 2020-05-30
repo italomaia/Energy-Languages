@@ -1,5 +1,4 @@
 compile:
-	cp threadring.csharpcore Program.cs
 	${BINARY} build -c Release
 
 prepare:

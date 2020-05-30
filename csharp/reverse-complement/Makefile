@@ -1,5 +1,4 @@
 compile:
-	cp revcomp.csharpcore-2.csharpcore Program.cs
 	${BINARY} build -c Release
 
 prepare:

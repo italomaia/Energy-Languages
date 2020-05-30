@@ -1,5 +1,4 @@
 compile:
-	cp binarytrees.csharpcore-4.csharpcore Program.cs
 	${BINARY} build -c Release
 
 prepare:

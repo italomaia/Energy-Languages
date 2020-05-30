@@ -1,5 +1,4 @@
 compile:
-	cp pidigits.csharpcore-3.csharpcore Program.cs
 	${BINARY} build -c Release
 
 prepare:

@@ -1,5 +1,4 @@
 compile:
-	cp knucleotide.csharpcore-6.csharpcore Program.cs
 	${BINARY} build -c Release
 
 prepare:

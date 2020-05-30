@@ -1,5 +1,4 @@
 compile:
-	cp chameneosredux.csharpcore Program.cs
 	${BINARY} build -c Release
 
 prepare:

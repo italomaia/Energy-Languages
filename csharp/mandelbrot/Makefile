@@ -1,5 +1,4 @@
 compile:
-	cp mandelbrot.csharpcore-5.csharpcore Program.cs
 	${BINARY} build -c Release
 
 prepare:
