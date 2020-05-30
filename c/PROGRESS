@@ -6,5 +6,5 @@
 [x] n-body
 [x] pidigits
 [-] regex-redux (implementation seems outdated)
-[ ] reverse-complement
-[ ] spectral-norm
+[x] reverse-complement
+[x] spectral-norm
