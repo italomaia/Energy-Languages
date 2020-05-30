@@ -28,8 +28,8 @@ spot.
 ## Language Images That Compile
 
 [x] ada
-[ ] c
-[ ] c++
+[-] c
+[-] c++
 [ ] chapel
 [ ] csharp
 [ ] dart
