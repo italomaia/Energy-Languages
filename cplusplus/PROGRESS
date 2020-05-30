@@ -1,11 +1,11 @@
 [x] binary-trees
-[ ] fannkuch-redux
-[ ] fasta
-[ ] k-nucleotide
-[ ] mandelbrot
-[ ] n-body
-[ ] pidigits
-[ ] regex-redux
-[ ] reverse-complement
-[ ] spectral-norm
+[x] fannkuch-redux
+[-] fasta (segmentation fault)
+[x] k-nucleotide
+[x] mandelbrot
+[x] n-body
+[x] pidigits
+[x] regex-redux
+[x] reverse-complement
+[x] spectral-norm
 
