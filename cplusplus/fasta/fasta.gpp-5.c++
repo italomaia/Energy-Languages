@@ -12,6 +12,7 @@
  compiles with gcc fasta.cpp -std=c++11 -O2
  */
 
+#include <functional>
 #include <algorithm>
 #include <array>
 #include <vector>
@@ -279,7 +280,7 @@ void make(const char* desc, int n, generator_type generator, converter_type conv
    std::vector< std::thread > threads(THREADS_TO_USE - 1);
    for(size_t i = 0; i < threads.size(); ++i)
    {
-      threads[ i ] = std::thread{ std::bind( &work< generator_type, converter_type >, i, std::ref(generator), std::ref(converter)) };
+      threads[ i ] = std::thread{ bind( &work< generator_type, converter_type >, i, std::ref(generator), std::ref(converter)) };
    }
    
    work(threads.size(), generator, converter);
