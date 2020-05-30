@@ -5,6 +5,6 @@
 [x] mandelbrot
 [x] n-body
 [x] pidigits
-[ ] regex-redux
+[-] regex-redux (implementation seems outdated)
 [ ] reverse-complement
 [ ] spectral-norm
