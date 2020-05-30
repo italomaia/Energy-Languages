@@ -87,7 +87,7 @@ def main(actions: str, only: str):
                         stderr=PIPE,
                     )
 
-                    msg = raw_msg.decode('utf-8').strip()
+                    msg = raw_msg.strip()
 
                     if action in ('compile', 'run'):
                         print(msg)
