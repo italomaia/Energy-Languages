@@ -57,6 +57,10 @@ def main(actions: str, only: str):
         logger.info(f"[ACT] {action}")
 
         for root, dirs, files in os.walk(path):
+            # ignore packed libraries
+            if root.startswith('./libs'):
+                continue
+
             if only not in root:
                 logger.debug(f"Skipping {root}")
                 continue
@@ -83,7 +87,7 @@ def main(actions: str, only: str):
                         stderr=PIPE,
                     )
 
-                    msg = raw_msg.decode('utf-8').strip()
+                    msg = raw_msg.strip()
 
                     if action in ('compile', 'run'):
                         print(msg)

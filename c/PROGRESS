@@ -1,0 +1,10 @@
+[x] binary-trees
+[x] fannkuch-redux
+[-] fasta (segmentation fault)
+[x] k-nucleotide
+[x] mandelbrot
+[x] n-body
+[x] pidigits
+[-] regex-redux (implementation seems outdated)
+[x] reverse-complement
+[x] spectral-norm
