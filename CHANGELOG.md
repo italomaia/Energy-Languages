@@ -1,3 +1,8 @@
+**0.1.1**
+
+- Ada fully working
+- compile_all.py now does not try to convert script output
+
 **0.1.0**
 
 - Added docker setup
