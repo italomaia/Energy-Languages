@@ -1,2 +1,10 @@
-output file being created in the test folder, which is wrong
-mandelbrot is failing
+[x] binary-trees
+[x] fannkuch-redux
+[x] fasta
+[x] k-nucleotide
+[x] mandelbrot
+[x] n-body
+[x] pidigits
+[x] regex-redux
+[x] reverse-complement
+[x] spectral-norm
