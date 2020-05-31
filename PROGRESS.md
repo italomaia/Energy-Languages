@@ -31,7 +31,6 @@ spot.
 [-] c
 [-] c++
 [x] csharp
-[ ] dart
 [ ] erlang
 [ ] fortran
 [ ] fsharp
