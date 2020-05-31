@@ -1,13 +1,13 @@
 compile:
-	${BINARY} build -c Release
+	csc -o Program.cs
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	${BINARY} ./bin/Release/netcoreapp1.1/tmp.dll 5500
+	${BINARY} Program.exe 5500
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ${BINARY} ./bin/Release/netcoreapp1.1/tmp.dll 5500
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ${BINARY} Program.exe 5500
 
