@@ -30,7 +30,7 @@ spot.
 [x] ada
 [-] c
 [-] c++
-[ ] csharp
+[x] csharp
 [ ] dart
 [ ] erlang
 [ ] fortran
