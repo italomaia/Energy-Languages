@@ -31,10 +31,10 @@ spot.
 [-] c
 [-] c++
 [x] csharp
-[ ] erlang
-[ ] fortran
-[ ] fsharp
-[ ] go
+[-] erlang
+[-] fortran
+[-] fsharp
+[-] go
 [ ] hack
 [ ] haskell
 [ ] java
