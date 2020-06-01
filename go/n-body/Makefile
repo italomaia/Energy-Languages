@@ -1,13 +1,13 @@
 compile:
-	${COMPILER} build -o nbody.go_run
+	CGO_ENABLED=0 ${COMPILER} build nbody.go
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./nbody.go_run 50000000
+	./nbody 50000000
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./nbody.go_run 50000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./nbody 50000000
 

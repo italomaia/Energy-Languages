@@ -1,13 +1,13 @@
 compile:
-	${COMPILER} build -o fannkuchredux.go_run
+	CGO_ENABLED=0 ${COMPILER} build fannkuchredux.go
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./fannkuchredux.go_run 12
+	./fannkuchredux 12
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fannkuchredux.go_run 12
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fannkuchredux 12
 

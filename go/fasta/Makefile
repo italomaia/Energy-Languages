@@ -1,13 +1,13 @@
 compile:
-	${COMPILER} build -o fasta.go-3.go_run
+	CGO_ENABLED=0 ${COMPILER} build fasta.go
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./fasta.go-3.go_run 25000000
+	./fasta 25000000
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.go-3.go_run 25000000
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta 25000000
 
