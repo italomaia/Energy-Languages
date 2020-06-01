@@ -4,4 +4,4 @@ ENV COMPILER=/usr/bin/go
 
 COPY . .
 
-RUN apk add --no-cache musl-dev go
+RUN apk add --no-cache musl-dev gmp-dev pcre-dev go
