@@ -14,9 +14,9 @@ import (
    "io/ioutil"
    "os"
    "runtime"
-
-   "github.com/glenn-brown/golang-pkg-pcre/src/pkg/pcre"
 )
+
+import "github.com/glenn-brown/golang-pkg-pcre/src/pkg/pcre"
 //   "github.com/tuxychandru/golang-pkg-pcre/src/pkg/pcre"
 
 

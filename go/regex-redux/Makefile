@@ -1,7 +1,7 @@
 compile:
-	CGO_ENABLED=0 ${COMPILER} build regexredux.go
+	${COMPILER} build regexredux.go
 
-xprepare:
+prepare:
 	mkdir -p /opt/results/${TLANG}
 	mkdir -p /opt/measures/${TLANG}
 
