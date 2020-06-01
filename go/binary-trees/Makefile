@@ -1,13 +1,13 @@
 compile:
-	${COMPILER} build -o binarytrees.go-2.go_run
+	CGO_ENABLED=0 ${COMPILER} build binarytrees.go
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./binarytrees.go-2.go_run 21
+	./binarytrees 21
 
 measure:
-	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.go-2.go_run 21
+	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees 21
 
