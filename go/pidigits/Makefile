@@ -1,5 +1,5 @@
 compile:
-	/usr/bin/go build -o pidigits.go-3.go_run
+	${COMPILER} build -o pidigits.go-3.go_run
 
 prepare:
 	mkdir -p /opt/results/${TLANG}

@@ -1,5 +1,5 @@
 compile:
-	/usr/bin/go build -o fannkuchredux.go_run
+	${COMPILER} build -o fannkuchredux.go_run
 
 prepare:
 	mkdir -p /opt/results/${TLANG}

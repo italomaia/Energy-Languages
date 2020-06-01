@@ -1,5 +1,5 @@
 compile:
-	/usr/bin/go build -o regexredux.go-2.go_run
+	${COMPILER} build -o regexredux.go-2.go_run
 
 xprepare:
 	mkdir -p /opt/results/${TLANG}

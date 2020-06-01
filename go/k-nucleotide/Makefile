@@ -1,5 +1,5 @@
 compile:
-	/usr/bin/go build -o knucleotide.go-6.go_run
+	${COMPILER} build -o knucleotide.go-6.go_run
 
 prepare:
 	mkdir -p /opt/results/${TLANG}

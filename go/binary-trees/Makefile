@@ -1,5 +1,5 @@
 compile:
-	/usr/bin/go build -o binarytrees.go-2.go_run
+	${COMPILER} build -o binarytrees.go-2.go_run
 
 prepare:
 	mkdir -p /opt/results/${TLANG}

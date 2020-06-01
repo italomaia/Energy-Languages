@@ -1,5 +1,5 @@
 compile:
-	/usr/bin/go build -o nbody.go_run
+	${COMPILER} build -o nbody.go_run
 
 prepare:
 	mkdir -p /opt/results/${TLANG}

@@ -1,5 +1,5 @@
 compile:
-	/usr/bin/go build -o spectralnorm.go-4.go_run
+	${COMPILER} build -o spectralnorm.go-4.go_run
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
