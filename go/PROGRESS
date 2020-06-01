@@ -6,6 +6,6 @@
 [x] n-body
 [x] pidigits
 [-] regex-redux (seems the library changed)
-[ ] reverse-complement
-[ ] spectral-norm
+[x] reverse-complement
+[x] spectral-norm
 
