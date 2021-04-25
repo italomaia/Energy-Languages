@@ -1,3 +1,4 @@
+#!/bin/env python3
 import os
 import sys
 import time
@@ -10,8 +11,6 @@ from subprocess import PIPE  # nosec
 
 path = '.'
 action = 'compile'
-
-logger = None
 
 
 def file_exists(fpath: str) -> bool:
@@ -28,7 +27,7 @@ def clean_results():
         os.remove(results_filepath)
 
 
-def clean_measures(lang):
+def clean_measures():
     t_lang = os.getenv('TLANG')  # language name
     measures_filepath = f"/opt/measures/{t_lang}.txt"
 
@@ -52,7 +51,7 @@ def configure_logger(loglevel: str):
     return logger
 
 
-def main(actions: str, only: str):
+def main(logger, actions: str, only: str):
     for action in actions:
         logger.info(f"[ACT] {action}")
 
@@ -90,7 +89,7 @@ def main(actions: str, only: str):
                     msg = raw_msg.strip()
 
                     if action in ('compile', 'run'):
-                        print(msg)
+                        print(msg.decode())
                 except CalledProcessError as err:
                     out_msg = err.stdout.decode().strip()
                     err_msg = err.stderr.decode().strip()
@@ -99,7 +98,7 @@ def main(actions: str, only: str):
                     logger.error(f"[M] {out_msg}; Code {err_code}")
                     logger.error(f"[E] {err_msg}; Code {err_code}")
             else:
-                logger.warning(f"compile_all: ignoring {root}")
+                logger.debug(f"compile_all: ignoring {root}")
 
             if action == 'measure':
                 time.sleep(5)
@@ -126,4 +125,4 @@ if __name__ == '__main__':
 
     loglevel = namespace.loglevel.upper()
     logger = configure_logger(loglevel)
-    main(namespace.actions, namespace.only)
+    main(logger, namespace.actions, namespace.only)

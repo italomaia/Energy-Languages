@@ -11,6 +11,17 @@ from typing import List
 # current directory
 CUR_DIR = os.path.abspath(os.path.dirname('.'))
 
+ACT_PRP = 'prepare'
+ACT_RUN = 'run'
+ACT_CPL = 'compile'
+ACT_MES = 'measure'
+
+ACT_TRS_MAP = {
+    ACT_RUN: [ACT_PRP, ACT_CPL, ACT_RUN],
+    ACT_MES: [ACT_PRP, ACT_CPL, ACT_MES],
+    ACT_CPL: [ACT_CPL],
+}
+
 
 def make_root(name):
     "Creates the filepath for a language folder"
@@ -85,6 +96,7 @@ def run_docker_image(image_name: str, action: str, only: str):
 
     cmd = [
         'docker', 'run', '--rm', '-t',
+        '-u', '1000:1000',
         '-v', "%s:/root/data/" % data_folder,
         '-v', "%s:/opt/results/" % results_folder,
         '-v', "%s:/opt/measures/" % measures_folder,
@@ -93,7 +105,7 @@ def run_docker_image(image_name: str, action: str, only: str):
         'compile_all.py'
     ]
 
-    cmd = cmd + options + ['prepare', 'compile', action]
+    cmd = cmd + options + ACT_TRS_MAP[action]
 
     print("running: " + ' '.join(cmd), end='\n\n')
 
@@ -167,7 +179,7 @@ def make_parser():
     parser.add_argument(
         '-a', '--act',
         required=True,
-        choices=('run', 'measure'),
+        choices=(ACT_RUN, ACT_MES, ACT_CPL),
         help='action to execute'
     )
     parser.add_argument(
@@ -181,7 +193,7 @@ def make_parser():
         type=str,
         default=None,
         required=False,
-        help='only run the requested test'
+        help='only run the requested test; uses regex lookup'
     )
 
     return parser

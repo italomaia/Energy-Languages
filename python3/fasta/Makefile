@@ -1,5 +1,5 @@
 compile:
-	echo "nothing to do"
+	${BINARY} -O -m compileall -l .
 
 prepare:
 	mkdir -p /opt/results/${TLANG}

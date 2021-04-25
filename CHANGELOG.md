@@ -1,3 +1,8 @@
+**0.1.2**
+
+- Added python3 support
+- Updated main.py to run for user 1000:1000 (needs improvement)
+
 **0.1.1**
 
 - Ada fully working
