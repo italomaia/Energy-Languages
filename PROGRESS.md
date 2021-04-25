@@ -49,7 +49,7 @@ spot.
 [ ] perl
 [ ] php
 [-] python2
-[ ] python3
+[x] python3
 [ ] racket
 [ ] rapl
 [ ] ravi
