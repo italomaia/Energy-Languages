@@ -1,4 +1,4 @@
-cmpile:
+compile:
 	${BINARY} -O -m compileall -l .
 
 prepare:
