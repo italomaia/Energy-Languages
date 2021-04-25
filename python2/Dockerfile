@@ -5,4 +5,4 @@ ENV TLANG=python2
 
 COPY . .
 RUN apk add python2
-RUN /usr/bin/python3 compile_all.py compile
+RUN chown -R 1000:1000 /root && chown -R 1000:1000 /opt
