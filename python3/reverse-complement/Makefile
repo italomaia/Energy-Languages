@@ -6,7 +6,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	${BINARY} -OO revcomp.py 0 < /root/data/revcomp-input25000000.txt > /opt/results/${TEST_NAME}.${TLANG}.txt
+	${BINARY} -OO revcomp.py 0 < /root/data/revcomp-input25000000.txt > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ${BINARY} -OO revcomp.py 0 < /root/data/revcomp-input25000000.txt
