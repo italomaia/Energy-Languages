@@ -89,7 +89,7 @@ def main(logger, actions: str, only: str):
                     msg = raw_msg.strip()
 
                     if action in ('compile', 'run'):
-                        print(msg)
+                        print(msg.decode())
                 except CalledProcessError as err:
                     out_msg = err.stdout.decode().strip()
                     err_msg = err.stderr.decode().strip()
@@ -98,7 +98,7 @@ def main(logger, actions: str, only: str):
                     logger.error(f"[M] {out_msg}; Code {err_code}")
                     logger.error(f"[E] {err_msg}; Code {err_code}")
             else:
-                logger.warning(f"compile_all: ignoring {root}")
+                logger.debug(f"compile_all: ignoring {root}")
 
             if action == 'measure':
                 time.sleep(5)
