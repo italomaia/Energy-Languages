@@ -1,3 +1,4 @@
+#!/bin/env python3
 # The Computer Language Benchmarks Game
 # http://benchmarksgame.alioth.debian.org/
 #
@@ -85,12 +86,14 @@ if __name__ == '__main__':
         from multiprocessing import Process, Queue, Value, Condition
         from ctypes import c_int
 
-        global data
         data = [data] + list(s)
-        q, c, v = (Queue(), Condition(), Value(c_int, 0))
+        q: Queue = Queue()
+        c = Condition()
+        v = Value(c_int, 0)
+
         processes = [
             Process(target=reverse_and_print_task, args=(q, c, v))
-            for _ in range(min(len(data), cpu_count()))
+            for _ in range(min(len(data), cpu_count() or 1))
         ]
 
         for p in processes:
