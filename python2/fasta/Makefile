@@ -1,4 +1,5 @@
-compile: ;
+compile:
+    ${BINARY} -O -m compileall -l .
 
 prepare:
 	mkdir -p /opt/results/${TLANG}
