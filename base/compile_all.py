@@ -1,3 +1,4 @@
+#!/bin/env python3
 import os
 import sys
 import time
@@ -10,8 +11,6 @@ from subprocess import PIPE  # nosec
 
 path = '.'
 action = 'compile'
-
-logger = None
 
 
 def file_exists(fpath: str) -> bool:
@@ -28,7 +27,7 @@ def clean_results():
         os.remove(results_filepath)
 
 
-def clean_measures(lang):
+def clean_measures():
     t_lang = os.getenv('TLANG')  # language name
     measures_filepath = f"/opt/measures/{t_lang}.txt"
 
@@ -52,7 +51,7 @@ def configure_logger(loglevel: str):
     return logger
 
 
-def main(actions: str, only: str):
+def main(logger, actions: str, only: str):
     for action in actions:
         logger.info(f"[ACT] {action}")
 
@@ -126,4 +125,4 @@ if __name__ == '__main__':
 
     loglevel = namespace.loglevel.upper()
     logger = configure_logger(loglevel)
-    main(namespace.actions, namespace.only)
+    main(logger, namespace.actions, namespace.only)
