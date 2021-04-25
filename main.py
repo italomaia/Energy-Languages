@@ -96,6 +96,7 @@ def run_docker_image(image_name: str, action: str, only: str):
 
     cmd = [
         'docker', 'run', '--rm', '-t',
+        '-u', '1000:1000',
         '-v', "%s:/root/data/" % data_folder,
         '-v', "%s:/opt/results/" % results_folder,
         '-v', "%s:/opt/measures/" % measures_folder,
