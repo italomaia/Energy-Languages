@@ -1,3 +1,7 @@
+**0.1.2** WIP
+
+- *Added python3 support
+
 **0.1.1**
 
 - Ada fully working
