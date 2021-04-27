@@ -116,9 +116,10 @@ def count_frequencies(sequence, reading_frames, i, j):
     ]
 
 
+# :param header lookup entry by header text
 def read_sequence(file, header, translation):
     for line in file:
-        if line[0] == ord('>'):
+        if line[0] == '>':
             if line[1:len(header)+1] == header:
                 break
 
@@ -198,6 +199,7 @@ def main():
     else:
         n = 1
 
+    # number of partitions is proportional to cpu count
     partitions = [len(sequence) * i // n for i in range(n+1)]
     count_jobs = [
         (sequence, reading_frames, partitions[i], partitions[i + 1])
