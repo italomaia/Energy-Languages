@@ -12,7 +12,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./pidigits.gnat-2.gnat_run 10000
+	./pidigits.gnat-2.gnat_run 10000 > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./pidigits.gnat-2.gnat_run 10000

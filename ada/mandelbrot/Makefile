@@ -11,7 +11,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./mandelbrot.gnat-3.gnat_run 16000
+	./mandelbrot.gnat-3.gnat_run 16000 > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./mandelbrot.gnat-3.gnat_run 16000

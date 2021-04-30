@@ -18,7 +18,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./spectralnorm.gnat-4.gnat_run 5500
+	./spectralnorm.gnat-4.gnat_run 5500 > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.gnat-4.gnat_run 5500
