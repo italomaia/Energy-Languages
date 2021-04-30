@@ -5,7 +5,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./revcomp.gpp-4.gpp_run 0 < /root/data/revcomp-input25000000.txt
+	./revcomp.gpp-4.gpp_run 0 < /root/data/revcomp-input25000000.txt > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./revcomp.gpp-4.gpp_run 0 < /root/data/revcomp-input25000000.txt

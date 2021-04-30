@@ -5,7 +5,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./spectralnorm.gpp-6.gpp_run 5500
+	./spectralnorm.gpp-6.gpp_run 5500 > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./spectralnorm.gpp-6.gpp_run 5500

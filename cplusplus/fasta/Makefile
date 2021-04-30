@@ -6,7 +6,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./fasta.gpp-5.gpp_run 25000000
+	./fasta.gpp-5.gpp_run 25000000 > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.gpp-5.gpp_run 25000000

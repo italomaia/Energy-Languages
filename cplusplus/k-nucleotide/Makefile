@@ -5,7 +5,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./knucleotide.gpp-3.gpp_run 0 < /root/data/knucleotide-input25000000.txt
+	./knucleotide.gpp-3.gpp_run 0 < /root/data/knucleotide-input25000000.txt > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./knucleotide.gpp-3.gpp_run 0 < /root/data/knucleotide-input25000000.txt
