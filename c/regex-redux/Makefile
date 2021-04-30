@@ -6,6 +6,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./regexredux.gcc-4.gcc_run 0 < /root/data/regexredux-input5000000.txt
+	./regexredux.gcc-4.gcc_run 0 < /root/data/regexredux-input5000000.txt > /opt/results/${TLANG}/${TEST_NAME}.txt
+
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./regexredux.gcc-4.gcc_run 0 < /root/data/regexredux-input5000000.txt

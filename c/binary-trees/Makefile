@@ -6,7 +6,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./binarytrees.gcc-3.gcc_run 21
+	./binarytrees.gcc-3.gcc_run 21 > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.gcc-3.gcc_run 21
