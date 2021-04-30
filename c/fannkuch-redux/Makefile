@@ -6,7 +6,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./fannkuchredux.gcc-5.gcc_run 12
+	./fannkuchredux.gcc-5.gcc_run 12 > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	 /usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fannkuchredux.gcc-5.gcc_run 12
