@@ -16,7 +16,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./fasta.gnat-5.gnat_run 25000000
+	./fasta.gnat-5.gnat_run 25000000 > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./fasta.gnat-5.gnat_run 25000000

@@ -11,7 +11,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./fannkuchredux.gnat-3.gnat_run 12
+	./fannkuchredux.gnat-3.gnat_run 12 > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v  ./fannkuchredux.gnat-3.gnat_run 12

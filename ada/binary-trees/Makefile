@@ -14,7 +14,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./binarytrees.gnat-4.gnat_run 21
+	./binarytrees.gnat-4.gnat_run 21 > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./binarytrees.gnat-4.gnat_run 21

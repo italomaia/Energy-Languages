@@ -13,7 +13,7 @@ prepare:
 	mkdir -p /opt/measures/${TLANG}
 
 run:
-	./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt
+	./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt > /opt/results/${TLANG}/${TEST_NAME}.txt
 
 measure:
 	/usr/bin/time -o /opt/measures/${TLANG}.txt -v ./revcomp.gnat-2.gnat_run 0 < /root/data/revcomp-input25000000.txt
