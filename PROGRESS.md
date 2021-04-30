@@ -48,7 +48,6 @@ spot.
 [ ] pascal
 [ ] perl
 [ ] php
-[-] python2
 [x] python3
 [ ] racket
 [ ] rapl
