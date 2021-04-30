@@ -28,8 +28,8 @@ spot.
 ## Language Images That Compile
 
 [x] ada
-[x] c
-[x] c++
+[-] c - fasta segfault
+[-] c++ - fasta segfault
 [x] csharp
 [-] erlang
 [-] fortran
