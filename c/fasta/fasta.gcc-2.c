@@ -49,7 +49,7 @@ static char* make_Sequence_Buffer(const char string_To_Repeat[])
 
 	// JG: Changed to that this writes a sequence to a buffer, which is used
 	intnative_t number_Of_Characters_To_Create = string_To_Repeat_Length * MAXIMUM_LINE_WIDTH;
-	char* buffer = (char*) malloc(number_Of_Characters_To_Create + 
+	char* buffer = (char*) malloc(number_Of_Characters_To_Create +
 		number_Of_Characters_To_Create / MAXIMUM_LINE_WIDTH + 1);
 	if (buffer == NULL)
 		exit(-1);
@@ -102,7 +102,7 @@ static char* make_Sequence_Buffer(const char string_To_Repeat[])
 	return buffer;
 }
 
-void repeat_And_Wrap_String(const char string_To_Repeat[], intnative_t number_Of_Characters_To_Create) 
+void repeat_And_Wrap_String(const char string_To_Repeat[], intnative_t number_Of_Characters_To_Create)
 {
 	/* JG: fasta_repeat repeats every len(alu) * line-length = 287 * 61 = 17507 characters.
 	       So, calculate this once, then just print that buffer over and over. */
@@ -115,7 +115,7 @@ void repeat_And_Wrap_String(const char string_To_Repeat[], intnative_t number_Of
 	}
 	if (outputBytes > 0) {
 		fwrite(sequence, outputBytes, 1, stdout);
-		printf("\n"); 
+		printf("\n");
 	}
 	free(sequence);
 }
@@ -253,7 +253,7 @@ static void generate_And_Wrap_Pseudorandom_DNA_Sequence(
 #endif
 		while (1)
 		{
-			do
+      do
 			{
 				cnt = rng_gen_blk(rnd, CHARACTERS_PER_BLOCK, cur_tid);
 			} while (-1 == cnt);
@@ -285,7 +285,7 @@ static void generate_And_Wrap_Pseudorandom_DNA_Sequence(
 					*line++ = '\n';
 				}
 			}
-			//Check if we need to end the line
+      //Check if we need to end the line
 			if (0 != col)
 			{
 				//Last iteration didn't end the line, so finish the job.
@@ -296,7 +296,7 @@ static void generate_And_Wrap_Pseudorandom_DNA_Sequence(
 			{
 				cnt = out_write(block, line - block, cur_tid);
 			} while (-1 == cnt);
-			//Check  fot IO error
+      //Check for IO error
 			if (0 == cnt)
 			{
 				exit(1);
@@ -322,16 +322,16 @@ int main(int argc, char ** argv)
 	out_init();
 
 	fputs(">TWO IUB ambiguity codes\n", stdout);
-	nucleotide_info iub_Nucleotides_Information[] =
+  nucleotide_info iub_Nucleotides_Information[] =
 	{
 		{ 'a', 0.27 },{ 'c', 0.12 },{ 'g', 0.12 },{ 't', 0.27 },{ 'B', 0.02 },
 		{ 'D', 0.02 },{ 'H', 0.02 },{ 'K', 0.02 },{ 'M', 0.02 },{ 'N', 0.02 },
 		{ 'R', 0.02 },{ 'S', 0.02 },{ 'V', 0.02 },{ 'W', 0.02 },{ 'Y', 0.02 }
 	};
-	generate_And_Wrap_Pseudorandom_DNA_Sequence(iub_Nucleotides_Information,
+  generate_And_Wrap_Pseudorandom_DNA_Sequence(iub_Nucleotides_Information,
 		sizeof(iub_Nucleotides_Information) / sizeof(nucleotide_info), 3 * n);
 
-	fputs(">THREE Homo sapiens frequency\n", stdout);
+  fputs(">THREE Homo sapiens frequency\n", stdout);
 	nucleotide_info homo_Sapien_Nucleotides_Information[] =
 	{
 		{ 'a', 0.3029549426680 },{ 'c', 0.1979883004921 },
